@@ -16,11 +16,17 @@
       "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [
+          "Nur ein Süßungsmittel wählen: Ahornsirup (feucht) oder Rohrzucker (trocken).",
+          "Mehl teilweise durch Proteinpulver ersetzbar.",
+          "Max. 20 % des Mehls durch Vollkornmehl ersetzen — mehr macht das Ausbacken schwieriger.",
           "Geduldig sein: erst wenden, wenn sie oben fast trocken sind und sich von selbst von der Pfanne lösen.",
           "Je nach Herd mit der Temperatur spielen, bis es klappt.",
           "In bevorzugter Portionsgröße ausbacken — handtellergroße Mini-Pancakes sind super."
         ],
         "en": [
+          "Pick only one sweetener: maple syrup (wet) or cane sugar (dry).",
+          "Part of the flour can be swapped for protein powder.",
+          "Replace at most 20% of the flour with wholegrain — more makes frying harder.",
           "Be patient: flip only when the tops are almost dry and they release from the pan on their own.",
           "Play with the temperature depending on your stove until it works.",
           "Cook in your preferred size — palm-sized mini pancakes are great."
@@ -29,11 +35,12 @@
       "ingredients": [
         { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
         { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "rohrzucker", "amount": null, "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
         { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
         { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
       "steps": [
-        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl und Backpulver verrühren.", "en": "Mix flour and baking powder." }, "uses": ["mehl", "backpulver"] },
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "rohrzucker"] },
         { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
         { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
         { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
@@ -44,7 +51,7 @@
           {
             "op": { "de": "glatt rühren", "en": "stir smooth" },
             "children": [
-              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }] },
+              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }, { "ing": "rohrzucker" }] },
               { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
             ]
           }
@@ -59,11 +66,17 @@
       "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [
+          "Nur ein Süßungsmittel wählen: Ahornsirup (feucht) oder Rohrzucker (trocken).",
+          "Mehl teilweise durch Proteinpulver ersetzbar.",
+          "Max. 20 % des Mehls durch Vollkornmehl ersetzen — mehr macht das Ausbacken schwieriger.",
           "Geduldig sein: erst wenden, wenn sie oben fast trocken sind und sich von selbst von der Pfanne lösen.",
           "Je nach Herd mit der Temperatur spielen, bis es klappt.",
           "In bevorzugter Portionsgröße ausbacken — handtellergroße Mini-Pancakes sind super."
         ],
         "en": [
+          "Pick only one sweetener: maple syrup (wet) or cane sugar (dry).",
+          "Part of the flour can be swapped for protein powder.",
+          "Replace at most 20% of the flour with wholegrain — more makes frying harder.",
           "Be patient: flip only when the tops are almost dry and they release from the pan on their own.",
           "Play with the temperature depending on your stove until it works.",
           "Cook in your preferred size — palm-sized mini pancakes are great."
@@ -72,11 +85,12 @@
       "ingredients": [
         { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
         { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "rohrzucker", "amount": null, "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
         { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
         { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
       "steps": [
-        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl und Backpulver verrühren.", "en": "Mix flour and baking powder." }, "uses": ["mehl", "backpulver"] },
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "rohrzucker"] },
         { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
         { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
         { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
@@ -87,7 +101,7 @@
           {
             "op": { "de": "glatt rühren", "en": "stir smooth" },
             "children": [
-              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }] },
+              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }, { "ing": "rohrzucker" }] },
               { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
             ]
           }
