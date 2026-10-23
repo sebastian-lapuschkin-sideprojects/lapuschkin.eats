@@ -250,9 +250,9 @@
       var kc = m.key === "kcal", val = fmtN(n.base[m.key], kc);
       if (n.range && n.bmax[m.key] !== n.base[m.key]) val += "\u2013" + fmtN(n.bmax[m.key], kc);
       if (n.partial[m.key]) val += "*";
-      var dd = val + " " + esc(m.unit);
-      if (pct[m.key] != null) dd += '<sup class="nutri-pct">' + pct[m.key] + "\u00a0%</sup>";
-      h += "<div><dt>" + esc(t(m.label)) + "</dt><dd>" + dd + "</dd></div>";
+      var dtx = esc(t(m.label));
+      if (pct[m.key] != null) dtx += '<span class="nutri-pct">' + pct[m.key] + "\u00a0%</span>";
+      h += "<div><dt>" + dtx + "</dt><dd>" + val + " " + esc(m.unit) + "</dd></div>";
     });
     h += "</dl>";
     if (n.opts.length) {
