@@ -271,7 +271,7 @@
         step.uses.forEach(function (id) {
           var ing = im[id]; if (!ing) return;
           var a = amtOnly(ing, f);
-          h += '<span class="chip">' + (a ? '<span class="amt">' + esc(a) + "</span> " : "") + esc(t(ing.name)) + "</span>";
+          h += '<span class="chip' + (ing.optional ? " opt" : "") + '">' + (a ? '<span class="amt">' + esc(a) + "</span> " : "") + esc(t(ing.name)) + "</span>";
         });
         h += "</div>";
       }
