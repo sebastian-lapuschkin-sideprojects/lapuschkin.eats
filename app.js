@@ -66,7 +66,8 @@
     nutri_optional: { de: "Optional dazu:", en: "Optional add-ons:" },
     nutri_incomplete: { de: "Unvollst\u00e4ndig \u2014 ohne hinterlegte Werte:", en: "Incomplete \u2014 no data for:" },
     nutri_foot: { de: "Berechnet aus den Zutaten (je 100 g), skaliert mit der Menge; gerundet. Quellen in nutrition.json.", en: "Computed from the ingredients (per 100 g), scaled by the amount; rounded. Sources in nutrition.json." },
-    nutri_partial: { de: "* Einzelwert fehlt in der Quelle \u2014 Gesamt ist Untergrenze.", en: "* a per-item value is missing from the source \u2014 total is a lower bound." }
+    nutri_partial: { de: "* Einzelwert fehlt in der Quelle \u2014 Gesamt ist Untergrenze.", en: "* a per-item value is missing from the source \u2014 total is a lower bound." },
+    nutri_pct: { de: "% = Anteil an der Energie (Eiwei\u00df und KH je 4, Fett 9 kcal/g).", en: "% = share of energy (protein and carbs 4, fat 9 kcal/g each)." }
   };
   function ui(k) { var o = UI[k]; return o ? (o[LANG] || o.de) : k; }
 
@@ -218,7 +219,8 @@
     v.ingredients.forEach(function (ing) {
       if (ing.amount == null) return;
       var fd = ing.food && foods[ing.food];
-      var gpu = fd && fd.g_per_unit && fd.g_per_unit[ing.unit || "g"];
+      var unit = (ing.unit == null ? "g" : ing.unit);
+      var gpu = fd && fd.g_per_unit && fd.g_per_unit[unit];
       if (!fd || gpu == null) { missing.push(ing); return; }
       any = true;
       function contrib(amt) {
@@ -240,12 +242,17 @@
   function nutritionHTML(v, f) {
     var n = nutri(v, f);
     if (!n || (!n.any && !n.missing.length)) return "";
+    var eP = (n.base.protein || 0) * 4, eC = (n.base.carbs || 0) * 4, eF = (n.base.fat || 0) * 9;
+    var esum = eP + eC + eF, pct = {};
+    if (esum > 0) { pct.protein = Math.round(eP / esum * 100); pct.carbs = Math.round(eC / esum * 100); pct.fat = Math.round(eF / esum * 100); }
     var h = '<div class="nutri"><div class="nutri-h">' + esc(ui("nutri_title")) + "</div><dl>";
     n.macros.forEach(function (m) {
       var kc = m.key === "kcal", val = fmtN(n.base[m.key], kc);
       if (n.range && n.bmax[m.key] !== n.base[m.key]) val += "\u2013" + fmtN(n.bmax[m.key], kc);
       if (n.partial[m.key]) val += "*";
-      h += "<div><dt>" + esc(t(m.label)) + "</dt><dd>" + val + " " + esc(m.unit) + "</dd></div>";
+      var dd = val + " " + esc(m.unit);
+      if (pct[m.key] != null) dd += '<sup class="nutri-pct">' + pct[m.key] + "\u00a0%</sup>";
+      h += "<div><dt>" + esc(t(m.label)) + "</dt><dd>" + dd + "</dd></div>";
     });
     h += "</dl>";
     if (n.opts.length) {
@@ -260,7 +267,8 @@
     }
     var pnote = "";
     for (var pk in n.partial) { pnote = '<div class="nutri-note">' + esc(ui("nutri_partial")) + "</div>"; break; }
-    h += pnote + '<div class="nutri-note">' + esc(ui("nutri_foot")) + "</div></div>";
+    var pctnote = (esum > 0) ? '<div class="nutri-note">' + esc(ui("nutri_pct")) + "</div>" : "";
+    h += pnote + pctnote + '<div class="nutri-note">' + esc(ui("nutri_foot")) + "</div></div>";
     return h;
   }
 
