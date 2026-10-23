@@ -12,10 +12,10 @@
     {
       "id": "basis",
       "label": { "de": "Grundrezept", "en": "Base recipe" },
-      "placeholder": "bowl",
+      "image": "images/linsensuppe.jpg",
       "baseServings": 4,
       "servingsUnit": { "de": "Portionen", "en": "servings" },
-      "time": { "total": { "de": "1 Std 15 Min", "en": "1 hr 15 min" } },
+      "time": { "total": { "de": "1 Std 30 Min", "en": "1 hr 30 min" } },
       "multipliers": [0.5, 1, 2, 3, 4],
       "note": {
         "de": [
@@ -32,7 +32,7 @@
       "ingredients": [
         { "id": "oel", "amount": 4, "unit": "EL", "name": { "de": "Bratöl", "en": "Cooking oil" } },
         { "id": "zwiebeln", "amount": 200, "max": 250, "unit": "g", "name": { "de": "Zwiebeln", "en": "Onions" }, "note": { "de": "2–3 Stück", "en": "2–3" } },
-        { "id": "tofu", "amount": 175, "unit": "g", "name": { "de": "Räuchertofu", "en": "Smoked tofu" }, "note": { "de": "ca. 1 Block", "en": "approx. 1 block" } },
+        { "id": "tofu", "amount": 350, "unit": "g", "name": { "de": "Räuchertofu", "en": "Smoked tofu" }, "note": { "de": "ca. 2 Blöcke", "en": "approx. 2 blocks" } },
         { "id": "moehren", "amount": 200, "max": 250, "unit": "g", "name": { "de": "Möhren", "en": "Carrots" }, "note": { "de": "ca. 2 Stück", "en": "approx. 2" } },
         { "id": "tomatenmark", "amount": 50, "unit": "g", "name": { "de": "Tomatenmark", "en": "Tomato paste" } },
         { "id": "wasser", "amount": 1.5, "unit": "l", "name": { "de": "Wasser", "en": "Water" } },
@@ -41,7 +41,7 @@
         { "id": "lorbeer", "amount": 1, "unit": "", "name": { "de": "Lorbeerblatt", "en": "Bay leaf" }, "optional": true },
         { "id": "bruehe", "amount": 30, "unit": "g", "name": { "de": "Gemüsebrühe-Pulver", "en": "Veg stock powder" }, "note": { "de": "ca. 2 EL", "en": "approx. 2 tbsp" } },
         { "id": "pfeffer", "amount": null, "name": { "de": "schwarzer Pfeffer", "en": "Black pepper" } },
-        { "id": "essig", "amount": 2, "unit": "EL", "name": { "de": "Essig", "en": "Vinegar" }, "note": { "de": "oder Balsamico", "en": "or balsamic" } },
+        { "id": "essig", "amount": 2, "unit": "EL", "name": { "de": "Apfelessig", "en": "Apple cider vinegar" } },
         { "id": "petersilie", "amount": 3, "max": 4, "unit": "EL", "name": { "de": "Petersilie", "en": "Parsley" }, "note": { "de": "gehackt", "en": "chopped" } },
         { "id": "paprika", "amount": 0.5, "max": 1, "unit": "TL", "name": { "de": "geräuchertes Paprikapulver", "en": "Smoked paprika" }, "optional": true }
       ],
@@ -54,7 +54,7 @@
         { "text": { "de": "Räuchertofu und Möhren zugeben, 5 Min mitbraten.", "en": "Add smoked tofu and carrots, fry for 5 min." }, "uses": ["tofu", "moehren"] },
         { "text": { "de": "Tomatenmark zugeben, 1,5 Min mitrösten, gut verrühren.", "en": "Add tomato paste, roast for 1.5 min, stir well." }, "uses": ["tomatenmark"] },
         { "section": { "de": "Kochen", "en": "Simmer" }, "text": { "de": "Wasser, Kartoffeln, Berglinsen und Lorbeerblatt zugeben, aufkochen, zugedeckt 45 Min köcheln. Lorbeerblatt entfernen.", "en": "Add water, potatoes, lentils and bay leaf, bring to a boil, simmer covered for 45 min. Remove the bay leaf." }, "uses": ["wasser", "kartoffeln", "linsen", "lorbeer"] },
-        { "section": { "de": "Würzen", "en": "Season" }, "text": { "de": "Mit Gemüsebrühe, Pfeffer, Essig, Petersilie und Paprikapulver abschmecken.", "en": "Season with stock powder, pepper, vinegar, parsley and smoked paprika." }, "uses": ["bruehe", "pfeffer", "essig", "petersilie", "paprika"] }
+        { "section": { "de": "Würzen", "en": "Season" }, "text": { "de": "Mit Gemüsebrühe, Pfeffer, Apfelessig, Petersilie und Paprikapulver abschmecken.", "en": "Season with stock powder, pepper, apple cider vinegar, parsley and smoked paprika." }, "uses": ["bruehe", "pfeffer", "essig", "petersilie", "paprika"] }
       ],
       "tree": {
         "op": { "de": "abschmecken", "en": "season to taste" },
@@ -68,16 +68,16 @@
                   {
                     "op": { "de": "5 Min mitbraten", "en": "fry 5 min" },
                     "children": [
-                      { "op": { "de": "Zwiebeln 10 Min andünsten", "en": "sweat onions 10 min" }, "children": [{ "ing": "oel" }, { "ing": "zwiebeln" }] },
-                      { "ing": "tofu" },
-                      { "ing": "moehren" }
+                      { "op": { "de": "Zwiebeln 10 Min andünsten", "en": "sweat onions 10 min" }, "children": [{ "ing": "oel" }, { "op": { "de": "fein würfeln", "en": "finely dice" }, "children": [{ "ing": "zwiebeln" }] }] },
+                      { "op": { "de": "würfeln", "en": "dice" }, "children": [{ "ing": "tofu" }] },
+                      { "op": { "de": "würfeln", "en": "dice" }, "children": [{ "ing": "moehren" }] }
                     ]
                   },
                   { "ing": "tomatenmark" }
                 ]
               },
               { "ing": "wasser" },
-              { "ing": "kartoffeln" },
+              { "op": { "de": "würfeln", "en": "dice" }, "children": [{ "ing": "kartoffeln" }] },
               { "ing": "linsen" },
               { "ing": "lorbeer" }
             ]
