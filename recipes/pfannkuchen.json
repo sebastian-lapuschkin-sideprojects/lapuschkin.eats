@@ -35,7 +35,7 @@
       "ingredients": [
         { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
         { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
-        { "id": "rohrzucker", "amount": null, "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
+        { "id": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
         { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
         { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
@@ -85,7 +85,7 @@
       "ingredients": [
         { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
         { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
-        { "id": "rohrzucker", "amount": null, "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
+        { "id": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
         { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
         { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
