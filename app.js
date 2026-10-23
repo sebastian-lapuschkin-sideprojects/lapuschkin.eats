@@ -11,6 +11,7 @@
   var byId = {};
   var state = {}; // gid -> {vi, factor}
   var carTimer = null;
+  var NUTRITION = null;
 
   // ---- language ------------------------------------------------------------
   var LANG = "de";
@@ -60,7 +61,12 @@
       de: "Knapp notiert \u2014 in jedem Schritt stehen die Mengen dabei. Die Menge l\u00e4sst sich per Multiplikator skalieren, und jedes Rezept gibt es als Varianten mit eigenen Notizen. Alles vegan \u2014 oder konsequent veganisiert.",
       en: "Written tight \u2014 every step lists its amounts. Scale the quantity with a multiplier, and every recipe comes as variants with their own notes. All vegan \u2014 or consistently veganized."
     },
-    loading: { de: "l\u00e4dt\u2026", en: "loading\u2026" }
+    loading: { de: "l\u00e4dt\u2026", en: "loading\u2026" },
+    nutri_title: { de: "N\u00e4hrwerte \u2014 ganzes Gericht", en: "Nutrition \u2014 whole dish" },
+    nutri_optional: { de: "Optional dazu:", en: "Optional add-ons:" },
+    nutri_incomplete: { de: "Unvollst\u00e4ndig \u2014 ohne hinterlegte Werte:", en: "Incomplete \u2014 no data for:" },
+    nutri_foot: { de: "Berechnet aus den Zutaten (je 100 g), skaliert mit der Menge; gerundet. Quellen in nutrition.json.", en: "Computed from the ingredients (per 100 g), scaled by the amount; rounded. Sources in nutrition.json." },
+    nutri_partial: { de: "* Einzelwert fehlt in der Quelle \u2014 Gesamt ist Untergrenze.", en: "* a per-item value is missing from the source \u2014 total is a lower bound." }
   };
   function ui(k) { var o = UI[k]; return o ? (o[LANG] || o.de) : k; }
 
@@ -197,6 +203,67 @@
     return '<div class="note"><div class="nh">' + esc(ui("vnotes")) + "</div>" + inner + "</div>";
   }
 
+  // ---- nutrition (computed from nutrition.json, whole dish) -----------------
+  function fmtN(x, kcal) {
+    if (x == null) return "\u2013";
+    var v = kcal ? Math.round(x) : Math.round(x * 10) / 10;
+    var s = Number.isInteger(v) ? String(v) : String(v);
+    return LANG === "en" ? s : s.replace(".", ",");
+  }
+  function nutri(v, f) {
+    if (!NUTRITION || !NUTRITION.foods) return null;
+    var foods = NUTRITION.foods, macros = NUTRITION.macros || [];
+    var base = {}, bmax = {}, range = false, opts = [], missing = [], any = false, partial = {};
+    macros.forEach(function (m) { base[m.key] = 0; bmax[m.key] = 0; });
+    v.ingredients.forEach(function (ing) {
+      if (ing.amount == null) return;
+      var fd = ing.food && foods[ing.food];
+      var gpu = fd && fd.g_per_unit && fd.g_per_unit[ing.unit || "g"];
+      if (!fd || gpu == null) { missing.push(ing); return; }
+      any = true;
+      function contrib(amt) {
+        var g = amt * gpu * f, o = {};
+        macros.forEach(function (m) { var p = fd.per100g ? fd.per100g[m.key] : null; o[m.key] = (p == null ? null : g / 100 * p); });
+        return o;
+      }
+      var cmin = contrib(ing.amount), cmax = contrib(ing.max != null ? ing.max : ing.amount);
+      if (ing.optional) { opts.push({ ing: ing, min: cmin, max: cmax }); }
+      else {
+        macros.forEach(function (m) {
+          if (cmin[m.key] != null) { base[m.key] += cmin[m.key]; bmax[m.key] += cmax[m.key]; if (cmax[m.key] !== cmin[m.key]) range = true; }
+          else { partial[m.key] = true; }
+        });
+      }
+    });
+    return { macros: macros, base: base, bmax: bmax, range: range, opts: opts, missing: missing, any: any, partial: partial };
+  }
+  function nutritionHTML(v, f) {
+    var n = nutri(v, f);
+    if (!n || (!n.any && !n.missing.length)) return "";
+    var h = '<div class="nutri"><div class="nutri-h">' + esc(ui("nutri_title")) + "</div><dl>";
+    n.macros.forEach(function (m) {
+      var kc = m.key === "kcal", val = fmtN(n.base[m.key], kc);
+      if (n.range && n.bmax[m.key] !== n.base[m.key]) val += "\u2013" + fmtN(n.bmax[m.key], kc);
+      if (n.partial[m.key]) val += "*";
+      h += "<div><dt>" + esc(t(m.label)) + "</dt><dd>" + val + " " + esc(m.unit) + "</dd></div>";
+    });
+    h += "</dl>";
+    if (n.opts.length) {
+      h += '<div class="nutri-opt">' + esc(ui("nutri_optional")) + "<ul>" + n.opts.map(function (o) {
+        var k = fmtN(o.min.kcal, true);
+        if (o.max.kcal !== o.min.kcal) k += "\u2013" + fmtN(o.max.kcal, true);
+        return "<li>" + esc(t(o.ing.name)) + " +" + k + " kcal</li>";
+      }).join("") + "</ul></div>";
+    }
+    if (n.missing.length) {
+      h += '<div class="nutri-missing">' + esc(ui("nutri_incomplete")) + " " + n.missing.map(function (i) { return esc(t(i.name)); }).join(", ") + "</div>";
+    }
+    var pnote = "";
+    for (var pk in n.partial) { pnote = '<div class="nutri-note">' + esc(ui("nutri_partial")) + "</div>"; break; }
+    h += pnote + '<div class="nutri-note">' + esc(ui("nutri_foot")) + "</div></div>";
+    return h;
+  }
+
   // ---- recipe view ---------------------------------------------------------
   function recipeHTML(g) {
     var s = st(g), v = g.variants[s.vi], f = s.factor;
@@ -258,7 +325,7 @@
       var badge = ing.optional ? '<span class="badge">' + esc(ui("optional")) + "</span>" : "";
       h += '<li' + (ing.optional ? ' class="opt"' : "") + '><span class="amt">' + esc(amtOnly(ing, f)) + "</span><span>" + esc(t(ing.name)) + note + badge + "</span></li>";
     });
-    h += "</ul></section><section class=\"panel\"><h2>" + esc(ui("method")) + "</h2><div class=\"steps\">";
+    h += "</ul>" + nutritionHTML(v, f) + "</section><section class=\"panel\"><h2>" + esc(ui("method")) + "</h2><div class=\"steps\">";
     var lastS = null;
     v.steps.forEach(function (step) {
       var sec = step.section ? t(step.section) : null;
@@ -394,15 +461,17 @@
 
   function load() {
     app.innerHTML = '<p class="back">' + esc(ui("loading")) + "</p>";
-    fetch("recipes/index.json")
+    var pNut = fetch("nutrition.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    var pRec = fetch("recipes/index.json")
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (list) {
         return Promise.all(list.map(function (f) {
           return fetch("recipes/" + f).then(function (r) { if (!r.ok) throw 0; return r.json(); });
         }));
-      })
-      .then(function (groups) {
-        GROUPS = groups;
+      });
+    Promise.all([pRec, pNut])
+      .then(function (res) {
+        GROUPS = res[0]; NUTRITION = res[1];
         GROUPS.forEach(function (g) { byId[g.id] = g; });
         route();
       })

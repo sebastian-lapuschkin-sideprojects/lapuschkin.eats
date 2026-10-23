@@ -35,11 +35,11 @@
         ]
       },
       "ingredients": [
-        { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
-        { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
-        { "id": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
-        { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
-        { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
+        { "id": "mehl", "food": "dinkelmehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "rohrzucker", "food": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
+        { "id": "milch", "food": "sojamilch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
+        { "id": "sirup", "food": "ahornsirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
       "steps": [
         { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "rohrzucker"] },
@@ -87,11 +87,11 @@
         ]
       },
       "ingredients": [
-        { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
-        { "id": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
-        { "id": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
-        { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
-        { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
+        { "id": "mehl", "food": "dinkelmehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "rohrzucker", "food": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
+        { "id": "milch", "food": "mandelmilch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
+        { "id": "sirup", "food": "ahornsirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
       "steps": [
         { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "rohrzucker"] },
