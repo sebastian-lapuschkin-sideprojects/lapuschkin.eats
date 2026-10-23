@@ -1,0 +1,74 @@
+{
+  "id": "pfannkuchen",
+  "title": { "de": "Pfannkuchen", "en": "Pancakes" },
+  "subtitle": {
+    "de": "Veganes Grundrezept. Mal 3–4 für die ganze WG.",
+    "en": "Vegan base recipe. Times 3–4 for the whole flat-share."
+  },
+  "tags": [{ "de": "süß", "en": "sweet" }],
+  "defaultVariant": "soja",
+  "variants": [
+    {
+      "id": "soja",
+      "label": { "de": "Sojamilch", "en": "Soy milk" },
+      "placeholder": "pancakes",
+      "image": "images/pfannkuchen.jpg",
+      "multipliers": [1, 2, 3, 4],
+      "ingredients": [
+        { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
+        { "id": "natron", "amount": 0.5, "unit": "TL", "name": { "de": "Natron", "en": "Baking soda" } },
+        { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
+        { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
+      ],
+      "steps": [
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl und Natron verrühren.", "en": "Mix flour and baking soda." }, "uses": ["mehl", "natron"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
+        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
+        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "ohne Fett backen", "en": "cook without fat" },
+        "children": [
+          {
+            "op": { "de": "glatt rühren", "en": "stir smooth" },
+            "children": [
+              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "natron" }] },
+              { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "mandel",
+      "label": { "de": "Mandelmilch", "en": "Almond milk" },
+      "placeholder": "pancakes",
+      "image": "images/pfannkuchen.jpg",
+      "multipliers": [1, 2, 3, 4],
+      "ingredients": [
+        { "id": "mehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
+        { "id": "natron", "amount": 0.5, "unit": "TL", "name": { "de": "Natron", "en": "Baking soda" } },
+        { "id": "milch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
+        { "id": "sirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
+      ],
+      "steps": [
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl und Natron verrühren.", "en": "Mix flour and baking soda." }, "uses": ["mehl", "natron"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
+        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
+        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "ohne Fett backen", "en": "cook without fat" },
+        "children": [
+          {
+            "op": { "de": "glatt rühren", "en": "stir smooth" },
+            "children": [
+              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "natron" }] },
+              { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

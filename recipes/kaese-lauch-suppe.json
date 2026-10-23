@@ -1,0 +1,106 @@
+{
+  "id": "kaese-lauch-suppe",
+  "title": { "de": "Käse-Lauch-Suppe", "en": "Cheesy leek soup" },
+  "subtitle": {
+    "de": "Vegan, cremig, mit Lauch und Hack.",
+    "en": "Vegan, creamy, with leek and mince."
+  },
+  "tags": [{ "de": "Suppe", "en": "soup" }],
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base recipe" },
+      "images": ["images/kaese-lauch-1.jpg", "images/kaese-lauch-2.jpg", "images/kaese-lauch-3.jpg"],
+      "baseServings": 6,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "time": { "total": { "de": "ca. 1 Std", "en": "approx. 1 hr" } },
+      "multipliers": [0.5, 1, 2, 3, 4],
+      "note": {
+        "de": [
+          "Empfehlung: Beyond Meat TK-Hack.",
+          "Verhältnis: 250 g Hack auf 1–1,5 Stangen Lauch; 500 g (2 Packs) auf 2 Stangen.",
+          "Beyond Hack leicht antauen und vorschneiden, dann zerfällt es beim Anbraten leichter.",
+          "Lauch erst in Ringe schneiden, dann waschen — der Sand sitzt zwischen den Schichten; Salatschleuder hilft."
+        ],
+        "en": [
+          "Recommendation: Beyond Meat frozen mince.",
+          "Ratio: 250 g mince to 1–1.5 leek stalks; 500 g (2 packs) to 2 stalks.",
+          "Let the Beyond mince thaw slightly and pre-cut it, so it crumbles more easily when fried.",
+          "Cut the leek into rings first, then wash — the sand sits between the layers; a salad spinner helps."
+        ]
+      },
+      "ingredients": [
+        { "id": "oel", "amount": 2, "max": 3, "unit": "EL", "name": { "de": "Pflanzenöl", "en": "Vegetable oil" }, "note": { "de": "Topfboden bedecken", "en": "enough to cover the pot base" } },
+        { "id": "hack", "amount": 250, "max": 500, "unit": "g", "name": { "de": "veganes Hack", "en": "Vegan mince" }, "note": { "de": "1–2 Packs, z.B. Beyond Meat", "en": "1–2 packs, e.g. Beyond Meat" } },
+        { "id": "zwiebel", "amount": 1, "unit": "", "name": { "de": "Zwiebel", "en": "Onion" }, "note": { "de": "gehackt; bei kleinen gern mehr", "en": "chopped; more if small" } },
+        { "id": "knoblauch", "amount": 2, "unit": "", "name": { "de": "Knoblauchzehen", "en": "Garlic cloves" }, "note": { "de": "gehackt", "en": "chopped" } },
+        { "id": "lauch", "amount": 1, "max": 2, "unit": "Stangen", "name": { "de": "Lauch", "en": "Leek" }, "note": { "de": "gewaschen, halbiert, in Ringen", "en": "washed, halved, into rings" } },
+        { "id": "kraeuter", "amount": 1, "max": 2, "unit": "TL", "name": { "de": "Kräutermischung", "en": "Herb mix" } },
+        { "id": "muskat", "amount": 1, "unit": "Prise", "name": { "de": "Muskat", "en": "Nutmeg" } },
+        { "id": "hefe", "amount": 3, "unit": "EL", "name": { "de": "Hefeflocken", "en": "Nutritional yeast" }, "note": { "de": "gehäuft", "en": "heaped" } },
+        { "id": "salzpfeffer", "amount": null, "name": { "de": "Salz & Pfeffer", "en": "Salt & pepper" } },
+        { "id": "tamari", "amount": 1, "unit": "EL", "name": { "de": "Sojasauce", "en": "Soy sauce" }, "note": { "de": "leicht überlaufend; oder Tamari", "en": "a touch overfull; or tamari" } },
+        { "id": "bruehe", "amount": 500, "unit": "ml", "name": { "de": "Gemüsebrühe", "en": "Vegetable stock" } },
+        { "id": "sahne", "amount": 250, "unit": "ml", "name": { "de": "pflanzliche Sahne", "en": "Plant cream" }, "note": { "de": "Soja/Hafer; oder 200 ml + Pack mit Sojamilch ausspülen", "en": "soy/oat; or 200 ml + rinse carton with soy milk" } },
+        { "id": "kartoffeln", "amount": 4, "unit": "", "name": { "de": "Kartoffeln", "en": "Potatoes" }, "note": { "de": "mittelgroß, gewürfelt", "en": "medium, diced" }, "optional": true },
+        { "id": "cremevega", "amount": 150, "unit": "g", "name": { "de": "Creme Vega", "en": "Creme Vega" }, "note": { "de": "von Dr. Oetker; oder veganer Frischkäse", "en": "by Dr. Oetker; or vegan cream cheese" } },
+        { "id": "reibekaese", "amount": null, "name": { "de": "veganer Reibekäse", "en": "vegan grated cheese" }, "note": "alles und viel Kartoffelmobil", "optional": true },
+        { "id": "petersilie", "amount": null, "name": { "de": "Petersilie", "en": "Parsley" }, "note": { "de": "zum Servieren", "en": "to serve" }, "optional": true },
+        { "id": "baguette", "amount": null, "name": { "de": "Baguette", "en": "Baguette" }, "optional": true }
+      ],
+      "steps": [
+        { "text": { "de": "Lauch halbieren, in Ringe schneiden, dann gründlich waschen (Sand sitzt zwischen den Schichten) — Salatschleuder hilft. Zwiebel und Knoblauch hacken.", "en": "Halve the leek, cut into rings, then wash well (sand hides between the layers) — a salad spinner helps. Chop onion and garlic." }, "uses": ["lauch", "zwiebel", "knoblauch"] },
+        { "text": { "de": "Beyond Hack leicht antauen und vorschneiden. Öl erhitzen (Topfboden bedeckt), Hack 3–4 Min scharf anbraten (gefroren braucht länger). Zwiebel + Knoblauch 2–3 Min mitbraten, Lauch kurz mitbraten. Mit Kräutern, Muskat, gehäuften Hefeflocken, Salz & Pfeffer würzen.", "en": "Thaw the Beyond mince slightly and pre-cut it. Heat the oil (covering the pot base), fry the mince hard for 3–4 min (frozen needs longer). Add onion + garlic, fry 2–3 min, add leek briefly. Season with herbs, nutmeg, heaped nutritional yeast, salt & pepper." }, "uses": ["oel", "hack", "zwiebel", "knoblauch", "lauch", "kraeuter", "muskat", "hefe", "salzpfeffer"] },
+        { "text": { "de": "Mit Sojasauce, Gemüsebrühe und Sahne ablöschen, zugedeckt ~10 Min köcheln.", "en": "Deglaze with soy sauce, stock and cream, simmer covered for ~10 min." }, "optionalText": { "de": "Eine Handvoll Kartoffelwürfel mitköcheln — bei Bedarf etwas Flüssigkeit nachgießen.", "en": "Simmer a handful of diced potatoes along — add a little liquid if needed." }, "uses": ["tamari", "bruehe", "sahne"] },
+        { "text": { "de": "Creme Vega einrühren, einmal aufkochen, abschmecken.", "en": "Stir in Creme Vega, bring to a boil once, season to taste." }, "optionalText": { "de": "Hier nochmal eine Prise frisch gemahlenen schwarzen Pfeffer dazu; für mehr Käse veganen Reibekäse einrühren.", "en": "Grind in another pinch of fresh black pepper here; for extra cheesiness, stir in vegan grated cheese." }, "uses": ["cremevega"] },
+        { "text": { "de": "In Schalen anrichten, mit Petersilie bestreuen, mit Baguette servieren.", "en": "Serve in bowls, sprinkle with parsley, serve with baguette." }, "uses": ["petersilie", "baguette"] }
+      ],
+      "tree": {
+        "op": { "de": "anrichten, servieren", "en": "plate up, serve" },
+        "children": [
+          {
+            "op": { "de": "einrühren, aufkochen, abschmecken", "en": "stir in, boil, season" },
+            "children": [
+              {
+                "op": { "de": "ablöschen, 10 Min köcheln", "en": "deglaze, simmer 10 min" },
+                "children": [
+                  {
+                    "op": { "de": "würzen", "en": "season" },
+                    "children": [
+                      {
+                        "op": { "de": "Lauch kurz mitbraten", "en": "fry leek briefly" },
+                        "children": [
+                          {
+                            "op": { "de": "Zwiebel + Knoblauch 2–3 Min", "en": "onion + garlic 2–3 min" },
+                            "children": [
+                              { "op": { "de": "Hack 3–4 Min anbraten", "en": "fry mince 3–4 min" }, "children": [{ "ing": "oel" }, { "ing": "hack" }] },
+                              { "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "zwiebel" }] },
+                              { "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "knoblauch" }] }
+                            ]
+                          },
+                          { "op": { "de": "in Ringe schneiden", "en": "cut into rings" }, "children": [{ "ing": "lauch" }] }
+                        ]
+                      },
+                      { "ing": "kraeuter" },
+                      { "ing": "muskat" },
+                      { "ing": "hefe" },
+                      { "ing": "salzpfeffer" }
+                    ]
+                  },
+                  { "ing": "tamari" },
+                  { "ing": "bruehe" },
+                  { "ing": "sahne" },
+                  { "op": { "de": "würfeln", "en": "dice" }, "children": [{ "ing": "kartoffeln" }] }
+                ]
+              },
+              { "ing": "cremevega" }, { "ing": "reibekaese" }
+            ]
+          },
+          { "ing": "petersilie" },
+          { "ing": "baguette" }
+        ]
+      }
+    }
+  ]
+}

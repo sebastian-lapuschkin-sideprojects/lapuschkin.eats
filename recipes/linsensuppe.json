@@ -1,0 +1,94 @@
+{
+  "id": "linsensuppe",
+  "title": { "de": "Linsensuppe mit Räuchertofu", "en": "Lentil soup with smoked tofu" },
+  "subtitle": {
+    "de": "Herzhaft und deftig. Das Tomatenmark gibt die Tiefe.",
+    "en": "Hearty and rich. The tomato paste gives the depth."
+  },
+  "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }],
+  "source": { "name": "veggie-einhorn.de", "url": "https://veggie-einhorn.de/einfache-vegane-linsensuppe-raeuchertofu-tomatenmark/" },
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base recipe" },
+      "placeholder": "bowl",
+      "baseServings": 4,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "time": { "total": { "de": "1 Std 15 Min", "en": "1 hr 15 min" } },
+      "multipliers": [0.5, 1, 2, 3, 4],
+      "note": {
+        "de": [
+          "Tomatenmark mitrösten ist der Clou — nicht weglassen.",
+          "Das Anbraten des Tofus ist optional; ohne wird die Suppe milder.",
+          "Für eine dickere Suppe im zweiten Drittel ohne Deckel köcheln."
+        ],
+        "en": [
+          "Roasting the tomato paste is the key — don't skip it.",
+          "Frying the tofu is optional; without it the soup is milder.",
+          "For a thicker soup, simmer uncovered for the second third of the time."
+        ]
+      },
+      "ingredients": [
+        { "id": "oel", "amount": 4, "unit": "EL", "name": { "de": "Bratöl", "en": "Cooking oil" } },
+        { "id": "zwiebeln", "amount": 200, "max": 250, "unit": "g", "name": { "de": "Zwiebeln", "en": "Onions" }, "note": { "de": "2–3 Stück", "en": "2–3" } },
+        { "id": "tofu", "amount": 175, "unit": "g", "name": { "de": "Räuchertofu", "en": "Smoked tofu" }, "note": { "de": "ca. 1 Block", "en": "approx. 1 block" } },
+        { "id": "moehren", "amount": 200, "max": 250, "unit": "g", "name": { "de": "Möhren", "en": "Carrots" }, "note": { "de": "ca. 2 Stück", "en": "approx. 2" } },
+        { "id": "tomatenmark", "amount": 50, "unit": "g", "name": { "de": "Tomatenmark", "en": "Tomato paste" } },
+        { "id": "wasser", "amount": 1.5, "unit": "l", "name": { "de": "Wasser", "en": "Water" } },
+        { "id": "kartoffeln", "amount": 350, "unit": "g", "name": { "de": "Kartoffeln", "en": "Potatoes" }, "note": { "de": "geschält", "en": "peeled" } },
+        { "id": "linsen", "amount": 250, "unit": "g", "name": { "de": "Berglinsen", "en": "Brown lentils" } },
+        { "id": "lorbeer", "amount": 1, "unit": "", "name": { "de": "Lorbeerblatt", "en": "Bay leaf" }, "optional": true },
+        { "id": "bruehe", "amount": 30, "unit": "g", "name": { "de": "Gemüsebrühe-Pulver", "en": "Veg stock powder" }, "note": { "de": "ca. 2 EL", "en": "approx. 2 tbsp" } },
+        { "id": "pfeffer", "amount": null, "name": { "de": "schwarzer Pfeffer", "en": "Black pepper" } },
+        { "id": "essig", "amount": 2, "unit": "EL", "name": { "de": "Essig", "en": "Vinegar" }, "note": { "de": "oder Balsamico", "en": "or balsamic" } },
+        { "id": "petersilie", "amount": 3, "max": 4, "unit": "EL", "name": { "de": "Petersilie", "en": "Parsley" }, "note": { "de": "gehackt", "en": "chopped" } },
+        { "id": "paprika", "amount": 0.5, "max": 1, "unit": "TL", "name": { "de": "geräuchertes Paprikapulver", "en": "Smoked paprika" }, "optional": true }
+      ],
+      "steps": [
+        { "section": { "de": "Vorbereiten", "en": "Prep" }, "text": { "de": "Räuchertofu in kleine Würfel schneiden.", "en": "Dice the smoked tofu small." }, "uses": ["tofu"] },
+        { "text": { "de": "Kartoffeln schälen und würfeln.", "en": "Peel and dice the potatoes." }, "uses": ["kartoffeln"] },
+        { "text": { "de": "Möhren nach Geschmack schälen und würfeln.", "en": "Peel the carrots if you like, then dice." }, "uses": ["moehren"] },
+        { "text": { "de": "Zwiebeln schälen und fein würfeln.", "en": "Peel and finely dice the onions." }, "uses": ["zwiebeln"] },
+        { "section": { "de": "Anbraten", "en": "Fry" }, "text": { "de": "Öl im großen Topf erhitzen, Zwiebeln 10 Min anbraten.", "en": "Heat the oil in a large pot, fry the onions for 10 min." }, "uses": ["oel", "zwiebeln"] },
+        { "text": { "de": "Räuchertofu und Möhren zugeben, 5 Min mitbraten.", "en": "Add smoked tofu and carrots, fry for 5 min." }, "uses": ["tofu", "moehren"] },
+        { "text": { "de": "Tomatenmark zugeben, 1,5 Min mitrösten, gut verrühren.", "en": "Add tomato paste, roast for 1.5 min, stir well." }, "uses": ["tomatenmark"] },
+        { "section": { "de": "Kochen", "en": "Simmer" }, "text": { "de": "Wasser, Kartoffeln, Berglinsen und Lorbeerblatt zugeben, aufkochen, zugedeckt 45 Min köcheln. Lorbeerblatt entfernen.", "en": "Add water, potatoes, lentils and bay leaf, bring to a boil, simmer covered for 45 min. Remove the bay leaf." }, "uses": ["wasser", "kartoffeln", "linsen", "lorbeer"] },
+        { "section": { "de": "Würzen", "en": "Season" }, "text": { "de": "Mit Gemüsebrühe, Pfeffer, Essig, Petersilie und Paprikapulver abschmecken.", "en": "Season with stock powder, pepper, vinegar, parsley and smoked paprika." }, "uses": ["bruehe", "pfeffer", "essig", "petersilie", "paprika"] }
+      ],
+      "tree": {
+        "op": { "de": "abschmecken", "en": "season to taste" },
+        "children": [
+          {
+            "op": { "de": "aufkochen, 45 Min köcheln", "en": "boil, simmer 45 min" },
+            "children": [
+              {
+                "op": { "de": "Tomatenmark anrösten", "en": "roast tomato paste" },
+                "children": [
+                  {
+                    "op": { "de": "5 Min mitbraten", "en": "fry 5 min" },
+                    "children": [
+                      { "op": { "de": "Zwiebeln 10 Min andünsten", "en": "sweat onions 10 min" }, "children": [{ "ing": "oel" }, { "ing": "zwiebeln" }] },
+                      { "ing": "tofu" },
+                      { "ing": "moehren" }
+                    ]
+                  },
+                  { "ing": "tomatenmark" }
+                ]
+              },
+              { "ing": "wasser" },
+              { "ing": "kartoffeln" },
+              { "ing": "linsen" },
+              { "ing": "lorbeer" }
+            ]
+          },
+          { "ing": "bruehe" },
+          { "ing": "pfeffer" },
+          { "ing": "essig" },
+          { "ing": "petersilie" },
+          { "ing": "paprika" }
+        ]
+      }
+    }
+  ]
+}
