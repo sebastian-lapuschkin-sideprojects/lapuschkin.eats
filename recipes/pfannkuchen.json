@@ -6,11 +6,11 @@
     "en": "Vegan base recipe. Times 3–4 for the whole flat-share."
   },
   "tags": [{ "de": "süß", "en": "sweet" }],
-  "defaultVariant": "mandel",
+  "defaultVariant": "basis",
   "variants": [
     {
-      "id": "soja",
-      "label": { "de": "Sojamilch", "en": "Soy milk" },
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base" },
       "placeholder": "pancakes",
       "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg", "images/pfannkuchen-stapel.jpg"],
       "multipliers": [1, 2, 3, 4],
@@ -18,6 +18,7 @@
         "de": [
           "Nur ein Süßungsmittel wählen: Ahornsirup (feucht) oder Rohrzucker (trocken).",
           "Geht auch neutral bis deftig — dann ohne Süßungsmittel.",
+          "Pflanzenmilch nach Geschmack — Mandel oder Soja.",
           "Mehl teilweise durch Proteinpulver ersetzbar.",
           "Max. 20 % des Mehls durch Vollkornmehl ersetzen — mehr macht das Ausbacken schwieriger.",
           "Geduldig sein: erst wenden, wenn sie oben fast trocken sind, viele offene Bläschen zeigen und sich von selbst von der Pfanne lösen — so wie auf den beiden Pfannen-Fotos in der Galerie.",
@@ -27,6 +28,7 @@
         "en": [
           "Pick only one sweetener: maple syrup (wet) or cane sugar (dry).",
           "Works neutral to savoury too — then skip the sweetener.",
+          "Plant milk to taste — almond or soy.",
           "Part of the flour can be swapped for protein powder.",
           "Replace at most 20% of the flour with wholegrain — more makes frying harder.",
           "Be patient: flip only when the tops are almost dry, show lots of open bubbles and release from the pan on their own — like in the two in-pan photos in the gallery.",
@@ -39,65 +41,12 @@
         { "id": "backpulver", "food": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
         { "id": "salz", "food": "salz", "amount": 1, "unit": "Prise", "name": { "de": "Salz", "en": "Salt" } },
         { "id": "rohrzucker", "food": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
-        { "id": "milch", "food": "sojamilch", "amount": 220, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
+        { "id": "milch", "food": "mandelmilch", "amount": 220, "unit": "ml", "name": { "de": "Pflanzenmilch", "en": "Plant milk" }, "note": { "de": "z.B. Mandel- oder Sojamilch (hier mit Mandel gerechnet)", "en": "e.g. almond or soy milk (computed with almond here)" } },
         { "id": "sirup", "food": "ahornsirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
       ],
       "steps": [
         { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver, Salz (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder, salt (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "salz", "rohrzucker"] },
-        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
-        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
-        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
-      ],
-      "tree": {
-        "op": { "de": "ohne Fett backen", "en": "cook without fat" },
-        "children": [
-          {
-            "op": { "de": "glatt rühren", "en": "stir smooth" },
-            "children": [
-              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }, { "ing": "salz" }, { "ing": "rohrzucker" }] },
-              { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "mandel",
-      "label": { "de": "Mandelmilch", "en": "Almond milk" },
-      "placeholder": "pancakes",
-      "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg", "images/pfannkuchen-stapel.jpg"],
-      "multipliers": [1, 2, 3, 4],
-      "note": {
-        "de": [
-          "Nur ein Süßungsmittel wählen: Ahornsirup (feucht) oder Rohrzucker (trocken).",
-          "Geht auch neutral bis deftig — dann ohne Süßungsmittel.",
-          "Mehl teilweise durch Proteinpulver ersetzbar.",
-          "Max. 20 % des Mehls durch Vollkornmehl ersetzen — mehr macht das Ausbacken schwieriger.",
-          "Geduldig sein: erst wenden, wenn sie oben fast trocken sind, viele offene Bläschen zeigen und sich von selbst von der Pfanne lösen — so wie auf den beiden Pfannen-Fotos in der Galerie.",
-          "Je nach Herd mit der Temperatur spielen, bis es klappt.",
-          "In bevorzugter Portionsgröße ausbacken — handtellergroße Mini-Pancakes sind super."
-        ],
-        "en": [
-          "Pick only one sweetener: maple syrup (wet) or cane sugar (dry).",
-          "Works neutral to savoury too — then skip the sweetener.",
-          "Part of the flour can be swapped for protein powder.",
-          "Replace at most 20% of the flour with wholegrain — more makes frying harder.",
-          "Be patient: flip only when the tops are almost dry, show lots of open bubbles and release from the pan on their own — like in the two in-pan photos in the gallery.",
-          "Play with the temperature depending on your stove until it works.",
-          "Cook in your preferred size — palm-sized mini pancakes are great."
-        ]
-      },
-      "ingredients": [
-        { "id": "mehl", "food": "dinkelmehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
-        { "id": "backpulver", "food": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
-        { "id": "salz", "food": "salz", "amount": 1, "unit": "Prise", "name": { "de": "Salz", "en": "Salt" } },
-        { "id": "rohrzucker", "food": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
-        { "id": "milch", "food": "mandelmilch", "amount": 220, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
-        { "id": "sirup", "food": "ahornsirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true }
-      ],
-      "steps": [
-        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver, Salz (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder, salt (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "salz", "rohrzucker"] },
-        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Milch (und Ahornsirup) verrühren.", "en": "Mix milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Pflanzenmilch (und Ahornsirup) verrühren.", "en": "Mix plant milk (and maple syrup)." }, "uses": ["milch", "sirup"] },
         { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren.", "en": "Add the wet to the dry mix and stir smooth." }, "uses": [] },
         { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
       ],
