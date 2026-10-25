@@ -1,9 +1,9 @@
 {
   "id": "ramen-bowl",
-  "title": "Customized Ramen Bowl",
+  "title": { "de": "Aufgepimpte Instant-Ramen", "en": "Customized Ramen Bowl" },
   "subtitle": {
-    "de": "Instant-Ramen, aufgepeppt mit dünnem Gemüse, Protein und Toppings.",
-    "en": "Instant ramen, dressed up with thin-sliced veg, protein and toppings."
+    "de": "Mit zart geschnittenem Gemüse, Protein und Toppings.",
+    "en": "With finely sliced veg, protein and toppings."
   },
   "tags": [{ "de": "Suppe", "en": "Soup" }, { "de": "herzhaft", "en": "savoury" }],
   "defaultVariant": "basis",

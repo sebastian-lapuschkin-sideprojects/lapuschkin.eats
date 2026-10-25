@@ -42,7 +42,7 @@
     "lorbeerblatt": { "per100g": { "kcal": 353,  "protein": 7.61, "carbs": 48.6, "fat": 8.36, "fiber": 26.3 }, "g_per_unit": { "g": 1, "": 0.2 }, "source": "Ciqual 2025, 'Bay, leaves' 11053" },
     "schwarzer_pfeffer": { "per100g": { "kcal": 331, "protein": 13.3, "carbs": 39.9, "fat": 7.5, "fiber": 25.3 }, "g_per_unit": { "g": 1, "Prise": 0.3, "TL": 2.3 }, "source": "Ciqual 2025, 'Black pepper, powder' 11015" },
     "salz":         { "per100g": { "kcal": 0,    "protein": 0,    "carbs": 0,    "fat": 0,    "fiber": 0 },    "g_per_unit": { "g": 1, "Prise": 0.3, "TL": 5 }, "source": "Ciqual 2025, 'Salt' 11082" },
-    "instant_ramen": { "per100g": { "kcal": 430, "protein": 8.9, "carbs": 67, "fat": 14, "fiber": null }, "g_per_unit": { "g": 1, "Pack": 120 }, "source": "Nongshim Shin Ramyun (UK-/Ocado-Label), ~120 g/Pack; stark marken-/sortenabhängig; Ballaststoffe nicht deklariert" },
+    "instant_ramen": { "per100g": { "kcal": 430, "protein": 8.9, "carbs": 67, "fat": 14, "fiber": null }, "g_per_unit": { "g": 1, "Pack": 112 }, "source": "Nongshim-Werte (Shin Ramyun, UK-/Ocado-Label); 1 Pack ~112 g (Soon) bis 120 g (Shin/Kimchi); stark marken-/sortenabhängig; Ballaststoffe nicht deklariert" },
     "tofu_natur":   { "per100g": { "kcal": 123, "protein": 14, "carbs": 1.3, "fat": 6.7, "fiber": null }, "g_per_unit": { "g": 1 }, "source": "Taifun Tofu natur (EU-Label)" },
     "tempeh":       { "per100g": { "kcal": 191, "protein": 22, "carbs": 4.4, "fat": 8, "fiber": 6.2 }, "g_per_unit": { "g": 1 }, "source": "Aldi Nord Tempeh (GB Fine-Food), EU-Label, 200 g/Packung" }
   }
