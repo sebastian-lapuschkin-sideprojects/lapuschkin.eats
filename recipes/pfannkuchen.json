@@ -12,7 +12,7 @@
       "id": "soja",
       "label": { "de": "Sojamilch", "en": "Soy milk" },
       "placeholder": "pancakes",
-      "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg"],
+      "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg", "images/pfannkuchen-stapel.jpg"],
       "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [
@@ -65,7 +65,7 @@
       "id": "mandel",
       "label": { "de": "Mandelmilch", "en": "Almond milk" },
       "placeholder": "pancakes",
-      "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg"],
+      "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg", "images/pfannkuchen-stapel.jpg"],
       "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [

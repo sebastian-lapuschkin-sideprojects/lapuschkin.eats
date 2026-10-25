@@ -1,0 +1,82 @@
+{
+  "id": "ramen-bowl",
+  "title": "Customized Ramen Bowl",
+  "subtitle": {
+    "de": "Instant-Ramen, aufgepeppt mit dünnem Gemüse, Protein und Toppings.",
+    "en": "Instant ramen, dressed up with thin-sliced veg, protein and toppings."
+  },
+  "tags": [{ "de": "Suppe", "en": "Soup" }, { "de": "herzhaft", "en": "savoury" }],
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base" },
+      "images": [
+        "images/ramen-bowl-1.jpg",
+        "images/ramen-bowl-2.jpg",
+        "images/ramen-bowl-3.jpg",
+        "images/ramen-bowl-4.jpg",
+        "images/ramen-bowl-5.jpg",
+        "images/ramen-bowl-6.jpg",
+        "images/ramen-bowl-7.jpg",
+        "images/ramen-bowl-8.jpg",
+        "images/ramen-bowl-9.jpg"
+      ],
+      "baseServings": 1,
+      "servingsUnit": { "de": "Schüssel", "en": "bowl" },
+      "multipliers": [1, 2, 3, 4],
+      "note": {
+        "de": [
+          "Trivial einfach — nimm, worauf du Lust hast.",
+          "Nudeln: Nongshim (Soon / Kimchi / Shin Ramyun) — gute Portionsgröße, das runde Nudelpaket passt schön in die Schüssel, und die dickeren Nudeln sind angenehm (dicker als z. B. YumYum). Günstig im koreanischen Supermarkt. Variable Komponente.",
+          "Marke auf vegan prüfen: Nongshim Soon ist vegan; bei YumYum sind Chicken und Duck vegan, Vegetable aber nicht.",
+          "Gemüse sehr dünn schneiden, damit es im heißen Wasser gart.",
+          "Protein: ein Block (~200 g) — Tempeh, Tofu, veganer Thunfisch, veganes Schnitzel oder Seitan.",
+          "Fürs Auge großzügig garnieren: Sesam, eingelegter Ingwer, Sriracha, Frühlingszwiebeln."
+        ],
+        "en": [
+          "Trivially simple — take whatever you fancy.",
+          "Noodles: Nongshim (Soon / Kimchi / Shin Ramyun) — good portion size, the round noodle block fits the bowl nicely, and the thicker noodles are pleasant (thicker than e.g. YumYum). Cheap at the Korean supermarket. A variable component.",
+          "Check the brand is vegan: Nongshim Soon is vegan; for YumYum the Chicken and Duck flavours are vegan, but Vegetable is not.",
+          "Slice the veg very thinly so it cooks in the hot water.",
+          "Protein: one block (~200 g) — tempeh, tofu, vegan tuna, vegan schnitzel or seitan.",
+          "Garnish generously for the eye: sesame, pickled ginger, sriracha, spring onions."
+        ]
+      },
+      "ingredients": [
+        { "id": "ramen", "food": "instant_ramen", "amount": 1, "unit": "Pack", "name": { "de": "Instant-Ramen", "en": "Instant ramen" }, "note": { "de": "z. B. Nongshim Soon / Kimchi / Shin Ramyun", "en": "e.g. Nongshim Soon / Kimchi / Shin Ramyun" } },
+        { "id": "gemuese", "amount": null, "name": { "de": "Gemüse, sehr dünn geschnitten", "en": "Veg, very thinly sliced" }, "note": { "de": "z. B. Gurke, Zucchini, Pilze, Kimchi, Ingwer, Kohl, Salat", "en": "e.g. cucumber, courgette, mushrooms, kimchi, ginger, cabbage, lettuce" } },
+        { "id": "protein", "food": "tempeh", "amount": 200, "unit": "g", "name": { "de": "Tempeh", "en": "Tempeh" }, "note": { "de": "oder Tofu, veganer Thunfisch, veganes Schnitzel, Seitan — ein Block", "en": "or tofu, vegan tuna, vegan schnitzel, seitan — one block" } },
+        { "id": "nori", "amount": null, "name": { "de": "Nori", "en": "Nori" } },
+        { "id": "sojasauce", "food": "sojasauce", "amount": null, "name": { "de": "Sojasauce", "en": "Soy sauce" }, "note": { "de": "bei Bedarf", "en": "as needed" } },
+        { "id": "wasser", "food": "wasser", "amount": null, "name": { "de": "kochendes Wasser", "en": "boiling water" } },
+        { "id": "sesam", "amount": null, "name": { "de": "Sesam", "en": "Sesame" } },
+        { "id": "ingwer", "amount": null, "name": { "de": "eingelegter Ingwer", "en": "pickled ginger" } },
+        { "id": "sriracha", "amount": null, "name": { "de": "Sriracha", "en": "Sriracha" } },
+        { "id": "fruehlingszwiebeln", "amount": null, "name": { "de": "Frühlingszwiebeln", "en": "Spring onions" } }
+      ],
+      "steps": [
+        { "section": { "de": "Schüssel", "en": "Bowl" }, "text": { "de": "Instant-Ramen auspacken und alles (Nudeln + Würzpäckchen) in eine ausreichend große Schüssel geben.", "en": "Unpack the instant ramen and put everything (noodles + seasoning sachets) into a large enough bowl." }, "uses": ["ramen"] },
+        { "section": { "de": "Belegen", "en": "Top" }, "text": { "de": "Dünn geschnittenes Gemüse, Protein und Nori dazugeben, bei Bedarf etwas Sojasauce.", "en": "Add the thin-sliced veg, protein and nori; a splash of soy sauce if you like." }, "uses": ["gemuese", "protein", "nori", "sojasauce"] },
+        { "section": { "de": "Aufgießen", "en": "Steep" }, "text": { "de": "Mit kochendem Wasser aufgießen und 5 Min ziehen lassen.", "en": "Pour over boiling water and let it steep for 5 min." }, "uses": ["wasser"] },
+        { "section": { "de": "Garnieren", "en": "Garnish" }, "text": { "de": "Mit Sesam, eingelegtem Ingwer, Sriracha und Frühlingszwiebeln garnieren. Genießen.", "en": "Garnish with sesame, pickled ginger, sriracha and spring onions. Enjoy." }, "uses": ["sesam", "ingwer", "sriracha", "fruehlingszwiebeln"] }
+      ],
+      "tree": {
+        "op": { "de": "garnieren", "en": "garnish" },
+        "children": [
+          {
+            "op": { "de": "aufgießen, 5 Min ziehen", "en": "pour over, steep 5 min" },
+            "children": [
+              { "op": { "de": "in die Schüssel", "en": "into the bowl" }, "children": [{ "ing": "ramen" }, { "ing": "gemuese" }, { "ing": "protein" }, { "ing": "nori" }, { "ing": "sojasauce" }] },
+              { "ing": "wasser" }
+            ]
+          },
+          { "ing": "sesam" },
+          { "ing": "ingwer" },
+          { "ing": "sriracha" },
+          { "ing": "fruehlingszwiebeln" }
+        ]
+      }
+    }
+  ]
+}
