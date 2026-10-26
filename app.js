@@ -72,6 +72,13 @@
     copied: { de: "kopiert \u2713", en: "copied \u2713" }
   };
   var SHARE_BASE = "https://sebastian-lapuschkin-sideprojects.github.io/lapuschkin.eats/";
+  var BASE_PATH = (function () {
+    try { var s = document.currentScript && document.currentScript.src; if (s) return new URL(".", s).pathname; } catch (e) {}
+    var p = location.pathname; return p.slice(0, p.lastIndexOf("/") + 1) || "/";
+  })();
+  // Fixed <base> so relative asset/data URLs resolve against the app root even
+  // when the address bar shows a deeper route like /waffeln/nicole.
+  try { var _base = document.createElement("base"); _base.href = BASE_PATH; document.head.appendChild(_base); } catch (e) {}
   function copyText(text, done) {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -298,7 +305,7 @@
     var im = {}; v.ingredients.forEach(function (i) { im[i.id] = i; });
     var h = "";
 
-    h += '<p class="back"><a href="#index">' + esc(ui("back")) + '</a><button class="sharebtn" type="button" data-share="' + esc(SHARE_BASE + g.id + "/") + '">' + esc(ui("share")) + "</button></p>";
+    h += '<p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">' + esc(ui("back")) + '</a><button class="sharebtn" type="button">' + esc(ui("share")) + "</button></p>";
     h += '<div class="r-head"><div class="eyebrow">' + g.tags.map(function (x) { return esc(t(x)); }).join(" / ") + "</div>";
     h += "<h1>" + esc(t(g.title)) + "</h1>";
     if (g.subtitle) h += '<p class="sub">' + esc(t(g.subtitle)) + "</p></div>";
@@ -341,7 +348,7 @@
 
     h += '<figure class="cfe-fig"><figcaption>' + esc(ui("figcap")) + "</figcaption>";
     h += '<div class="tablewrap">' + tableHTML(v, f) + "</div>";
-    h += '<details class="howto"><summary>' + esc(ui("howto_s")) + "</summary><p>" + esc(ui("howto_b")) + '<a href="#about">' + esc(ui("howto_more")) + "</a>.</p></details></figure>";
+    h += '<details class="howto"><summary>' + esc(ui("howto_s")) + "</summary><p>" + esc(ui("howto_b")) + '<a data-route="about" href="' + esc(pathFor("about")) + '">' + esc(ui("howto_more")) + "</a>.</p></details></figure>";
 
     return h;
   }
@@ -386,7 +393,7 @@
       if (v.time && v.time.total) parts.push(esc(t(v.time.total)));
       if (v.baseServings != null) parts.push(v.baseServings + " " + esc(t(v.servingsUnit)));
       if (g.variants.length > 1) parts.push('<span class="vcount">' + g.variants.length + " " + esc(ui("variants")) + "</span>");
-      h += '<a class="card" href="#' + g.id + '">' + thumb(v) +
+      h += '<a class="card" data-route="' + esc(g.id) + '" href="' + esc(pathFor(g.id)) + '">' + thumb(v) +
         '<div class="body"><div class="tags">' + g.tags.map(function (x) { return '<span class="tag">' + esc(t(x)) + "</span>"; }).join("") + "</div>" +
         "<h3>" + esc(t(g.title)) + "</h3>" +
         '<p class="meta">' + parts.join(" \u00b7 ") + "</p></div></a>";
@@ -396,7 +403,7 @@
 
   function aboutHTML() {
     if (LANG === "en") {
-      return '<div class="prose"><p class="back"><a href="#index">\u2190 all recipes</a></p>' +
+      return '<div class="prose"><p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">\u2190 all recipes</a></p>' +
         "<h1>The Engineer's Table</h1>" +
         "<p>Every recipe here has a table at the bottom. It comes from <strong>Michael Chu</strong>, a software engineer who launched the site <em>Cooking for Engineers</em> in 2004. A handwritten note method \u2014 ingredients listed, grouped with curly braces \u2014 became this table form.</p>" +
         "<h2>How to read it</h2><ol>" +
@@ -407,7 +414,7 @@
         "<li>Read <strong>left \u2192 right, top \u2192 bottom</strong>. Times and temperatures sit exactly where they are needed \u2014 no scrolling back.</li></ol>" +
         '<p class="muted">Source: <a href="https://www.cookingforengineers.com/" target="_blank" rel="noopener">cookingforengineers.com</a> (Michael Chu, since June 2004).</p></div>';
     }
-    return '<div class="prose"><p class="back"><a href="#index">\u2190 alle Rezepte</a></p>' +
+    return '<div class="prose"><p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">\u2190 alle Rezepte</a></p>' +
       "<h1>Die Ingenieurs-Tabelle</h1>" +
       "<p>Jedes Rezept hier hat unten eine Tabelle. Sie stammt von <strong>Michael Chu</strong>, einem Software-Ingenieur, der 2004 die Seite <em>Cooking for Engineers</em> startete. Aus einer handschriftlichen Notiz-Methode \u2014 Zutaten untereinander, mit geschweiften Klammern gruppiert \u2014 wurde diese Tabellenform.</p>" +
       "<h2>So liest man sie</h2><ol>" +
@@ -455,14 +462,17 @@
       b.onclick = function () { st(g).factor = parseFloat(b.dataset.f); rerender(g); };
     });
     app.querySelectorAll(".vsel").forEach(function (b) {
-      b.onclick = function () { st(g).vi = parseInt(b.dataset.vi, 10); rerender(g); };
+      b.onclick = function () { st(g).vi = parseInt(b.dataset.vi, 10); rerender(g); syncVariantURL(g); };
     });
     app.querySelectorAll(".vfav").forEach(function (b) {
-      b.onclick = function () { var i = parseInt(b.dataset.fav, 10); setFav(g, g.variants[i].id); st(g).vi = i; rerender(g); };
+      b.onclick = function () { var i = parseInt(b.dataset.fav, 10); setFav(g, g.variants[i].id); st(g).vi = i; rerender(g); syncVariantURL(g); };
     });
     app.querySelectorAll(".sharebtn").forEach(function (b) {
       b.onclick = function () {
-        copyText(b.getAttribute("data-share"), function () {
+        var p = location.pathname;
+        if (p.indexOf(BASE_PATH) === 0) p = p.slice(BASE_PATH.length);
+        p = p.replace(/^\//, "").replace(/\/$/, "");
+        copyText(SHARE_BASE + p + "/", function () {
           b.textContent = ui("copied"); b.classList.add("ok");
           setTimeout(function () { b.textContent = ui("share"); b.classList.remove("ok"); }, 1500);
         });
@@ -507,15 +517,51 @@
   }
   function rerender(g) { var y = window.scrollY; app.innerHTML = recipeHTML(g); bind(g); startCarousel(); window.scrollTo(0, y); }
 
-  function currentHash() { return decodeURIComponent(location.hash.replace(/^#/, "")); }
-  function render(h) {
-    var g = byId[h];
-    if (g) { app.innerHTML = recipeHTML(g); bind(g); }
-    else if (h === "about") { app.innerHTML = aboutHTML(); }
-    else { app.innerHTML = indexHTML(); }
-    markNav(h); applyChrome(); startCarousel();
+  function currentRoute() {
+    var h = location.hash.replace(/^#/, ""), raw;
+    if (h) raw = decodeURIComponent(h);
+    else {
+      var p = decodeURIComponent(location.pathname);
+      if (p.indexOf(BASE_PATH) === 0) p = p.slice(BASE_PATH.length);
+      raw = p.replace(/^\//, "").replace(/\/$/, "");
+    }
+    if (raw === "index.html") raw = "";
+    var parts = raw.split("/");
+    return { id: parts[0] || "", variant: parts[1] || "" };
   }
-  function route() { render(currentHash()); window.scrollTo(0, 0); }
+  function pathFor(id, variant) {
+    if (!id || id === "index") return BASE_PATH;
+    return BASE_PATH + encodeURIComponent(id) + (variant ? "/" + encodeURIComponent(variant) : "");
+  }
+  function variantIndex(g, variant) {
+    if (variant) for (var i = 0; i < g.variants.length; i++) if (g.variants[i].id === variant) return i;
+    return -1;
+  }
+  function render(id, variant) {
+    if (id === "index") id = "";
+    var g = byId[id];
+    if (g) {
+      var vi = variantIndex(g, variant);
+      if (vi >= 0) st(g).vi = vi;
+      app.innerHTML = recipeHTML(g); bind(g);
+    }
+    else if (id === "about") { app.innerHTML = aboutHTML(); }
+    else { app.innerHTML = indexHTML(); }
+    markNav(id); applyChrome(); startCarousel();
+  }
+  function navTo(id, variant) {
+    try { history.pushState(null, "", pathFor(id, variant)); } catch (e) {}
+    render(id, variant); window.scrollTo(0, 0);
+  }
+  function syncVariantURL(g) {
+    try { history.replaceState(null, "", pathFor(g.id, g.variants[st(g).vi].id)); } catch (e) {}
+  }
+  function route() {
+    var r = currentRoute();
+    render(r.id, r.variant);
+    try { history.replaceState(null, "", pathFor(r.id, r.variant)); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
 
   function initTheme() { try { var th = localStorage.getItem("eats-theme"); if (th) document.documentElement.setAttribute("data-theme", th); } catch (e) {} }
 
@@ -549,11 +595,20 @@
   if (langBtn) langBtn.onclick = function () {
     var y = window.scrollY;
     setLang(LANG === "de" ? "en" : "de");
-    render(currentHash());
+    var _r = currentRoute(); render(_r.id, _r.variant);
     window.scrollTo(0, y);
   };
 
-  window.addEventListener("hashchange", route);
+  window.addEventListener("popstate", function () { var r = currentRoute(); render(r.id, r.variant); window.scrollTo(0, 0); });
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var sk = e.target.closest ? e.target.closest("a.skip") : null;
+    if (sk) { e.preventDefault(); var m = document.getElementById("app"); if (m) { m.setAttribute("tabindex", "-1"); m.focus(); m.scrollIntoView(); } return; }
+    var a = e.target.closest ? e.target.closest("a[data-route]") : null;
+    if (!a) return;
+    e.preventDefault();
+    navTo(a.getAttribute("data-route"));
+  });
   initTheme();
   applyChrome();
   load();

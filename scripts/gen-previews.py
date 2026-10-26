@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
-"""Generate per-recipe link-preview stub pages + 1200x630 OG crops.
+"""Generate link-preview stub pages + 1200x630 OG crops, per recipe AND per variant.
 
-WhatsApp/Telegram/etc. read static og: meta tags from the served HTML and do
-NOT run JS or see the URL #fragment. So a hash-routed SPA can only ever show
-ONE site-wide preview. To get a per-recipe preview, each recipe needs a real
-path with its own static HTML. This writes <id>/index.html (og: tags + a
-redirect into the SPA at /#<id>) and images/og-<id>.jpg (a 1200x630 cover-crop
-of the recipe's title photo).
+WhatsApp/Telegram/etc. read static og: meta tags from the served HTML and do NOT
+run JS or see the URL #fragment. So a hash-routed SPA can only ever show ONE
+site-wide preview. For a per-recipe/-variant preview, each needs a real path with
+its own static HTML. This writes:
+  <id>/index.html              -> default variant's photo as OG
+  <id>/<variant>/index.html    -> that variant's photo as OG
+each redirecting into the SPA (/#<route>), plus images/og-<id>[-<variant>].jpg
+(a 1200x630 cover-crop of the relevant title photo).
 
-Re-run after changing a recipe's title, subtitle, default variant or title
-photo:  python3 scripts/gen-previews.py   (needs ImageMagick `magick`)
+Re-run after changing a recipe's title, subtitle, variants or title photos:
+  python3 scripts/gen-previews.py      (needs ImageMagick `magick`)
 """
-import json, os, html, subprocess, sys
+import json, os, html, subprocess
 
 BASE = "https://sebastian-lapuschkin-sideprojects.github.io/lapuschkin.eats/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,30 +26,23 @@ def t(v):
     return v or ""
 
 
-idx = json.load(open("recipes/index.json"))
-for fn in idx:
-    d = json.load(open("recipes/" + fn))
-    rid = d["id"]
-    title = t(d.get("title", rid))
-    subtitle = t(d.get("subtitle", ""))
-    dv = d.get("defaultVariant")
-    variants = d["variants"]
-    v = next((x for x in variants if x.get("id") == dv), variants[0])
+def variant_hero(v):
     imgs = v.get("images") or ([v["image"]] if v.get("image") else [])
-    hero = imgs[0] if imgs else "images/og-default.png"
+    return imgs[0] if imgs else None
 
-    # 1200x630 cover-crop of the title photo for a clean landscape card
-    og_rel = "images/og-%s.jpg" % rid
-    if os.path.exists(hero):
-        subprocess.run(["magick", hero, "-resize", "1200x630^", "-gravity",
-                        "center", "-extent", "1200x630", "-quality", "85",
-                        "-strip", og_rel], check=True)
-    else:
-        og_rel = "images/og-default.png"
 
-    url = BASE + rid + "/"
+def crop(hero, out_rel):
+    if hero and os.path.exists(hero):
+        subprocess.run(["magick", hero, "-resize", "1200x630^", "-gravity", "center",
+                        "-extent", "1200x630", "-quality", "85", "-strip", out_rel], check=True)
+        return out_rel
+    return "images/og-default.png"
+
+
+def write_stub(route, title, subtitle, og_rel):
+    url = BASE + route + "/"
+    canon = BASE + "#" + route
     og_img = BASE + og_rel
-    canonical = BASE + "#" + rid
     H = html.escape
     stub = """<!doctype html>
 <html lang="de"><head>
@@ -75,11 +70,31 @@ for fn in idx:
 <p>Weiter zu <a href="{canon}">{title}</a> …</p>
 </body></html>
 """.format(title=H(title), sub=H(subtitle), url=H(url), img=H(og_img),
-           canon=H(canonical), canon_js=json.dumps(canonical))
-
-    os.makedirs(rid, exist_ok=True)
-    with open(os.path.join(rid, "index.html"), "w", encoding="utf-8") as f:
+           canon=H(canon), canon_js=json.dumps(canon))
+    d = os.path.join(*route.split("/"))
+    os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
         f.write(stub)
-    print("wrote %s/index.html  (og: %s)" % (rid, og_rel))
 
-print("done:", len(idx), "recipes")
+
+idx = json.load(open("recipes/index.json"))
+n = 0
+for fn in idx:
+    d = json.load(open("recipes/" + fn))
+    rid = d["id"]
+    title = t(d.get("title", rid))
+    subtitle = t(d.get("subtitle", ""))
+    variants = d["variants"]
+    dv = next((x for x in variants if x.get("id") == d.get("defaultVariant")), variants[0])
+    # recipe-level stub: default variant's photo
+    write_stub(rid, title, subtitle, crop(variant_hero(dv), "images/og-%s.jpg" % rid))
+    n += 1
+    # per-variant stubs: each variant's own photo
+    for v in variants:
+        vlabel = t(v.get("label", ""))
+        vtitle = title + (" · " + vlabel if vlabel else "")
+        write_stub(rid + "/" + v["id"], vtitle, subtitle,
+                   crop(variant_hero(v), "images/og-%s-%s.jpg" % (rid, v["id"])))
+        n += 1
+    print("  %s + %d variant(s)" % (rid, len(variants)))
+print("done:", n, "stubs")

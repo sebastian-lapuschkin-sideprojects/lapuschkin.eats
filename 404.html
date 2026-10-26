@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lapuschkin.eats</title>
+<style>body{font-family:system-ui,sans-serif;background:#121410;color:#e8eae2;margin:0;display:grid;place-items:center;min-height:100vh}a{color:#73c793}</style>
+<script>
+/* SPA fallback for GitHub Pages: unmatched paths under the site (e.g. a page
+   reloaded at /lapuschkin.eats/about, or a typo) boot the app at the root with
+   the path carried as a #fragment, which the app then routes and rewrites back
+   to a clean path. Recipe paths have real stub pages, so they never land here. */
+(function () {
+  var base = "/lapuschkin.eats/";
+  var p = location.pathname;
+  var seg = p.indexOf(base) === 0 ? p.slice(base.length) : "";
+  seg = seg.replace(/\/$/, "").replace(/^\//, "");
+  location.replace(base + (seg ? "#" + seg : ""));
+})();
+</script>
+</head><body>
+<p><a href="/lapuschkin.eats/">lapuschkin.eats</a></p>
+</body></html>
