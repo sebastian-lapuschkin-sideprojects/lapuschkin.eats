@@ -490,7 +490,7 @@
         var p = location.pathname;
         if (p.indexOf(BASE_PATH) === 0) p = p.slice(BASE_PATH.length);
         p = p.replace(/^\//, "").replace(/\/$/, "");
-        copyText(SHARE_BASE + p + "/" + langQS(), function () {
+        copyText(SHARE_BASE + (LANG === "en" ? "en/" : "") + p + "/", function () {
           b.textContent = ui("copied"); b.classList.add("ok");
           setTimeout(function () { b.textContent = ui("share"); b.classList.remove("ok"); }, 1500);
         });
