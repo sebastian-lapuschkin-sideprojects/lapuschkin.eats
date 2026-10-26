@@ -63,7 +63,7 @@ def write_stub(path, hash_route, title, subtitle, og_rel, lang):
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{sub}">
 <meta name="twitter:image" content="{img}">
-<link rel="canonical" href="{canon}">
+<link rel="canonical" href="{url}">
 <script>location.replace({base_js} + {rqs} + {hash_js});</script>
 <style>body{{font-family:system-ui,sans-serif;background:#121410;color:#e8eae2;margin:0;display:grid;place-items:center;min-height:100vh}}a{{color:#73c793}}</style>
 </head><body>
