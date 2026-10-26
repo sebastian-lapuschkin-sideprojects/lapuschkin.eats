@@ -1,0 +1,129 @@
+{
+  "id": "waffeln",
+  "title": { "de": "Waffeln", "en": "Waffles" },
+  "subtitle": {
+    "de": "Zwei Varianten: Nicoles ballaststoffreiche Frühstückswaffeln und Sebastians Patchworkwaffeln.",
+    "en": "Two variants: Nicole's fibre-rich breakfast waffles and Sebastian's patchwork waffles."
+  },
+  "tags": [{ "de": "süß", "en": "sweet" }],
+  "defaultVariant": "sebastian",
+  "variants": [
+    {
+      "id": "nicole",
+      "label": { "de": "Nicole · ballaststoffreich", "en": "Nicole · fibre-rich" },
+      "images": ["images/waffeln-nicole-1.jpg", "images/waffeln-nicole-2.jpg"],
+      "multipliers": [1, 2, 3],
+      "note": {
+        "de": [
+          "Nicoles ballaststoffreiche Frühstückswaffeln — die Obstreste aus der Saftpresse (Apfel, Möhre) bringen die Ballaststoffe.",
+          "Ohne Saftpresse: einfach Äpfel und Möhren reiben.",
+          "Agavendicksaft mit Vanille nach Geschmack süßen."
+        ],
+        "en": [
+          "Nicole's fibre-rich breakfast waffles — the pulp from the juicer (apple, carrot) brings the fibre.",
+          "No juicer: just grate apples and carrots.",
+          "Sweeten to taste with vanilla agave syrup."
+        ]
+      },
+      "ingredients": [
+        { "id": "mehl", "food": "dinkelvollkornmehl", "amount": 300, "unit": "g", "name": { "de": "Dinkelvollkornmehl", "en": "Wholemeal spelt flour" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 2, "unit": "EL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "zimt", "food": "zimt", "amount": 2, "unit": "TL", "name": { "de": "Zimt", "en": "Cinnamon" }, "note": { "de": "viel — gern 2+ TL", "en": "lots — 2+ tsp" } },
+        { "id": "agave", "amount": null, "name": { "de": "Agavendicksaft mit Vanille", "en": "Agave syrup with vanilla" }, "note": { "de": "nach Geschmack", "en": "to taste" } },
+        { "id": "haferdrink", "food": "haferdrink", "amount": 450, "unit": "ml", "name": { "de": "Haferdrink", "en": "Oat drink" }, "note": { "de": "Pflanzendrink", "en": "plant drink" } },
+        { "id": "apfelmark", "food": "apfelmark", "amount": 3, "unit": "EL", "name": { "de": "Apfelmark", "en": "Apple purée" } },
+        { "id": "oel", "food": "pflanzenoel", "amount": 30, "unit": "ml", "name": { "de": "Pflanzenöl", "en": "Vegetable oil" } },
+        { "id": "reste", "amount": null, "name": { "de": "Obst-/Gemüsereste aus der Saftpresse", "en": "Fruit/veg pulp from the juicer" }, "note": { "de": "alternativ Äpfel und Möhren reiben", "en": "or grate apples and carrots" } }
+      ],
+      "steps": [
+        { "section": { "de": "Vorbereiten", "en": "Prep" }, "text": { "de": "Obstreste aus der Saftpresse bereithalten — alternativ Äpfel und Möhren reiben.", "en": "Have the pulp from the juicer ready — or grate apples and carrots." }, "uses": ["reste"] },
+        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Alle übrigen Zutaten dazugeben und alles gut verrühren.", "en": "Add all the other ingredients and mix everything well." }, "uses": ["mehl", "backpulver", "zimt", "agave", "haferdrink", "apfelmark", "oel"] },
+        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "Im Waffeleisen goldbraun ausbacken.", "en": "Bake golden in the waffle iron." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "im Waffeleisen ausbacken", "en": "bake in the waffle iron" },
+        "children": [
+          {
+            "op": { "de": "alles verrühren", "en": "mix everything" },
+            "children": [
+              { "ing": "mehl" },
+              { "ing": "backpulver" },
+              { "ing": "zimt" },
+              { "ing": "agave" },
+              { "ing": "haferdrink" },
+              { "ing": "apfelmark" },
+              { "ing": "oel" },
+              { "ing": "reste" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sebastian",
+      "label": { "de": "Sebastian · Patchwork", "en": "Sebastian · patchwork" },
+      "images": ["images/waffeln-sebastian-1.jpg", "images/waffeln-sebastian-2.jpg", "images/waffeln-sebastian-3.jpg"],
+      "multipliers": [1, 2, 3],
+      "note": {
+        "de": [
+          "Sebastians „schlecht vorbereitete“ Patchworkwaffeln — aus zwei Mehlen und Resten zusammengewürfelt, trotzdem lecker.",
+          "Lecker mit Vanillepudding, Sahne und Streuseln."
+        ],
+        "en": [
+          "Sebastian's \"badly-prepped\" patchwork waffles — thrown together from two flours and leftovers, tasty anyway.",
+          "Great with vanilla pudding, cream and sprinkles."
+        ]
+      },
+      "ingredients": [
+        { "id": "weizenmehl", "food": "weizenmehl", "amount": 160, "unit": "g", "name": { "de": "Weizenmehl", "en": "Wheat flour" }, "note": { "de": "Type 405", "en": "white" } },
+        { "id": "weizenvk", "food": "weizenvollkornmehl", "amount": 140, "unit": "g", "name": { "de": "Weizenvollkornmehl", "en": "Wholemeal wheat flour" } },
+        { "id": "erbsenprotein", "food": "erbsenprotein", "amount": 20, "unit": "g", "name": { "de": "Erbsenprotein", "en": "Pea protein" }, "note": { "de": "bio", "en": "organic" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 2, "unit": "EL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "zimt", "food": "zimt", "amount": 1, "unit": "TL", "name": { "de": "Zimt", "en": "Cinnamon" } },
+        { "id": "vanille", "amount": null, "name": { "de": "Vanille, gemahlen", "en": "Ground vanilla" }, "note": { "de": "1 Messerspitze", "en": "a knife-tip" } },
+        { "id": "mandelmilch", "food": "mandelmilch", "amount": 200, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
+        { "id": "hafermilch", "food": "haferdrink", "amount": 250, "unit": "ml", "name": { "de": "Hafermilch", "en": "Oat milk" } },
+        { "id": "mus", "food": "aepfel_sanddorn_mus", "amount": 3, "unit": "EL", "name": { "de": "Äpfel-Sanddorn-Mus", "en": "Apple–sea-buckthorn purée" } },
+        { "id": "banane", "food": "banane", "amount": 1, "unit": "", "name": { "de": "Banane", "en": "Banana" }, "note": { "de": "klein–mittel, reif", "en": "small–medium, ripe" } },
+        { "id": "apfel", "food": "apfel", "amount": 1, "unit": "", "name": { "de": "Apfel, geraspelt", "en": "Apple, grated" } }
+      ],
+      "steps": [
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Alle trockenen Zutaten vermengen.", "en": "Mix all the dry ingredients." }, "uses": ["weizenmehl", "weizenvk", "erbsenprotein", "backpulver", "zimt", "vanille"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Alle feuchten Zutaten vermengen — mit Banane und geraspeltem Apfel.", "en": "Mix all the wet ingredients — with banana and grated apple." }, "uses": ["mandelmilch", "hafermilch", "mus", "banane", "apfel"] },
+        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Trockene und feuchte Mischung vermengen.", "en": "Combine the dry and wet mixtures." }, "uses": [] },
+        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "Im Waffeleisen ausbacken.", "en": "Bake in the waffle iron." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "im Waffeleisen ausbacken", "en": "bake in the waffle iron" },
+        "children": [
+          {
+            "op": { "de": "trockene + feuchte Mischung vermengen", "en": "combine dry + wet" },
+            "children": [
+              {
+                "op": { "de": "trocken vermengen", "en": "mix dry" },
+                "children": [
+                  { "ing": "weizenmehl" },
+                  { "ing": "weizenvk" },
+                  { "ing": "erbsenprotein" },
+                  { "ing": "backpulver" },
+                  { "ing": "zimt" },
+                  { "ing": "vanille" }
+                ]
+              },
+              {
+                "op": { "de": "feucht vermengen", "en": "mix wet" },
+                "children": [
+                  { "ing": "mandelmilch" },
+                  { "ing": "hafermilch" },
+                  { "ing": "mus" },
+                  { "ing": "banane" },
+                  { "ing": "apfel" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
