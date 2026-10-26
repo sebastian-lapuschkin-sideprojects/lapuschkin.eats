@@ -76,7 +76,7 @@ footer.site .wrap{padding-block:1.5rem}
 .r-hero{aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;background:var(--accent-soft);margin:1rem 0 .4rem}
 .r-hero img,.r-hero.ph{width:100%;height:100%;object-fit:cover;display:block}
 .r-hero.ph{display:grid;place-items:center}
-.r-hero.carousel{position:relative}
+.r-hero.carousel{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:pointer}
 .r-hero .cslide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
 .r-hero .cslide.on{opacity:1}
 @media print{.r-hero .cslide{opacity:0!important}.r-hero .cslide:first-child{opacity:1!important}.tbtn,.mult{display:none!important}}

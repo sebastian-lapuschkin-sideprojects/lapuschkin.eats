@@ -83,13 +83,14 @@
         { "id": "vanille", "amount": null, "name": { "de": "Vanille, gemahlen", "en": "Ground vanilla" }, "note": { "de": "1 Messerspitze", "en": "a knife-tip" } },
         { "id": "mandelmilch", "food": "mandelmilch", "amount": 200, "unit": "ml", "name": { "de": "Mandelmilch", "en": "Almond milk" } },
         { "id": "hafermilch", "food": "haferdrink", "amount": 250, "unit": "ml", "name": { "de": "Hafermilch", "en": "Oat milk" } },
+        { "id": "oel", "food": "pflanzenoel", "amount": 30, "unit": "ml", "name": { "de": "Pflanzenöl", "en": "Vegetable oil" }, "note": { "de": "Raps", "en": "rapeseed" } },
         { "id": "mus", "food": "aepfel_sanddorn_mus", "amount": 3, "unit": "EL", "name": { "de": "Äpfel-Sanddorn-Mus", "en": "Apple–sea-buckthorn purée" } },
         { "id": "banane", "food": "banane", "amount": 1, "unit": "", "name": { "de": "Banane", "en": "Banana" }, "note": { "de": "klein–mittel, reif", "en": "small–medium, ripe" } },
         { "id": "apfel", "food": "apfel", "amount": 1, "unit": "", "name": { "de": "Apfel, geraspelt", "en": "Apple, grated" } }
       ],
       "steps": [
         { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Alle trockenen Zutaten vermengen.", "en": "Mix all the dry ingredients." }, "uses": ["weizenmehl", "weizenvk", "erbsenprotein", "backpulver", "zimt", "vanille"] },
-        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Alle feuchten Zutaten vermengen — mit Banane und geraspeltem Apfel.", "en": "Mix all the wet ingredients — with banana and grated apple." }, "uses": ["mandelmilch", "hafermilch", "mus", "banane", "apfel"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Alle feuchten Zutaten vermengen — mit Banane und geraspeltem Apfel.", "en": "Mix all the wet ingredients — with banana and grated apple." }, "uses": ["mandelmilch", "hafermilch", "oel", "mus", "banane", "apfel"] },
         { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Trockene und feuchte Mischung vermengen.", "en": "Combine the dry and wet mixtures." }, "uses": [] },
         { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "Im Waffeleisen ausbacken.", "en": "Bake in the waffle iron." }, "uses": [] }
       ],
@@ -115,6 +116,7 @@
                 "children": [
                   { "ing": "mandelmilch" },
                   { "ing": "hafermilch" },
+                  { "ing": "oel" },
                   { "ing": "mus" },
                   { "ing": "banane" },
                   { "ing": "apfel" }

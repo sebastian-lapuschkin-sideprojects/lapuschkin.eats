@@ -443,15 +443,39 @@
   }
   function startCarousel() {
     if (carTimer) { clearInterval(carTimer); carTimer = null; }
-    try { if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; } catch (e) {}
-    var slides = app.querySelectorAll(".r-hero .cslide");
+    var car = app.querySelector(".r-hero.carousel");
+    if (!car) return;
+    var slides = car.querySelectorAll(".cslide");
     if (slides.length < 2) return;
-    var idx = 0;
-    carTimer = setInterval(function () {
+    var idx = 0, reduce = false;
+    try { reduce = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    function show(n) {
       slides[idx].classList.remove("on");
-      idx = (idx + 1) % slides.length;
+      idx = (n % slides.length + slides.length) % slides.length;
       slides[idx].classList.add("on");
-    }, 4000);
+    }
+    function schedule() {
+      if (carTimer) { clearInterval(carTimer); carTimer = null; }
+      if (reduce) return;
+      carTimer = setInterval(function () { show(idx + 1); }, 4000);
+    }
+    function go(d) { show(idx + d); schedule(); }
+    function half(x) { var r = car.getBoundingClientRect(); return (x - r.left) > r.width / 2 ? 1 : -1; }
+    car.addEventListener("dblclick", function (e) { e.preventDefault(); go(half(e.clientX)); });
+    var x0 = null, y0 = null, lastT = 0, lastX = 0;
+    car.addEventListener("touchstart", function (e) { var t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY; }, { passive: true });
+    car.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { go(dx < 0 ? 1 : -1); return; }
+      if (Math.abs(dx) < 12 && Math.abs(dy) < 12) {
+        var now = Date.now();
+        if (now - lastT < 320 && Math.abs(t.clientX - lastX) < 60) { go(half(t.clientX)); lastT = 0; }
+        else { lastT = now; lastX = t.clientX; }
+      }
+    }, { passive: true });
+    schedule();
   }
   function rerender(g) { var y = window.scrollY; app.innerHTML = recipeHTML(g); bind(g); startCarousel(); window.scrollTo(0, y); }
 
