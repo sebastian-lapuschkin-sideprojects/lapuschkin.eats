@@ -69,7 +69,8 @@
     nutri_partial: { de: "* Einzelwert fehlt in der Quelle \u2014 Gesamt ist Untergrenze.", en: "* a per-item value is missing from the source \u2014 total is a lower bound." },
     nutri_pct: { de: "% = Anteil an der Energie (Eiwei\u00df und KH je 4, Fett 9 kcal/g).", en: "% = share of energy (protein and carbs 4, fat 9 kcal/g each)." },
     share: { de: "Link kopieren", en: "Copy link" },
-    copied: { de: "kopiert \u2713", en: "copied \u2713" }
+    copied: { de: "kopiert \u2713", en: "copied \u2713" },
+    custom: { de: "eigene", en: "custom" }
   };
   var SHARE_BASE = "https://sebastian-lapuschkin-sideprojects.github.io/lapuschkin.eats/";
   var BASE_PATH = (function () {
@@ -336,10 +337,12 @@
     if (spec.length) h += '<div class="specrow"><span>' + spec.join("</span><span>") + "</span></div>";
 
     var mults = v.multipliers || [0.5, 1, 2, 3, 4];
+    var isCustom = mults.indexOf(f) < 0;
     h += '<div class="mult"><span class="lbl">' + esc(ui("menge")) + "</span>";
     mults.forEach(function (m) {
       h += '<button class="mbtn ' + (m === f ? "on" : "") + '" data-f="' + m + '">\u00d7' + num(m, "") + "</button>";
     });
+    h += '<span class="mcustom-wrap' + (isCustom ? " on" : "") + '">\u00d7<input class="mcustom" type="text" inputmode="decimal" aria-label="' + esc(ui("custom")) + '" placeholder="' + esc(ui("custom")) + '" value="' + (isCustom ? esc(LANG === "de" ? String(f).replace(".", ",") : String(f)) : "") + '"></span>';
     if (v.baseServings != null) h += '<span class="out">= ' + Math.round(v.baseServings * f) + " " + esc(t(v.servingsUnit)) + "</span>";
     h += "</div>";
 
@@ -461,6 +464,15 @@
     app.querySelectorAll(".mbtn").forEach(function (b) {
       b.onclick = function () { st(g).factor = parseFloat(b.dataset.f); rerender(g); };
     });
+    var ci = app.querySelector(".mcustom");
+    if (ci) {
+      var applyCustom = function () {
+        var val = parseFloat((ci.value || "").replace(",", "."));
+        if (isFinite(val) && val > 0) { st(g).factor = val; rerender(g); }
+      };
+      ci.onchange = applyCustom;
+      ci.onkeydown = function (e) { if (e.key === "Enter") { e.preventDefault(); applyCustom(); } };
+    }
     app.querySelectorAll(".vsel").forEach(function (b) {
       b.onclick = function () { st(g).vi = parseInt(b.dataset.vi, 10); rerender(g); syncVariantURL(g); };
     });

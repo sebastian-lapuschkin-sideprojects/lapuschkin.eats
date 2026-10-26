@@ -12,7 +12,6 @@
       "id": "nicole",
       "label": { "de": "Nicole · ballaststoffreich", "en": "Nicole · fibre-rich" },
       "images": ["images/waffeln-nicole-1.jpg", "images/waffeln-nicole-2.jpg"],
-      "multipliers": [1, 2, 3],
       "note": {
         "de": [
           "Nicoles ballaststoffreiche Frühstückswaffeln — die Obstreste aus der Saftpresse (Apfel, Möhre) bringen die Ballaststoffe.",
@@ -63,7 +62,6 @@
       "id": "sebastian",
       "label": { "de": "Sebastian · Patchwork", "en": "Sebastian · patchwork" },
       "images": ["images/waffeln-sebastian-1.jpg", "images/waffeln-sebastian-2.jpg", "images/waffeln-sebastian-3.jpg"],
-      "multipliers": [1, 2, 3],
       "note": {
         "de": [
           "Sebastians „schlecht vorbereitete“ Patchworkwaffeln — aus zwei Mehlen und Resten zusammengewürfelt, trotzdem lecker.",

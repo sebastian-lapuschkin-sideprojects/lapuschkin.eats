@@ -15,7 +15,6 @@
       "baseServings": 6,
       "servingsUnit": { "de": "Portionen", "en": "servings" },
       "time": { "total": { "de": "ca. 1 Std", "en": "approx. 1 hr" } },
-      "multipliers": [0.5, 1, 2, 3, 4],
       "note": {
         "de": [
           "Empfehlung: Beyond Meat TK-Hack.",

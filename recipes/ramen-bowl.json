@@ -24,7 +24,6 @@
       ],
       "baseServings": 1,
       "servingsUnit": { "de": "Schüssel", "en": "bowl" },
-      "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [
           "Trivial einfach — nimm, worauf du Lust hast.",

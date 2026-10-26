@@ -105,6 +105,10 @@ footer.site .wrap{padding-block:1.5rem}
 :root[data-theme="dark"] .mbtn.on,:root:not([data-theme="light"]) .mbtn.on{color:#0c140f}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .mbtn.on{color:#fff}}
 .mult .out{font-family:var(--mono);font-size:.85rem;color:var(--accent);margin-left:.2rem}
+.mcustom-wrap{display:inline-flex;align-items:center;gap:.15rem;font-family:var(--mono);font-size:.9rem;background:var(--raised);border:1px solid var(--line);border-radius:8px;padding:.35rem .5rem;color:var(--muted)}
+.mcustom-wrap.on{border-color:var(--accent);color:var(--ink)}
+.mcustom{width:3.4rem;border:0;background:transparent;color:var(--ink);font:inherit;padding:0;outline:none}
+.mcustom::placeholder{color:var(--muted)}
 
 .cols{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:2.4rem;align-items:start}
 @media (max-width:640px){.cols{grid-template-columns:1fr;gap:1.6rem}}

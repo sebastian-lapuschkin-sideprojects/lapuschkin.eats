@@ -16,7 +16,6 @@
       "baseServings": 4,
       "servingsUnit": { "de": "Portionen", "en": "servings" },
       "time": { "total": { "de": "1 Std 30 Min", "en": "1 hr 30 min" } },
-      "multipliers": [0.5, 1, 2, 3, 4],
       "note": {
         "de": [
           "Tomatenmark mitrösten ist der Clou — nicht weglassen.",

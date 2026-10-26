@@ -13,7 +13,6 @@
       "label": { "de": "Grundrezept", "en": "Base" },
       "placeholder": "pancakes",
       "images": ["images/pfannkuchen.jpg", "images/pfannkuchen-wenden-1.jpg", "images/pfannkuchen-wenden-2.jpg", "images/pfannkuchen-stapel.jpg"],
-      "multipliers": [1, 2, 3, 4],
       "note": {
         "de": [
           "Nur ein Süßungsmittel wählen: Ahornsirup (feucht) oder Rohrzucker (trocken).",
