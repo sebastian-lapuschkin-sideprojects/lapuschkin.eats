@@ -5,7 +5,7 @@
     "de": "Vegan, cremig, mit Lauch und Hack.",
     "en": "Vegan, creamy, with leek and mince."
   },
-  "tags": [{ "de": "Suppe", "en": "soup" }],
+  "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }],
   "defaultVariant": "basis",
   "variants": [
     {
