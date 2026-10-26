@@ -16,7 +16,13 @@
   // ---- language ------------------------------------------------------------
   var LANG = "de";
   try { var sl = localStorage.getItem("eats-lang"); if (sl === "de" || sl === "en") LANG = sl; } catch (e) {}
-  function setLang(l) { LANG = l; try { localStorage.setItem("eats-lang", l); } catch (e) {} }
+  try { var ql = new URLSearchParams(location.search).get("l"); if (ql === "de" || ql === "en") { LANG = ql; localStorage.setItem("eats-lang", ql); } } catch (e) {}
+  function langQS() { return LANG === "en" ? "?l=en" : ""; }
+  function setLang(l) {
+    LANG = l;
+    try { localStorage.setItem("eats-lang", l); } catch (e) {}
+    try { var r = currentRoute(); history.replaceState(null, "", pathFor(r.id, r.variant)); } catch (e) {}
+  }
   // data field: plain string, or {de, en}
   function t(val) {
     if (val == null) return "";
@@ -484,7 +490,7 @@
         var p = location.pathname;
         if (p.indexOf(BASE_PATH) === 0) p = p.slice(BASE_PATH.length);
         p = p.replace(/^\//, "").replace(/\/$/, "");
-        copyText(SHARE_BASE + p + "/", function () {
+        copyText(SHARE_BASE + p + "/" + langQS(), function () {
           b.textContent = ui("copied"); b.classList.add("ok");
           setTimeout(function () { b.textContent = ui("share"); b.classList.remove("ok"); }, 1500);
         });
@@ -542,8 +548,8 @@
     return { id: parts[0] || "", variant: parts[1] || "" };
   }
   function pathFor(id, variant) {
-    if (!id || id === "index") return BASE_PATH;
-    return BASE_PATH + encodeURIComponent(id) + (variant ? "/" + encodeURIComponent(variant) : "");
+    var base = (!id || id === "index") ? BASE_PATH : BASE_PATH + encodeURIComponent(id) + (variant ? "/" + encodeURIComponent(variant) : "");
+    return base + langQS();
   }
   function variantIndex(g, variant) {
     if (variant) for (var i = 0; i < g.variants.length; i++) if (g.variants[i].id === variant) return i;

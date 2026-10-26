@@ -64,13 +64,13 @@ def write_stub(route, title, subtitle, og_rel):
 <meta name="twitter:image" content="{img}">
 <link rel="canonical" href="{canon}">
 <meta http-equiv="refresh" content="0; url={canon}">
-<script>location.replace({canon_js});</script>
+<script>location.replace({base_js} + location.search + {hash_js});</script>
 <style>body{{font-family:system-ui,sans-serif;background:#121410;color:#e8eae2;margin:0;display:grid;place-items:center;min-height:100vh}}a{{color:#73c793}}</style>
 </head><body>
 <p>Weiter zu <a href="{canon}">{title}</a> …</p>
 </body></html>
 """.format(title=H(title), sub=H(subtitle), url=H(url), img=H(og_img),
-           canon=H(canon), canon_js=json.dumps(canon))
+           canon=H(canon), base_js=json.dumps(BASE), hash_js=json.dumps("#" + route))
     d = os.path.join(*route.split("/"))
     os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:

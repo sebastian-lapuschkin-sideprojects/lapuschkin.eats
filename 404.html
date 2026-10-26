@@ -14,7 +14,7 @@
   var p = location.pathname;
   var seg = p.indexOf(base) === 0 ? p.slice(base.length) : "";
   seg = seg.replace(/\/$/, "").replace(/^\//, "");
-  location.replace(base + (seg ? "#" + seg : ""));
+  location.replace(base + location.search + (seg ? "#" + seg : ""));
 })();
 </script>
 </head><body>
