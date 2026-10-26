@@ -80,7 +80,10 @@ footer.site .wrap{padding-block:1.5rem}
 
 /* recipe */
 .r-head{margin-bottom:1.4rem}
-.back{font-family:var(--mono);font-size:.8rem}
+.back{font-family:var(--mono);font-size:.8rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.sharebtn{font-family:var(--mono);font-size:.78rem;color:var(--muted);background:var(--raised);border:1px solid var(--line);border-radius:7px;padding:.25rem .6rem;cursor:pointer}
+.sharebtn:hover{border-color:var(--accent);color:var(--ink)}
+.sharebtn.ok{color:var(--accent);border-color:var(--accent)}
 .r-head h1{font-size:clamp(1.8rem,5vw,2.6rem);margin:.5rem 0 .3rem}
 .r-head .sub{color:var(--muted);font-size:1.05rem;max-width:42rem}
 .r-hero{aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;background:var(--accent-soft);margin:1rem 0 .4rem}

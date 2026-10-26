@@ -67,8 +67,28 @@
     nutri_incomplete: { de: "Unvollst\u00e4ndig \u2014 ohne hinterlegte Werte:", en: "Incomplete \u2014 no data for:" },
     nutri_foot: { de: "Berechnet aus den Zutaten (je 100 g), skaliert mit der Menge; gerundet. Quellen in nutrition.json.", en: "Computed from the ingredients (per 100 g), scaled by the amount; rounded. Sources in nutrition.json." },
     nutri_partial: { de: "* Einzelwert fehlt in der Quelle \u2014 Gesamt ist Untergrenze.", en: "* a per-item value is missing from the source \u2014 total is a lower bound." },
-    nutri_pct: { de: "% = Anteil an der Energie (Eiwei\u00df und KH je 4, Fett 9 kcal/g).", en: "% = share of energy (protein and carbs 4, fat 9 kcal/g each)." }
+    nutri_pct: { de: "% = Anteil an der Energie (Eiwei\u00df und KH je 4, Fett 9 kcal/g).", en: "% = share of energy (protein and carbs 4, fat 9 kcal/g each)." },
+    share: { de: "Link kopieren", en: "Copy link" },
+    copied: { de: "kopiert \u2713", en: "copied \u2713" }
   };
+  var SHARE_BASE = "https://sebastian-lapuschkin-sideprojects.github.io/lapuschkin.eats/";
+  function copyText(text, done) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { legacyCopy(text, done); });
+        return;
+      }
+    } catch (e) {}
+    legacyCopy(text, done);
+  }
+  function legacyCopy(text, done) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      document.execCommand("copy"); document.body.removeChild(ta); done();
+    } catch (e) {}
+  }
   function ui(k) { var o = UI[k]; return o ? (o[LANG] || o.de) : k; }
 
   // ---- units: localize the display string (number logic uses the raw unit) ----
@@ -278,7 +298,7 @@
     var im = {}; v.ingredients.forEach(function (i) { im[i.id] = i; });
     var h = "";
 
-    h += '<p class="back"><a href="#index">' + esc(ui("back")) + "</a></p>";
+    h += '<p class="back"><a href="#index">' + esc(ui("back")) + '</a><button class="sharebtn" type="button" data-share="' + esc(SHARE_BASE + g.id + "/") + '">' + esc(ui("share")) + "</button></p>";
     h += '<div class="r-head"><div class="eyebrow">' + g.tags.map(function (x) { return esc(t(x)); }).join(" / ") + "</div>";
     h += "<h1>" + esc(t(g.title)) + "</h1>";
     if (g.subtitle) h += '<p class="sub">' + esc(t(g.subtitle)) + "</p></div>";
@@ -439,6 +459,14 @@
     });
     app.querySelectorAll(".vfav").forEach(function (b) {
       b.onclick = function () { var i = parseInt(b.dataset.fav, 10); setFav(g, g.variants[i].id); st(g).vi = i; rerender(g); };
+    });
+    app.querySelectorAll(".sharebtn").forEach(function (b) {
+      b.onclick = function () {
+        copyText(b.getAttribute("data-share"), function () {
+          b.textContent = ui("copied"); b.classList.add("ok");
+          setTimeout(function () { b.textContent = ui("share"); b.classList.remove("ok"); }, 1500);
+        });
+      };
     });
   }
   function startCarousel() {
