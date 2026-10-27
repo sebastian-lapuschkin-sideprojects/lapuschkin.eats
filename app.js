@@ -12,6 +12,7 @@
   var state = {}; // gid -> {vi, factor}
   var carTimer = null;
   var NUTRITION = null;
+  var tagFilter = []; // active collection tag filters (de-keys); AND-combined
 
   // ---- language ------------------------------------------------------------
   var LANG = "de";
@@ -40,6 +41,8 @@
     placeholder_img: { de: "Platzhalterbild von der Originalseite", en: "placeholder image from the original site" },
     created: { de: "angelegt", en: "created" },
     updated: { de: "aktualisiert", en: "updated" },
+    all_tag: { de: "Alle", en: "All" },
+    no_match: { de: "Keine Rezepte mit diesen Tags.", en: "No recipes with these tags." },
     fav_set: { de: "Als Favorit setzen", en: "Set as favourite" },
     fav_is: { de: "Favorit", en: "Favourite" },
     prev_v: { de: "vorige Variante", en: "previous variant" },
@@ -410,10 +413,42 @@
   }
 
   // ---- index + about -------------------------------------------------------
+  function tagKey(x) {
+    return (typeof x === "object" && x) ? (x.de != null ? x.de : (x.en != null ? x.en : "")) : ("" + x);
+  }
+
   function indexHTML() {
     var h = '<div class="lede"><h1>' + esc(ui("lede_h1")) + "</h1><p>" + esc(ui("lede_p")) + "</p></div>";
-    h += '<div class="grid">';
+
+    // tag filter bar: every tag in first-seen order, with a recipe count
+    var order = [], tmeta = {};
     GROUPS.forEach(function (g) {
+      (g.tags || []).forEach(function (x) {
+        var k = tagKey(x);
+        if (!k) return;
+        if (!tmeta[k]) { tmeta[k] = { tag: x, count: 0 }; order.push(k); }
+        tmeta[k].count++;
+      });
+    });
+    if (order.length) {
+      h += '<div class="tagbar">';
+      h += '<button type="button" class="tagchip reset' + (tagFilter.length ? "" : " on") + '" data-tag="">' + esc(ui("all_tag")) + "</button>";
+      order.forEach(function (k) {
+        var on = tagFilter.indexOf(k) >= 0;
+        h += '<button type="button" class="tagchip' + (on ? " on" : "") + '" data-tag="' + esc(k) + '">' +
+          esc(t(tmeta[k].tag)) + '<span class="n">' + tmeta[k].count + "</span></button>";
+      });
+      h += "</div>";
+    }
+
+    // grid, filtered: a card shows only if it carries EVERY active tag (AND)
+    var shown = GROUPS.filter(function (g) {
+      if (!tagFilter.length) return true;
+      var keys = (g.tags || []).map(tagKey);
+      return tagFilter.every(function (k) { return keys.indexOf(k) >= 0; });
+    });
+    h += '<div class="grid">';
+    shown.forEach(function (g) {
       var v = g.variants[defIdx(g)];
       var parts = [];
       if (v.time && v.time.total) parts.push(esc(t(v.time.total)));
@@ -424,7 +459,9 @@
         "<h3>" + esc(t(g.title)) + "</h3>" +
         '<p class="meta">' + parts.join(" \u00b7 ") + "</p></div></a>";
     });
-    return h + "</div>";
+    h += "</div>";
+    if (!shown.length) h += '<p class="noresults">' + esc(ui("no_match")) + "</p>";
+    return h;
   }
 
   function aboutHTML() {
@@ -639,6 +676,15 @@
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var sk = e.target.closest ? e.target.closest("a.skip") : null;
     if (sk) { e.preventDefault(); var m = document.getElementById("app"); if (m) { m.setAttribute("tabindex", "-1"); m.focus(); m.scrollIntoView(); } return; }
+    var chip = e.target.closest ? e.target.closest(".tagchip") : null;
+    if (chip) {
+      e.preventDefault();
+      var tk = chip.getAttribute("data-tag");
+      if (!tk) tagFilter = [];
+      else { var ci = tagFilter.indexOf(tk); if (ci >= 0) tagFilter.splice(ci, 1); else tagFilter.push(tk); }
+      app.innerHTML = indexHTML(); applyChrome();
+      return;
+    }
     var a = e.target.closest ? e.target.closest("a[data-route]") : null;
     if (!a) return;
     e.preventDefault();

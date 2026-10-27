@@ -5,10 +5,10 @@
   },
   "macros": [
     { "key": "kcal", "label": { "de": "Energie", "en": "Energy" }, "unit": "kcal" },
-    { "key": "protein", "label": { "de": "Eiweiß", "en": "Protein" }, "unit": "g" },
-    { "key": "carbs", "label": { "de": "Kohlenhydrate", "en": "Carbs" }, "unit": "g" },
     { "key": "fat", "label": { "de": "Fett", "en": "Fat" }, "unit": "g" },
-    { "key": "fiber", "label": { "de": "Ballaststoffe", "en": "Fibre" }, "unit": "g" }
+    { "key": "carbs", "label": { "de": "Kohlenhydrate", "en": "Carbs" }, "unit": "g" },
+    { "key": "fiber", "label": { "de": "Ballaststoffe", "en": "Fibre" }, "unit": "g" },
+    { "key": "protein", "label": { "de": "Eiweiß", "en": "Protein" }, "unit": "g" }
   ],
   "foods": {
     "dinkelmehl":   { "per100g": { "kcal": 347, "protein": 13,   "carbs": 69,    "fat": 1.2,  "fiber": 4 },    "g_per_unit": { "g": 1, "EL": 10, "TL": 3 }, "source": "Open Food Facts — Dinkelmehl Type 630 (ja!/REWE), 4337256678940" },
