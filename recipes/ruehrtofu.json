@@ -1,0 +1,87 @@
+{
+  "id": "ruehrtofu",
+  "title": { "de": "Rührtofu", "en": "Scrambled tofu" },
+  "subtitle": {
+    "de": "Vegane Rührei-Alternative, cremig eingekocht.",
+    "en": "Vegan scrambled-egg alternative, reduced until creamy."
+  },
+  "tags": [{ "de": "Frühstück", "en": "Breakfast" }, { "de": "herzhaft", "en": "savoury" }],
+  "created": "2026-10-27",
+  "updated": "2026-10-27",
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base recipe" },
+      "images": ["images/ruehrtofu.jpg"],
+      "baseServings": 4,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "note": {
+        "de": [
+          "Die Textur des Tofus bestimmt die Textur des Endprodukts — einfach die präferierte Sorte wählen (Hausmarke von Edeka ist ganz nice).",
+          "Beim Krümeln die Textur steuern: grob mit der Hand zerbrechen für Stücke, mit dem Stampfer zerdrücken für feiner.",
+          "Geduld beim Einkochen ist der Schlüssel — der Tofu soll sich vollsaugen und gleichmäßig weich werden.",
+          "Mengen werden in Zukunft noch verfeinert."
+        ],
+        "en": [
+          "The tofu's texture defines the texture of the result — just pick your preferred kind (Edeka's own brand is quite nice).",
+          "Control the texture while crumbling: break coarsely by hand for chunks, mash with a masher for finer.",
+          "Patience while reducing is the key — the tofu should soak up the liquid and soften evenly.",
+          "Amounts still to be refined."
+        ]
+      },
+      "ingredients": [
+        { "id": "tofu", "food": "tofu_natur", "amount": 400, "unit": "g", "name": { "de": "Naturtofu", "en": "Plain tofu" }, "note": { "de": "zerkrümelt; Textur entscheidet", "en": "crumbled; texture is decisive" } },
+        { "id": "sojamilch", "food": "sojamilch", "amount": 200, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" }, "note": { "de": "erst ~200 ml, nach Bedarf mehr", "en": "start with ~200 ml, add more as needed" } },
+        { "id": "quisine", "food": "pflanzensahne", "amount": 100, "unit": "ml", "name": { "de": "Soja Cuisine", "en": "Soy cuisine" }, "note": { "de": "Sojasahne; für Cremigkeit & Bindung", "en": "soy cream; for creaminess & binding" } },
+        { "id": "kurkuma", "amount": null, "name": { "de": "Kurkuma", "en": "Turmeric" }, "note": { "de": "für die Farbe", "en": "for the colour" } },
+        { "id": "paprika", "food": "paprika", "amount": null, "name": { "de": "Paprikapulver, edelsüß", "en": "Sweet paprika" }, "note": { "de": "geschmackliche Note", "en": "flavour note" } },
+        { "id": "kalanamak", "food": "salz", "amount": null, "name": { "de": "Kala Namak", "en": "Kala namak" }, "note": { "de": "Schwefelsalz, klassischer Ei-Geschmack", "en": "black salt, classic egg taste" } },
+        { "id": "hefe", "food": "hefeflocken", "amount": null, "name": { "de": "Hefeflocken", "en": "Nutritional yeast" }, "note": { "de": "für die würzige Note", "en": "for a savoury note" }, "optional": true },
+        { "id": "sojasauce", "food": "sojasauce", "amount": null, "name": { "de": "Sojasauce", "en": "Soy sauce" }, "note": { "de": "Umami-Kick zum Schluss", "en": "umami kick at the end" }, "optional": true },
+        { "id": "kraeuter", "food": "petersilie", "amount": null, "name": { "de": "Kräutermischung oder Petersilie", "en": "Herb mix or parsley" }, "note": { "de": "gehackt, zum Schluss", "en": "chopped, at the end" } }
+      ],
+      "steps": [
+        { "section": { "de": "Zerkrümeln", "en": "Crumble" }, "text": { "de": "Tofu in eine Pfanne krümeln — mit der Hand grob zerbrechen (je nach gewünschter Textur) oder mit einem Stampfer zerdrücken. Pfanne auf mittlerer bis mittel-hoher Stufe erhitzen.", "en": "Crumble the tofu into a pan — break it coarsely by hand (depending on the texture you want) or mash it with a masher. Heat the pan to medium or medium-high." }, "uses": ["tofu"] },
+        { "section": { "de": "Aufgießen", "en": "Add liquid" }, "text": { "de": "Mit Sojamilch (erst ~200 ml) und Soja Cuisine aufgießen und alles vermengen. Die Sojamilch bringt die Flüssigkeit, die Cuisine Cremigkeit und leichte Bindung. Im Laufe der Zubereitung einkochen lassen — der Tofu soll sich vollsaugen und gleichmäßig weich werden.", "en": "Pour in soy milk (start with ~200 ml) and soy cuisine and mix everything. The soy milk brings the liquid, the cuisine creaminess and a little binding. Let it reduce as you go — the tofu should soak it up and soften evenly." }, "uses": ["sojamilch", "quisine"] },
+        { "section": { "de": "Würzen", "en": "Season" }, "text": { "de": "Kurkuma für die Farbe und Paprikapulver für die geschmackliche Note untermengen, Kala Namak für den klassischen Ei-Geschmack.", "en": "Stir in turmeric for colour and sweet paprika for flavour, kala namak for the classic egg taste." }, "optionalText": { "de": "Hefeflocken für die würzige Note dazugeben.", "en": "Add nutritional yeast for a savoury note." }, "uses": ["kurkuma", "paprika", "kalanamak", "hefe"] },
+        { "section": { "de": "Textur", "en": "Texture" }, "text": { "de": "Textur durch geduldiges Einkochen steuern; bei Bedarf Cuisine (Cremigkeit) oder Sojamilch (Flüssigkeit) nach Belieben nachgeben.", "en": "Control the texture by reducing patiently; add more cuisine (creaminess) or soy milk (liquid) to taste as needed." }, "uses": [] },
+        { "section": { "de": "Abschmecken", "en": "Finish" }, "text": { "de": "Zum Schluss gehackte Kräuter untermengen und warm servieren.", "en": "Finally stir in the chopped herbs and serve warm." }, "optionalText": { "de": "Mit etwas Sojasauce für den Umami-Kick verfeinern.", "en": "Refine with a little soy sauce for an umami kick." }, "uses": ["kraeuter", "sojasauce"] }
+      ],
+      "tree": {
+        "op": { "de": "warm servieren", "en": "serve warm" },
+        "children": [
+          {
+            "op": { "de": "Kräuter untermengen", "en": "stir in herbs" },
+            "children": [
+              {
+                "op": { "de": "mit Sojasauce abschmecken", "en": "finish with soy sauce" },
+                "children": [
+                  {
+                    "op": { "de": "würzen, weiter einkochen", "en": "season, reduce further" },
+                    "children": [
+                      {
+                        "op": { "de": "aufgießen, einkochen", "en": "add liquid, reduce" },
+                        "children": [
+                          { "op": { "de": "in die Pfanne krümeln", "en": "crumble into the pan" }, "children": [{ "ing": "tofu" }] },
+                          { "ing": "sojamilch" },
+                          { "ing": "quisine" }
+                        ]
+                      },
+                      { "ing": "kurkuma" },
+                      { "ing": "paprika" },
+                      { "ing": "kalanamak" },
+                      { "ing": "hefe" }
+                    ]
+                  },
+                  { "ing": "sojasauce" }
+                ]
+              },
+              { "ing": "kraeuter" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
