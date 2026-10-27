@@ -6,6 +6,8 @@
     "en": "Vegan base recipe. Times 3–4 for the whole flat-share."
   },
   "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }],
+  "created": "2026-10-23",
+  "updated": "2026-10-26",
   "defaultVariant": "basis",
   "variants": [
     {

@@ -38,6 +38,8 @@
     adapted: { de: "nach", en: "adapted from" },
     own: { de: "eigenes Rezept", en: "own recipe" },
     placeholder_img: { de: "Platzhalterbild von der Originalseite", en: "placeholder image from the original site" },
+    created: { de: "angelegt", en: "created" },
+    updated: { de: "aktualisiert", en: "updated" },
     fav_set: { de: "Als Favorit setzen", en: "Set as favourite" },
     fav_is: { de: "Favorit", en: "Favourite" },
     prev_v: { de: "vorige Variante", en: "previous variant" },
@@ -306,6 +308,18 @@
     return h;
   }
 
+  function fmtDate(iso, lang) {
+    if (!iso) return "";
+    var p = ("" + iso).split("-");
+    if (p.length !== 3) return "" + iso;
+    var y = p[0], m = +p[1], d = +p[2];
+    if (lang === "en") {
+      var mo = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return d + " " + (mo[m - 1] || p[1]) + " " + y;
+    }
+    return (d < 10 ? "0" + d : d) + "." + (m < 10 ? "0" + m : m) + "." + y;
+  }
+
   // ---- recipe view ---------------------------------------------------------
   function recipeHTML(g) {
     var s = st(g), v = g.variants[s.vi], f = s.factor;
@@ -322,7 +336,10 @@
     var src = g.source
       ? ui("adapted") + ' <a href="' + esc(g.source.url) + '" target="_blank" rel="noopener">' + esc(g.source.name) + "</a>"
       : ui("own");
-    h += '<p class="srcline">' + esc(ui("source")) + " " + src + (v.imagePlaceholder ? " \u00b7 " + esc(ui("placeholder_img")) : "") + "</p>";
+    var dmeta = "";
+    if (g.created) dmeta += " \u00b7 " + esc(ui("created")) + " " + esc(fmtDate(g.created, LANG));
+    if (g.updated && g.updated !== g.created) dmeta += " \u00b7 " + esc(ui("updated")) + " " + esc(fmtDate(g.updated, LANG));
+    h += '<p class="srcline">' + esc(ui("source")) + " " + src + (v.imagePlaceholder ? " \u00b7 " + esc(ui("placeholder_img")) : "") + dmeta + "</p>";
 
     if (g.variants.length > 1) {
       var fav = favId(g);

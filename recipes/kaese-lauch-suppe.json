@@ -6,6 +6,8 @@
     "en": "Vegan, creamy, with leek and mince."
   },
   "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }],
+  "created": "2026-10-23",
+  "updated": "2026-10-26",
   "defaultVariant": "basis",
   "variants": [
     {

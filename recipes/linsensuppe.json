@@ -7,6 +7,8 @@
   },
   "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }],
   "source": { "name": "veggie-einhorn.de", "url": "https://veggie-einhorn.de/einfache-vegane-linsensuppe-raeuchertofu-tomatenmark/" },
+  "created": "2026-10-23",
+  "updated": "2026-10-26",
   "defaultVariant": "basis",
   "variants": [
     {

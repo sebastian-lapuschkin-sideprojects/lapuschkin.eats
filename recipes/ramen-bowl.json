@@ -6,6 +6,8 @@
     "en": "With finely sliced veg, protein and toppings."
   },
   "tags": [{ "de": "Suppe", "en": "Soup" }, { "de": "herzhaft", "en": "savoury" }],
+  "created": "2026-10-25",
+  "updated": "2026-10-26",
   "defaultVariant": "basis",
   "variants": [
     {
