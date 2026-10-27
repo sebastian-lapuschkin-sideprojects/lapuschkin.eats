@@ -38,6 +38,8 @@ Ein Rezept ist eine **Gruppe** mit einer oder mehreren **Varianten**.
 | `subtitle` | optional. Ein Satz. |
 | `tags` | Liste kurzer Schlagworte, z. B. `["Suppe","herzhaft"]`. Keine Zeitangaben wie „schnell". |
 | `source` | optional. `{"name":"…","url":"…"}` — Quelle, wenn übernommen. Weglassen bei eigenen Rezepten. |
+| `created` | optional. `"JJJJ-MM-TT"` — Anlagedatum. Erscheint in der Quellenzeile als „angelegt …". |
+| `updated` | optional. `"JJJJ-MM-TT"` — Datum der letzten Änderung. Erscheint als „aktualisiert …", aber nur wenn es von `created` abweicht. Bei jeder inhaltlichen Änderung hochsetzen. |
 | `defaultVariant` | `id` der Standard-Variante (wird zuerst gezeigt). |
 | `variants` | Liste von Varianten (mindestens eine). |
 
@@ -67,6 +69,7 @@ Ein Rezept ist eine **Gruppe** mit einer oder mehreren **Varianten**.
 | `max` | optional. Zahl → macht einen Bereich („200–250 g"). |
 | `unit` | `"g"`,`"ml"`,`"l"`,`"EL"`,`"TL"`,`"Stange"`,`"Prise"`,`""` … (`""` für reine Stückzahl). |
 | `name` | Anzeigename („Räuchertofu"). |
+| `food` | optional. Schlüssel in `nutrition.json` für die Nährwertberechnung (s. u.). Für Zutaten mit Menge setzen; bei `amount: null` (nach Geschmack) unnötig. |
 | `note` | optional. Klammer-Zusatz („geschält", „2–3 Stück"). |
 | `optional` | optional. `true` → Badge „optional". |
 
@@ -84,6 +87,16 @@ Ein Rezept ist eine **Gruppe** mit einer oder mehreren **Varianten**.
 - `amount` gilt pro `baseServings` und wird mit dem gewählten Faktor multipliziert.
 - `g`/`ml`/`l`/`kg` werden als Dezimalzahl gezeigt (Komma), alles andere (EL/TL/Stück/Prise …) als Bruch (½ ¼ ⅓ …).
 - `max` → Bereich. `amount: null` → nur der Name (ohne Zahl).
+
+## Nährwerte (`nutrition.json`)
+
+Die Nährwerte unter den Zutaten werden **berechnet, nie im Rezept gespeichert** — so stimmen sie bei jeder Mengen- oder Zutatenänderung automatisch.
+
+- `nutrition.json` (Projektwurzel) hat eine geteilte `foods`-Map: `Schlüssel → { per100g {kcal,protein,carbs,fat,fiber}, g_per_unit {Einheit→Gramm pro 1 Einheit; g=1, ml=Dichte, EL/TL/Stück/Prise = übliche Gewichte}, source }`. Werte gelten je 100 g der Zutat **wie verwendet** (Gemüse roh, Linsen trocken, Flüssiges je 100 ml).
+- Jede Zutat mit Menge verweist per `"food": "<schlüssel>"` auf einen Eintrag. Fehlt `food`/Eintrag, markiert die Engine die Summe als unvollständig; fehlt ein Einzelwert, wird die Zahl als Untergrenze (`*`) gezeigt. `amount: null` (nach Geschmack) wird übersprungen.
+- Angezeigt wird die **Summe fürs ganze Gericht**, skaliert mit dem Multiplikator, plus der **Energie-Anteil** je Makro (Eiweiß und KH ×4, Fett ×9 kcal/g).
+- Reihenfolge und Beschriftung der Zeilen stehen in `nutrition.json` unter `macros` (aktuell: Energie, Fett, Kohlenhydrate, Ballaststoffe, Eiweiß).
+- **Quellen: europäisch bevorzugen** — Ciqual (ANSES, FR), CoFID (UK), BLS (DE), Open Food Facts für EU-Labels; USDA meiden. **Nichts erfinden — fehlende Werte leer lassen.**
 
 ## Mehrsprachig (DE/EN)
 
@@ -123,6 +136,8 @@ Tags sind kurze Schlagworte über dem Rezept. Einen **neuen Tag hinzufügen** he
 "tags": [ { "de": "süß", "en": "sweet" }, "Basis" ]
 ```
 Ein einfacher String wie `"Basis"` erscheint in beiden Sprachen gleich. Keine Zeit-Tags wie „schnell/langsam".
+
+Auf der Übersichtsseite lässt sich die Sammlung über eine Chip-Leiste nach Tags filtern (mehrere Tags = UND-Verknüpfung, „Alle" setzt zurück).
 
 ## Die Ingenieurs-Tabelle (`tree`)
 
@@ -221,9 +236,10 @@ Reine Ansichtslogik, keine Daten. Wichtige Funktionen:
 | Funktion | Aufgabe |
 |---|---|
 | `load()` | lädt `recipes/index.json` und alle Rezepte per `fetch` |
-| `route()` | Hash-Routing: `#<id>` → Rezept, `#about` → Infoseite, sonst Übersicht |
-| `indexHTML()` | die Übersicht (Karten) |
+| `route()` | Pfad-Routing: `/<id>` → Rezept, `/<id>/<variante>` → Variante direkt, `/about` → Infoseite, sonst Übersicht; `?l=de\|en` schaltet die Sprache. |
+| `indexHTML()` | die Übersicht (Karten) + Tag-Filter |
 | `recipeHTML()` / `ingAndSteps()` | eine Rezeptseite (Kopf, Varianten, Mengen, Zutaten, Schritte) |
+| `nutritionHTML()` | Nährwert-Block (ganzes Gericht, skaliert) |
 | `tableHTML()` | baut die Ingenieurs-Tabelle aus `tree` (Blätter → Spalten → Zellen mit rowspan/colspan) |
 | `num()` / `frac()` / `dec()` / `amtOnly()` | Mengenformatierung (Bruch vs. Dezimal, Skalierung) |
 | `favId()` / `setFav()` | persönlicher Favorit via `localStorage` |
