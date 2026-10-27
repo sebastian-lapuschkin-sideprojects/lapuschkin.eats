@@ -5,7 +5,7 @@
     "de": "Vegane Rührei-Alternative, cremig eingekocht.",
     "en": "Vegan scrambled-egg alternative, reduced until creamy."
   },
-  "tags": [{ "de": "Frühstück", "en": "Breakfast" }, { "de": "Abendessen", "en": "Dinner" }, { "de": "kindererprobt", "en": "kid-approved" }],
+  "tags": [{ "de": "Frühstück", "en": "Breakfast" }, { "de": "Abendessen", "en": "Dinner" }, "kid"],
   "created": "2026-10-27",
   "updated": "2026-10-27",
   "defaultVariant": "basis",
