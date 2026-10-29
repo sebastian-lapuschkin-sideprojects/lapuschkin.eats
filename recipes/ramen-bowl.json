@@ -7,13 +7,14 @@
   },
   "tags": [{ "de": "Suppe", "en": "Soup" }, { "de": "herzhaft", "en": "savoury" }],
   "created": "2026-10-25",
-  "updated": "2026-10-26",
+  "updated": "2026-10-29",
   "defaultVariant": "basis",
   "variants": [
     {
       "id": "basis",
       "label": { "de": "Grundrezept", "en": "Base" },
       "images": [
+        "images/ramen-bowl-10.jpg",
         "images/ramen-bowl-1.jpg",
         "images/ramen-bowl-2.jpg",
         "images/ramen-bowl-3.jpg",
