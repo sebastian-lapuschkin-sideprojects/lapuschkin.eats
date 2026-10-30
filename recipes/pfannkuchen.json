@@ -7,7 +7,7 @@
   },
   "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }],
   "created": "2026-10-23",
-  "updated": "2026-10-26",
+  "updated": "2026-10-30",
   "defaultVariant": "basis",
   "variants": [
     {
@@ -59,6 +59,53 @@
             "children": [
               { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }, { "ing": "salz" }, { "ing": "rohrzucker" }] },
               { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "banane-hafer",
+      "label": { "de": "Banane & Hafer", "en": "Banana & oats" },
+      "placeholder": "pancakes",
+      "note": {
+        "de": [
+          "Wie das Grundrezept, plus zerdrückte Banane und Haferflocken — etwas süßer, saftiger und sättigender.",
+          "Die Banane süßt mit; Rohrzucker oder Ahornsirup kann man reduzieren oder weglassen.",
+          "Teig wird dicker — bei Bedarf einen Schluck Pflanzenmilch mehr.",
+          "Sonst wie beim Grundrezept: geduldig wenden, erst wenn die Oberseite fast trocken ist."
+        ],
+        "en": [
+          "Like the base recipe, plus mashed banana and oats — a bit sweeter, moister and more filling.",
+          "The banana sweetens too; reduce or skip the cane sugar or maple syrup.",
+          "The batter gets thicker — add a splash more plant milk if needed.",
+          "Otherwise as the base: flip patiently, only once the top is almost dry."
+        ]
+      },
+      "ingredients": [
+        { "id": "mehl", "food": "dinkelmehl", "amount": 125, "unit": "g", "name": { "de": "Dinkelmehl", "en": "Spelt flour" }, "note": { "de": "optional bis 20 % Vollkorn", "en": "optionally up to 20% wholegrain" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 0.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "salz", "food": "salz", "amount": 1, "unit": "Prise", "name": { "de": "Salz", "en": "Salt" } },
+        { "id": "hafer", "food": "haferflocken", "amount": 1, "unit": "Handvoll", "name": { "de": "Haferflocken", "en": "Rolled oats" }, "note": { "de": "eine hohle Hand voll", "en": "a cupped handful" } },
+        { "id": "rohrzucker", "food": "rohrzucker", "amount": 1, "unit": "EL", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "optional": true },
+        { "id": "milch", "food": "mandelmilch", "amount": 220, "unit": "ml", "name": { "de": "Pflanzenmilch", "en": "Plant milk" }, "note": { "de": "z.B. Mandel- oder Sojamilch (hier mit Mandel gerechnet)", "en": "e.g. almond or soy milk (computed with almond here)" } },
+        { "id": "sirup", "food": "ahornsirup", "amount": 1, "unit": "EL", "name": { "de": "Ahornsirup", "en": "Maple syrup" }, "optional": true },
+        { "id": "banane", "food": "banane", "amount": 0.5, "unit": "", "name": { "de": "Banane", "en": "Banana" }, "note": { "de": "sehr reif, zerdrückt", "en": "very ripe, mashed" } }
+      ],
+      "steps": [
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Mehl, Backpulver, Salz, Haferflocken (und ggf. Rohrzucker) verrühren.", "en": "Mix flour, baking powder, salt, oats (and cane sugar if using)." }, "uses": ["mehl", "backpulver", "salz", "hafer", "rohrzucker"] },
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Pflanzenmilch (und Ahornsirup) mit der zerdrückten Banane verrühren.", "en": "Mix plant milk (and maple syrup) with the mashed banana." }, "uses": ["milch", "sirup", "banane"] },
+        { "section": { "de": "Teig", "en": "Batter" }, "text": { "de": "Feuchtes in die trockene Mischung geben und glatt rühren. Teig kurz quellen lassen.", "en": "Add the wet to the dry mix and stir smooth. Let the batter swell briefly." }, "uses": [] },
+        { "section": { "de": "Backen", "en": "Cook" }, "text": { "de": "In beschichteter Pfanne ohne Fett bei mittlerer Hitze goldbraun backen.", "en": "Cook golden in a non-stick pan without fat over medium heat." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "ohne Fett backen", "en": "cook without fat" },
+        "children": [
+          {
+            "op": { "de": "glatt rühren, quellen lassen", "en": "stir smooth, let swell" },
+            "children": [
+              { "op": { "de": "trocken mischen", "en": "mix dry" }, "children": [{ "ing": "mehl" }, { "ing": "backpulver" }, { "ing": "salz" }, { "ing": "hafer" }, { "ing": "rohrzucker" }] },
+              { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "milch" }, { "ing": "sirup" }, { "ing": "banane" }] }
             ]
           }
         ]

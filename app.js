@@ -113,7 +113,7 @@
   // ---- units: localize the display string (number logic uses the raw unit) ----
   var UNIT_EN = { EL: "tbsp", TL: "tsp", "Prise": "pinch", "Stange": "stalk", "Stangen": "stalks",
     "Zehe": "clove", "Zehen": "cloves", "St\u00fcck": "pc", "Block": "block", "Msp": "pinch",
-    "Bund": "bunch", "Dose": "can", "Packung": "pack" };
+    "Bund": "bunch", "Dose": "can", "Packung": "pack", "Handvoll": "handful" };
   function unitStr(u) { if (!u) return ""; return LANG === "en" ? (UNIT_EN[u] || u) : u; }
 
   // ---- helpers -------------------------------------------------------------
