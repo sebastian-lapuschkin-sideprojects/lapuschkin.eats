@@ -5,10 +5,10 @@
     "de": "Herzhaft und deftig. Das Tomatenmark gibt die Tiefe.",
     "en": "Hearty and rich. The tomato paste gives the depth."
   },
-  "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }],
+  "tags": [{ "de": "Suppe", "en": "soup" }, { "de": "herzhaft", "en": "savoury" }, "kid"],
   "source": { "name": "veggie-einhorn.de", "url": "https://veggie-einhorn.de/einfache-vegane-linsensuppe-raeuchertofu-tomatenmark/" },
   "created": "2026-10-23",
-  "updated": "2026-10-26",
+  "updated": "2026-11-05",
   "defaultVariant": "basis",
   "variants": [
     {

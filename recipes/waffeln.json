@@ -5,9 +5,9 @@
     "de": "Zwei Varianten: Nicoles ballaststoffreiche Frühstückswaffeln und Sebastians Patchworkwaffeln.",
     "en": "Two variants: Nicole's fibre-rich breakfast waffles and Sebastian's patchwork waffles."
   },
-  "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }],
+  "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }, "kid"],
   "created": "2026-10-26",
-  "updated": "2026-10-26",
+  "updated": "2026-11-05",
   "defaultVariant": "sebastian",
   "variants": [
     {

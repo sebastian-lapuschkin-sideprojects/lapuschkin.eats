@@ -5,9 +5,9 @@
     "de": "Veganes Grundrezept. Mal 3–4 für die ganze WG.",
     "en": "Vegan base recipe. Times 3–4 for the whole flat-share."
   },
-  "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }],
+  "tags": [{ "de": "süß", "en": "sweet" }, { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }, "kid"],
   "created": "2026-10-23",
-  "updated": "2026-10-30",
+  "updated": "2026-11-05",
   "defaultVariant": "basis",
   "variants": [
     {
