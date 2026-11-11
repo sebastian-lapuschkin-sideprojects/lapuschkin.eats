@@ -481,6 +481,7 @@
         "<li>A bracket merges its ingredients into <strong>one intermediate</strong> that flows on to the right as a single strand.</li>" +
         "<li>Further right the strands merge with later ingredients, column by column, until the <strong>finished dish</strong> sits on the right.</li>" +
         "<li>Read <strong>left \u2192 right, top \u2192 bottom</strong>. Times and temperatures sit exactly where they are needed \u2014 no scrolling back.</li></ol>" +
+        '<p class="motto">\u201cBaking is chemistry, cooking is vibes.\u201d</p>' +
         '<p class="muted">Source: <a href="https://www.cookingforengineers.com/" target="_blank" rel="noopener">cookingforengineers.com</a> (Michael Chu, since June 2004).</p></div>';
     }
     return '<div class="prose"><p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">\u2190 alle Rezepte</a></p>' +
@@ -492,6 +493,7 @@
       "<li>Eine Klammer fasst ihre Zutaten zu <strong>einem Zwischenprodukt</strong> zusammen, das als ein Strang weiter nach rechts l\u00e4uft.</li>" +
       "<li>Weiter rechts verschmelzen die Str\u00e4nge mit sp\u00e4teren Zutaten, Spalte f\u00fcr Spalte, bis rechts das <strong>fertige Gericht</strong> steht.</li>" +
       "<li>Gelesen wird <strong>links \u2192 rechts, oben \u2192 unten</strong>. Zeiten und Temperaturen stehen genau da, wo sie gebraucht werden \u2014 kein Zur\u00fcckbl\u00e4ttern.</li></ol>" +
+      '<p class="motto">\u201eBacken ist Chemie, Kochen ist Vibes.\u201c</p>' +
       '<p class="muted">Quelle: <a href="https://www.cookingforengineers.com/" target="_blank" rel="noopener">cookingforengineers.com</a> (Michael Chu, seit Juni 2004).</p></div>';
   }
 
