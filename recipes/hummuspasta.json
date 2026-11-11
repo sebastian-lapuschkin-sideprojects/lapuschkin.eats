@@ -45,18 +45,18 @@
         { "id": "hummus", "food": "hummus", "amount": 400, "max": 600, "unit": "g", "name": { "de": "Hummus", "en": "Hummus" }, "note": { "de": "Basis der Soße", "en": "base of the sauce" } },
         { "id": "nudelwasser", "food": "wasser", "amount": 200, "unit": "ml", "name": { "de": "Nudelwasser", "en": "Pasta water" }, "note": { "de": "vor dem Abgießen aus dem Nudeltopf entnehmen; anfangs, bei Bedarf mehr", "en": "take from the pasta pot before draining; to start, more as needed" } },
         { "id": "salz", "food": "salz", "amount": null, "name": { "de": "Salz", "en": "Salt" } },
-        { "id": "spinat", "food": "spinat", "amount": 250, "max": 300, "unit": "g", "name": { "de": "Spinat", "en": "Spinach" }, "note": { "de": "Baby: zart; ausgewachsen: mehr Crunch", "en": "baby: tender; mature: more crunch" } },
+        { "id": "spinat", "food": "spinat", "amount": 250, "max": 300, "unit": "g", "name": { "de": "frischer Spinat", "en": "Fresh spinach" }, "note": { "de": "Baby: zart; ausgewachsen: mehr Crunch", "en": "baby: tender; mature: more crunch" } },
         { "id": "parmesan", "amount": null, "name": { "de": "veganer Parmesan", "en": "Vegan parmesan" }, "note": { "de": "Topping", "en": "topping" }, "optional": true },
         { "id": "tomaten_topping", "amount": null, "name": { "de": "getrocknete Tomaten, extra klein geschnitten", "en": "Sun-dried tomatoes, cut extra small" }, "note": { "de": "Topping; ein paar vom Glas abzweigen", "en": "topping; set a few aside from the jar" }, "optional": true },
         { "id": "jalapenos", "amount": null, "name": { "de": "Jalapeños", "en": "Jalapeños" }, "note": { "de": "Topping, für fruchtige Spannung", "en": "topping, for fruity tension" }, "optional": true }
       ],
       "steps": [
         { "section": { "de": "Pasta", "en": "Pasta" }, "text": { "de": "Nudelwasser aufsetzen und die Pasta kochen, bis sie noch etwas Biss hat. Wichtig: das Nudelwasser nicht komplett abgießen — vorher etwas beiseitenehmen.", "en": "Bring the pasta water to a boil and cook the pasta until it still has some bite. Important: don't pour all the water away — set some aside first." }, "uses": ["pasta", "nudelwasser"] },
-        { "section": { "de": "Schneiden", "en": "Chop" }, "text": { "de": "Zwiebeln klein hacken, getrocknete Tomaten in kleine Stücke (ca. 2 cm) schneiden.", "en": "Finely chop the onions, cut the sun-dried tomatoes into small pieces (approx. 2 cm)." }, "uses": ["zwiebel", "tomaten"] },
+        { "section": { "de": "Schnippeln", "en": "Chop" }, "text": { "de": "Zwiebeln klein hacken, getrocknete Tomaten in kleine Stücke (1–2 cm) schneiden.", "en": "Finely chop the onions, cut the sun-dried tomatoes into small pieces (1–2 cm)." }, "uses": ["zwiebel", "tomaten"] },
         { "section": { "de": "Anbraten", "en": "Fry" }, "text": { "de": "Zwiebeln mit etwas Olivenöl in der Pfanne anschwitzen und weich werden lassen. Getrocknete Tomaten dazugeben und bei mittlerer Hitze mitbraten. Reicht das Öl nicht, etwas vom aromatisierten Öl aus dem Tomatenglas nachgießen.", "en": "Sweat the onions in a little olive oil until soft. Add the sun-dried tomatoes and fry along over medium heat. If the oil runs short, add some of the flavoured oil from the tomato jar." }, "uses": ["olivenoel"] },
         { "section": { "de": "Spinat", "en": "Spinach" }, "text": { "de": "Währenddessen den Spinat waschen (falls nicht schon geschehen) — Salatschleuder empfohlen. Ausgewachsene Blätter ggf. einmal im Ganzen durchschneiden.", "en": "Meanwhile wash the spinach (unless already washed) — a salad spinner helps. Cut mature leaves through once as a whole pile if needed." }, "uses": ["spinat"] },
         { "section": { "de": "Soße", "en": "Sauce" }, "text": { "de": "Sobald die Zwiebeln gar sind, den Hummus in die Pfanne geben, erst einen Teil des Nudelwassers dazugeben und vorsichtig vermengen. Mit etwas Salz abschmecken.", "en": "Once the onions are done, add the hummus to the pan, pour in part of the pasta water first and combine gently. Season with a little salt." }, "uses": ["hummus", "nudelwasser", "salz"] },
-        { "section": { "de": "Spinat unterheben", "en": "Fold in spinach" }, "text": { "de": "Sobald die gewünschte Soßentextur erreicht ist, den Spinat unterheben. Vorsicht, die Soße dickt nach — bei Bedarf mehr Nudelwasser (oder Leitungswasser) dazugeben.", "en": "Once the sauce has the texture you want, fold in the spinach. Careful, the sauce thickens — add more pasta water (or tap water) as needed." }, "uses": [] },
+        { "section": { "de": "Spinat unterheben", "en": "Fold in spinach" }, "text": { "de": "Sobald die gewünschte Soßentextur erreicht ist, die Pfanne von der Kochfläche nehmen. Spinat geduldig und vorsichtig unterheben: Er zerfällt durch die Hitze der Soße, wird weich und gibt dabei noch etwas Flüssigkeit ab. Vorsicht, die Soße dickt nach — bei Bedarf mehr Nudelwasser (oder Leitungswasser) dazugeben.", "en": "Once the sauce has the texture you want, take the pan off the heat. Fold in the spinach patiently and gently: the heat of the sauce wilts it, it turns soft and releases a little more liquid. Careful, the sauce thickens — add more pasta water (or tap water) as needed." }, "uses": [] },
         { "section": { "de": "Servieren", "en": "Serve" }, "text": { "de": "Pasta mit der Soße anrichten und servieren.", "en": "Plate the pasta with the sauce and serve." }, "optionalText": { "de": "Toppings bereithalten: veganer Parmesan, ein paar extra klein geschnittene Tomaten oder Jalapeños.", "en": "Have toppings ready: vegan parmesan, a few extra-small-cut tomatoes or jalapeños." }, "uses": ["parmesan", "tomaten_topping", "jalapenos"] }
       ],
       "tree": {
@@ -64,7 +64,7 @@
         "children": [
           { "op": { "de": "bissfest kochen, Wasser aufheben", "en": "cook al dente, keep water" }, "children": [{ "ing": "pasta" }] },
           {
-            "op": { "de": "Spinat unterheben", "en": "fold in spinach" },
+            "op": { "de": "vom Herd, Spinat unterheben", "en": "off the heat, fold in spinach" },
             "children": [
               {
                 "op": { "de": "einrühren, salzen", "en": "stir in, salt" },
@@ -79,7 +79,7 @@
                           { "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "zwiebel" }] }
                         ]
                       },
-                      { "op": { "de": "in 2-cm-Stücke", "en": "cut 2 cm" }, "children": [{ "ing": "tomaten" }] }
+                      { "op": { "de": "in 1–2-cm-Stücke", "en": "cut 1–2 cm" }, "children": [{ "ing": "tomaten" }] }
                     ]
                   },
                   { "ing": "hummus" },
@@ -124,7 +124,7 @@
       ],
       "steps": [
         { "section": { "de": "Pasta", "en": "Pasta" }, "text": { "de": "Nudelwasser aufsetzen und die Pasta kochen, bis sie noch etwas Biss hat. Wichtig: das Nudelwasser nicht komplett abgießen — vorher etwas beiseitenehmen.", "en": "Bring the pasta water to a boil and cook the pasta until it still has some bite. Important: don't pour all the water away — set some aside first." }, "uses": ["pasta", "nudelwasser"] },
-        { "section": { "de": "Schneiden", "en": "Chop" }, "text": { "de": "Zwiebeln atomar klein hacken.", "en": "Chop the onions atomically small." }, "optionalText": { "de": "Falls Tomaten: in sehr kleine Stücke schneiden.", "en": "If using tomatoes: cut into very small pieces." }, "uses": ["zwiebel", "tomaten"] },
+        { "section": { "de": "Schnippeln", "en": "Chop" }, "text": { "de": "Zwiebeln atomar klein hacken.", "en": "Chop the onions atomically small." }, "optionalText": { "de": "Falls Tomaten: in sehr kleine Stücke schneiden.", "en": "If using tomatoes: cut into very small pieces." }, "uses": ["zwiebel", "tomaten"] },
         { "section": { "de": "Anbraten", "en": "Fry" }, "text": { "de": "Zwiebeln mit etwas Olivenöl in der Pfanne anschwitzen und weich werden lassen.", "en": "Sweat the onions in a little olive oil until soft." }, "optionalText": { "de": "Tomaten dazugeben und bei mittlerer Hitze mitbraten.", "en": "Add the tomatoes and fry along over medium heat." }, "uses": ["olivenoel"] },
         { "section": { "de": "Soße", "en": "Sauce" }, "text": { "de": "Sobald die Zwiebeln gar sind, den Hummus in die Pfanne geben, erst einen Teil des Nudelwassers dazugeben und vorsichtig vermengen. Mit etwas Salz abschmecken. Die Soße dickt nach — bei Bedarf mehr Nudelwasser dazugeben.", "en": "Once the onions are done, add the hummus to the pan, pour in part of the pasta water first and combine gently. Season with a little salt. The sauce thickens — add more pasta water as needed." }, "uses": ["hummus", "nudelwasser", "salz"] },
         { "section": { "de": "Servieren", "en": "Serve" }, "text": { "de": "Pasta mit der Soße anrichten und servieren.", "en": "Plate the pasta with the sauce and serve." }, "uses": [] }
