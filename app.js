@@ -475,25 +475,25 @@
       return '<div class="prose"><p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">\u2190 all recipes</a></p>' +
         "<h1>The Engineer's Table</h1>" +
         "<p>Every recipe here has a table at the bottom. It comes from <strong>Michael Chu</strong>, a software engineer who launched the site <em>Cooking for Engineers</em> in 2004. A handwritten note method \u2014 ingredients listed, grouped with curly braces \u2014 became this table form.</p>" +
-        "<h2>How to read it</h2><ol>" +
+        "<h2>How to read it</h2><ol start=\"0\">" +
+        "<li><strong>Baking is chemistry, cooking is vibes.</strong> Be precise with amounts and times when baking; when cooking, feel free to experiment.</li>" +
         "<li>The <strong>left column</strong> is every ingredient with amounts \u2014 also your shopping list.</li>" +
         "<li>Each cell on the right carries an <strong>action</strong> (stir, fry, simmer \u2026) and <strong>brackets</strong> the rows that belong together.</li>" +
         "<li>A bracket merges its ingredients into <strong>one intermediate</strong> that flows on to the right as a single strand.</li>" +
         "<li>Further right the strands merge with later ingredients, column by column, until the <strong>finished dish</strong> sits on the right.</li>" +
         "<li>Read <strong>left \u2192 right, top \u2192 bottom</strong>. Times and temperatures sit exactly where they are needed \u2014 no scrolling back.</li></ol>" +
-        '<p class="motto">\u201cBaking is chemistry, cooking is vibes.\u201d</p>' +
         '<p class="muted">Source: <a href="https://www.cookingforengineers.com/" target="_blank" rel="noopener">cookingforengineers.com</a> (Michael Chu, since June 2004).</p></div>';
     }
     return '<div class="prose"><p class="back"><a data-route="index" href="' + esc(pathFor("index")) + '">\u2190 alle Rezepte</a></p>' +
       "<h1>Die Ingenieurs-Tabelle</h1>" +
       "<p>Jedes Rezept hier hat unten eine Tabelle. Sie stammt von <strong>Michael Chu</strong>, einem Software-Ingenieur, der 2004 die Seite <em>Cooking for Engineers</em> startete. Aus einer handschriftlichen Notiz-Methode \u2014 Zutaten untereinander, mit geschweiften Klammern gruppiert \u2014 wurde diese Tabellenform.</p>" +
-      "<h2>So liest man sie</h2><ol>" +
+      "<h2>So liest man sie</h2><ol start=\"0\">" +
+      "<li><strong>Backen ist Chemie, Kochen ist Vibes.</strong> Beim Backen Mengen und Zeiten genau nehmen, beim Kochen ruhig experimentieren.</li>" +
       "<li>Die <strong>linke Spalte</strong> sind alle Zutaten mit Mengen \u2014 zugleich die Einkaufsliste.</li>" +
       "<li>Jede Zelle rechts tr\u00e4gt eine <strong>Handlung</strong> (r\u00fchren, anbraten, k\u00f6cheln \u2026) und <strong>klammert</strong> die Zeilen, die zusammengeh\u00f6ren.</li>" +
       "<li>Eine Klammer fasst ihre Zutaten zu <strong>einem Zwischenprodukt</strong> zusammen, das als ein Strang weiter nach rechts l\u00e4uft.</li>" +
       "<li>Weiter rechts verschmelzen die Str\u00e4nge mit sp\u00e4teren Zutaten, Spalte f\u00fcr Spalte, bis rechts das <strong>fertige Gericht</strong> steht.</li>" +
       "<li>Gelesen wird <strong>links \u2192 rechts, oben \u2192 unten</strong>. Zeiten und Temperaturen stehen genau da, wo sie gebraucht werden \u2014 kein Zur\u00fcckbl\u00e4ttern.</li></ol>" +
-      '<p class="motto">\u201eBacken ist Chemie, Kochen ist Vibes.\u201c</p>' +
       '<p class="muted">Quelle: <a href="https://www.cookingforengineers.com/" target="_blank" rel="noopener">cookingforengineers.com</a> (Michael Chu, seit Juni 2004).</p></div>';
   }
 
