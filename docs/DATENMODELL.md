@@ -53,6 +53,7 @@ Ein Rezept ist eine **Gruppe** mit einer oder mehreren **Varianten**.
 | `imagePlaceholder` | `true`, wenn das Bild nur ein Platzhalter von der Quelle ist (zeigt den Hinweis). Bei eigenen Fotos weglassen. |
 | `placeholder` | `"pancakes"` \| `"bowl"` (gezeichneter Platzhalter, wenn gar kein Foto). |
 | `baseServings` | optional. Zahl (Basis-Portionen). Weglassen, wenn unbekannt oder sinnlos. |
+| `baseServingsMax` | optional. Obergrenze, wenn das Rezept einen Bereich ergibt („3–4 Portionen“). Wird mitskaliert. |
 | `servingsUnit` | optional. `"Portionen"`, `"Pfannkuchen"`, … |
 | `time` | optional. `{"total":"…","active":"…"}` — beides optional. Nur eintragen, was man weiß. |
 | `multipliers` | optional. z. B. `[0.5,1,2,3,4]`. Standard: `[0.5,1,2,3,4]`. |

@@ -1,0 +1,156 @@
+{
+  "id": "hummuspasta",
+  "title": { "de": "Hummuspasta", "en": "Hummus pasta" },
+  "subtitle": {
+    "de": "Cremige Soße aus Hummus, getrockneten Tomaten und Spinat.",
+    "en": "Creamy sauce of hummus, sun-dried tomatoes and spinach."
+  },
+  "tags": [{ "de": "herzhaft", "en": "savoury" }, { "de": "Abendessen", "en": "Dinner" }, { "de": "einfach", "en": "easy" }, "kid"],
+  "created": "2026-11-11",
+  "updated": "2026-11-11",
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base" },
+      "images": ["images/hummuspasta-1.jpg"],
+      "baseServings": 3,
+      "baseServingsMax": 4,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "note": {
+        "de": [
+          "Pasta am besten aus der Bronzeform: die rauere Oberfläche hält die cremige Soße besser.",
+          "Hummus ist die Basis der Soße — je nach Produkt bekommt sie eine andere Grundnote. Lässt sich auch günstig und frisch selbst machen.",
+          "Halbgetrocknete Tomaten machen es fruchtiger; eine Mischung geht auch.",
+          "Babyspinat für eine zarte Struktur, ausgewachsener Spinat für etwas mehr Crunch.",
+          "Die Soße dickt nach — lieber genug Nudelwasser zurückbehalten.",
+          "Toppings bringen fruchtige Spannung auf den Teller. Ohne geht's aber auch: ein wunderbar wärmendes, sättigendes Herbst-/Wintergericht.",
+          "Für Kinder ggf. frühzeitig etwas Soße ohne Spinat abnehmen — oder gleich die Variante „Kinder“."
+        ],
+        "en": [
+          "Bronze-die pasta works best: its rougher surface holds the creamy sauce better.",
+          "Hummus is the base of the sauce — each product gives it a different note. It is also cheap and easy to make fresh.",
+          "Semi-dried tomatoes make it fruitier; a mix works too.",
+          "Baby spinach for a tender texture, mature spinach for a bit more crunch.",
+          "The sauce thickens as it stands — keep enough pasta water back.",
+          "Toppings add some fruity tension to the plate. It works without them too: a wonderfully warming, filling autumn/winter dish.",
+          "For kids, set aside some sauce early, before the spinach goes in — or use the \"Kids\" variant."
+        ]
+      },
+      "ingredients": [
+        { "id": "pasta", "food": "pasta", "amount": 300, "unit": "g", "name": { "de": "lange, breite Pasta", "en": "Long flat pasta" }, "note": { "de": "z.B. Fettuccine oder Linguine, gern aus der Bronzeform", "en": "e.g. fettuccine or linguine, ideally bronze-die" } },
+        { "id": "olivenoel", "amount": null, "name": { "de": "Olivenöl", "en": "Olive oil" }, "note": { "de": "etwas; oder Öl aus dem Tomatenglas", "en": "a little; or oil from the tomato jar" } },
+        { "id": "zwiebel", "food": "zwiebel", "amount": 1, "max": 2, "unit": "", "name": { "de": "Zwiebel", "en": "Onion" }, "note": { "de": "klein gehackt", "en": "finely chopped" } },
+        { "id": "tomaten", "food": "tomaten_getrocknet", "amount": 1.5, "unit": "Glas", "name": { "de": "getrocknete Tomaten in Öl", "en": "Sun-dried tomatoes in oil" }, "note": { "de": "oder halbgetrocknet, oder gemischt", "en": "or semi-dried, or a mix" } },
+        { "id": "hummus", "food": "hummus", "amount": 400, "max": 600, "unit": "g", "name": { "de": "Hummus", "en": "Hummus" }, "note": { "de": "Basis der Soße", "en": "base of the sauce" } },
+        { "id": "nudelwasser", "food": "wasser", "amount": 200, "unit": "ml", "name": { "de": "Nudelwasser", "en": "Pasta water" }, "note": { "de": "vor dem Abgießen aus dem Nudeltopf entnehmen; anfangs, bei Bedarf mehr", "en": "take from the pasta pot before draining; to start, more as needed" } },
+        { "id": "salz", "food": "salz", "amount": null, "name": { "de": "Salz", "en": "Salt" } },
+        { "id": "spinat", "food": "spinat", "amount": 250, "max": 300, "unit": "g", "name": { "de": "Spinat", "en": "Spinach" }, "note": { "de": "Baby: zart; ausgewachsen: mehr Crunch", "en": "baby: tender; mature: more crunch" } },
+        { "id": "parmesan", "amount": null, "name": { "de": "veganer Parmesan", "en": "Vegan parmesan" }, "note": { "de": "Topping", "en": "topping" }, "optional": true },
+        { "id": "tomaten_topping", "amount": null, "name": { "de": "getrocknete Tomaten, extra klein geschnitten", "en": "Sun-dried tomatoes, cut extra small" }, "note": { "de": "Topping; ein paar vom Glas abzweigen", "en": "topping; set a few aside from the jar" }, "optional": true },
+        { "id": "jalapenos", "amount": null, "name": { "de": "Jalapeños", "en": "Jalapeños" }, "note": { "de": "Topping, für fruchtige Spannung", "en": "topping, for fruity tension" }, "optional": true }
+      ],
+      "steps": [
+        { "section": { "de": "Pasta", "en": "Pasta" }, "text": { "de": "Nudelwasser aufsetzen und die Pasta kochen, bis sie noch etwas Biss hat. Wichtig: das Nudelwasser nicht komplett abgießen — vorher etwas beiseitenehmen.", "en": "Bring the pasta water to a boil and cook the pasta until it still has some bite. Important: don't pour all the water away — set some aside first." }, "uses": ["pasta", "nudelwasser"] },
+        { "section": { "de": "Schneiden", "en": "Chop" }, "text": { "de": "Zwiebeln klein hacken, getrocknete Tomaten in kleine Stücke (ca. 2 cm) schneiden.", "en": "Finely chop the onions, cut the sun-dried tomatoes into small pieces (approx. 2 cm)." }, "uses": ["zwiebel", "tomaten"] },
+        { "section": { "de": "Anbraten", "en": "Fry" }, "text": { "de": "Zwiebeln mit etwas Olivenöl in der Pfanne anschwitzen und weich werden lassen. Getrocknete Tomaten dazugeben und bei mittlerer Hitze mitbraten. Reicht das Öl nicht, etwas vom aromatisierten Öl aus dem Tomatenglas nachgießen.", "en": "Sweat the onions in a little olive oil until soft. Add the sun-dried tomatoes and fry along over medium heat. If the oil runs short, add some of the flavoured oil from the tomato jar." }, "uses": ["olivenoel"] },
+        { "section": { "de": "Spinat", "en": "Spinach" }, "text": { "de": "Währenddessen den Spinat waschen (falls nicht schon geschehen) — Salatschleuder empfohlen. Ausgewachsene Blätter ggf. einmal im Ganzen durchschneiden.", "en": "Meanwhile wash the spinach (unless already washed) — a salad spinner helps. Cut mature leaves through once as a whole pile if needed." }, "uses": ["spinat"] },
+        { "section": { "de": "Soße", "en": "Sauce" }, "text": { "de": "Sobald die Zwiebeln gar sind, den Hummus in die Pfanne geben, erst einen Teil des Nudelwassers dazugeben und vorsichtig vermengen. Mit etwas Salz abschmecken.", "en": "Once the onions are done, add the hummus to the pan, pour in part of the pasta water first and combine gently. Season with a little salt." }, "uses": ["hummus", "nudelwasser", "salz"] },
+        { "section": { "de": "Spinat unterheben", "en": "Fold in spinach" }, "text": { "de": "Sobald die gewünschte Soßentextur erreicht ist, den Spinat unterheben. Vorsicht, die Soße dickt nach — bei Bedarf mehr Nudelwasser (oder Leitungswasser) dazugeben.", "en": "Once the sauce has the texture you want, fold in the spinach. Careful, the sauce thickens — add more pasta water (or tap water) as needed." }, "uses": [] },
+        { "section": { "de": "Servieren", "en": "Serve" }, "text": { "de": "Pasta mit der Soße anrichten und servieren.", "en": "Plate the pasta with the sauce and serve." }, "optionalText": { "de": "Toppings bereithalten: veganer Parmesan, ein paar extra klein geschnittene Tomaten oder Jalapeños.", "en": "Have toppings ready: vegan parmesan, a few extra-small-cut tomatoes or jalapeños." }, "uses": ["parmesan", "tomaten_topping", "jalapenos"] }
+      ],
+      "tree": {
+        "op": { "de": "anrichten, servieren", "en": "plate, serve" },
+        "children": [
+          { "op": { "de": "bissfest kochen, Wasser aufheben", "en": "cook al dente, keep water" }, "children": [{ "ing": "pasta" }] },
+          {
+            "op": { "de": "Spinat unterheben", "en": "fold in spinach" },
+            "children": [
+              {
+                "op": { "de": "einrühren, salzen", "en": "stir in, salt" },
+                "children": [
+                  {
+                    "op": { "de": "Tomaten mitbraten", "en": "fry tomatoes along" },
+                    "children": [
+                      {
+                        "op": { "de": "anschwitzen", "en": "sweat" },
+                        "children": [
+                          { "ing": "olivenoel" },
+                          { "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "zwiebel" }] }
+                        ]
+                      },
+                      { "op": { "de": "in 2-cm-Stücke", "en": "cut 2 cm" }, "children": [{ "ing": "tomaten" }] }
+                    ]
+                  },
+                  { "ing": "hummus" },
+                  { "ing": "nudelwasser" },
+                  { "ing": "salz" }
+                ]
+              },
+              { "op": { "de": "waschen", "en": "wash" }, "children": [{ "ing": "spinat" }] }
+            ]
+          },
+          { "ing": "parmesan" },
+          { "op": { "de": "extra klein schneiden", "en": "cut extra small" }, "children": [{ "ing": "tomaten_topping" }] },
+          { "ing": "jalapenos" }
+        ]
+      }
+    },
+    {
+      "id": "kinder",
+      "label": { "de": "Kinder", "en": "Kids" },
+      "placeholder": "bowl",
+      "baseServings": 3,
+      "baseServingsMax": 4,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "note": {
+        "de": [
+          "Kindertauglich nur so: ohne Spinat, Zwiebeln atomar klein geschnippelt, Tomaten ggf. ganz weglassen.",
+          "Die Soße dickt nach — lieber genug Nudelwasser zurückbehalten."
+        ],
+        "en": [
+          "Kid-friendly only like this: no spinach, onions chopped atomically small, tomatoes left out if needed.",
+          "The sauce thickens as it stands — keep enough pasta water back."
+        ]
+      },
+      "ingredients": [
+        { "id": "pasta", "food": "pasta", "amount": 300, "unit": "g", "name": { "de": "lange, breite Pasta", "en": "Long flat pasta" }, "note": { "de": "z.B. Fettuccine oder Linguine, gern aus der Bronzeform", "en": "e.g. fettuccine or linguine, ideally bronze-die" } },
+        { "id": "olivenoel", "amount": null, "name": { "de": "Olivenöl", "en": "Olive oil" }, "note": { "de": "etwas", "en": "a little" } },
+        { "id": "zwiebel", "food": "zwiebel", "amount": 1, "max": 2, "unit": "", "name": { "de": "Zwiebel", "en": "Onion" }, "note": { "de": "atomar klein gehackt", "en": "chopped atomically small" } },
+        { "id": "tomaten", "food": "tomaten_getrocknet", "amount": 1.5, "unit": "Glas", "name": { "de": "getrocknete Tomaten in Öl", "en": "Sun-dried tomatoes in oil" }, "note": { "de": "ggf. weglassen", "en": "leave out if needed" }, "optional": true },
+        { "id": "hummus", "food": "hummus", "amount": 400, "max": 600, "unit": "g", "name": { "de": "Hummus", "en": "Hummus" }, "note": { "de": "Basis der Soße", "en": "base of the sauce" } },
+        { "id": "nudelwasser", "food": "wasser", "amount": 200, "unit": "ml", "name": { "de": "Nudelwasser", "en": "Pasta water" }, "note": { "de": "vor dem Abgießen aus dem Nudeltopf entnehmen; anfangs, bei Bedarf mehr", "en": "take from the pasta pot before draining; to start, more as needed" } },
+        { "id": "salz", "food": "salz", "amount": null, "name": { "de": "Salz", "en": "Salt" } }
+      ],
+      "steps": [
+        { "section": { "de": "Pasta", "en": "Pasta" }, "text": { "de": "Nudelwasser aufsetzen und die Pasta kochen, bis sie noch etwas Biss hat. Wichtig: das Nudelwasser nicht komplett abgießen — vorher etwas beiseitenehmen.", "en": "Bring the pasta water to a boil and cook the pasta until it still has some bite. Important: don't pour all the water away — set some aside first." }, "uses": ["pasta", "nudelwasser"] },
+        { "section": { "de": "Schneiden", "en": "Chop" }, "text": { "de": "Zwiebeln atomar klein hacken.", "en": "Chop the onions atomically small." }, "optionalText": { "de": "Falls Tomaten: in sehr kleine Stücke schneiden.", "en": "If using tomatoes: cut into very small pieces." }, "uses": ["zwiebel", "tomaten"] },
+        { "section": { "de": "Anbraten", "en": "Fry" }, "text": { "de": "Zwiebeln mit etwas Olivenöl in der Pfanne anschwitzen und weich werden lassen.", "en": "Sweat the onions in a little olive oil until soft." }, "optionalText": { "de": "Tomaten dazugeben und bei mittlerer Hitze mitbraten.", "en": "Add the tomatoes and fry along over medium heat." }, "uses": ["olivenoel"] },
+        { "section": { "de": "Soße", "en": "Sauce" }, "text": { "de": "Sobald die Zwiebeln gar sind, den Hummus in die Pfanne geben, erst einen Teil des Nudelwassers dazugeben und vorsichtig vermengen. Mit etwas Salz abschmecken. Die Soße dickt nach — bei Bedarf mehr Nudelwasser dazugeben.", "en": "Once the onions are done, add the hummus to the pan, pour in part of the pasta water first and combine gently. Season with a little salt. The sauce thickens — add more pasta water as needed." }, "uses": ["hummus", "nudelwasser", "salz"] },
+        { "section": { "de": "Servieren", "en": "Serve" }, "text": { "de": "Pasta mit der Soße anrichten und servieren.", "en": "Plate the pasta with the sauce and serve." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "anrichten, servieren", "en": "plate, serve" },
+        "children": [
+          { "op": { "de": "bissfest kochen, Wasser aufheben", "en": "cook al dente, keep water" }, "children": [{ "ing": "pasta" }] },
+          {
+            "op": { "de": "einrühren, salzen", "en": "stir in, salt" },
+            "children": [
+              {
+                "op": { "de": "anschwitzen (Tomaten ggf. mit)", "en": "sweat (tomatoes optional)" },
+                "children": [
+                  { "ing": "olivenoel" },
+                  { "op": { "de": "atomar klein hacken", "en": "chop very finely" }, "children": [{ "ing": "zwiebel" }] },
+                  { "op": { "de": "sehr klein schneiden", "en": "cut very small" }, "children": [{ "ing": "tomaten" }] }
+                ]
+              },
+              { "ing": "hummus" },
+              { "ing": "nudelwasser" },
+              { "ing": "salz" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

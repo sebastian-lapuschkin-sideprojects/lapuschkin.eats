@@ -311,6 +311,12 @@
     return h;
   }
 
+  // servings label, optionally a range (baseServingsMax), scaled by factor f
+  function servTxt(v, f) {
+    var a = Math.round(v.baseServings * f), b = v.baseServingsMax != null ? Math.round(v.baseServingsMax * f) : null;
+    return (b != null && b !== a ? a + "\u2013" + b : a) + " " + esc(t(v.servingsUnit));
+  }
+
   function fmtDate(iso, lang) {
     if (!iso) return "";
     var p = ("" + iso).split("-");
@@ -359,7 +365,7 @@
     var spec = [];
     if (v.time && v.time.total) spec.push(esc(ui("dauer")) + " <b>" + esc(t(v.time.total)) + "</b>");
     if (v.time && v.time.active) spec.push(esc(ui("aktiv")) + " <b>" + esc(t(v.time.active)) + "</b>");
-    if (v.baseServings != null) spec.push(esc(ui("basis")) + " <b>" + v.baseServings + " " + esc(t(v.servingsUnit)) + "</b>");
+    if (v.baseServings != null) spec.push(esc(ui("basis")) + " <b>" + servTxt(v, 1) + "</b>");
     if (spec.length) h += '<div class="specrow"><span>' + spec.join("</span><span>") + "</span></div>";
 
     var mults = v.multipliers || [0.5, 1, 2, 3, 4];
@@ -369,7 +375,7 @@
       h += '<button class="mbtn ' + (m === f ? "on" : "") + '" data-f="' + m + '">\u00d7' + num(m, "") + "</button>";
     });
     h += '<span class="mcustom-wrap' + (isCustom ? " on" : "") + '">\u00d7<input class="mcustom" type="text" inputmode="decimal" aria-label="' + esc(ui("custom")) + '" placeholder="' + esc(ui("custom")) + '" value="' + (isCustom ? esc(LANG === "de" ? String(f).replace(".", ",") : String(f)) : "") + '"></span>';
-    if (v.baseServings != null) h += '<span class="out">= ' + Math.round(v.baseServings * f) + " " + esc(t(v.servingsUnit)) + "</span>";
+    if (v.baseServings != null) h += '<span class="out">= ' + servTxt(v, f) + "</span>";
     h += "</div>";
 
     h += noteHTML(v.note);
@@ -452,7 +458,7 @@
       var v = g.variants[defIdx(g)];
       var parts = [];
       if (v.time && v.time.total) parts.push(esc(t(v.time.total)));
-      if (v.baseServings != null) parts.push(v.baseServings + " " + esc(t(v.servingsUnit)));
+      if (v.baseServings != null) parts.push(servTxt(v, 1));
       if (g.variants.length > 1) parts.push('<span class="vcount">' + g.variants.length + " " + esc(ui("variants")) + "</span>");
       h += '<a class="card" data-route="' + esc(g.id) + '" href="' + esc(pathFor(g.id)) + '">' + thumb(v) +
         '<div class="body"><div class="tags">' + g.tags.map(function (x) { return '<span class="tag">' + esc(t(x)) + "</span>"; }).join("") + "</div>" +
