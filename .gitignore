@@ -2,3 +2,6 @@ exports/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Private Fotoarchiv (aeltere datierte Rezeptfotos) — nur DataCloud-Backup, nicht im Repo
+Fotoarchiv/
