@@ -3,5 +3,5 @@ exports/
 __pycache__/
 *.pyc
 
-# Private Fotoarchiv (aeltere datierte Rezeptfotos) — nur DataCloud-Backup, nicht im Repo
+# Private Fotoarchiv (ältere datierte Rezeptfotos) — nur DataCloud-Backup, nicht im Repo
 Fotoarchiv/
