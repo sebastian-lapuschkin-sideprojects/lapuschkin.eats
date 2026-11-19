@@ -64,13 +64,16 @@ def write_stub(path, hash_route, title, subtitle, og_rel, lang):
 <meta name="twitter:description" content="{sub}">
 <meta name="twitter:image" content="{img}">
 <link rel="canonical" href="{url}">
+<link rel="icon" href="{base}images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{base}images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{base}images/apple-touch-icon.png">
 <script>location.replace({base_js} + {rqs} + {hash_js});</script>
 <style>body{{font-family:system-ui,sans-serif;background:#121410;color:#e8eae2;margin:0;display:grid;place-items:center;min-height:100vh}}a{{color:#73c793}}</style>
 </head><body>
 <p><a href="{canon}">lapuschkin.eats</a></p>
 </body></html>
 """.format(lang=lang, title=H(title), sub=H(subtitle), url=H(url), img=H(og_img),
-           canon=H(canon), base_js=json.dumps(BASE), rqs=rqs, hash_js=hash_js, ogtype=ogtype)
+           canon=H(canon), base=H(BASE), base_js=json.dumps(BASE), rqs=rqs, hash_js=hash_js, ogtype=ogtype)
     d = os.path.join(*path.split("/")) if path else "."
     if path:
         os.makedirs(d, exist_ok=True)
