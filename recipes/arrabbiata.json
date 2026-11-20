@@ -1,0 +1,89 @@
+{
+  "id": "arrabbiata",
+  "title": { "de": "Feurige Arrabbiata", "en": "Fiery arrabbiata" },
+  "subtitle": {
+    "de": "Frische Tomaten, Chili und Knoblauch — braucht nur Hitze und Geduld.",
+    "en": "Fresh tomatoes, chili and garlic — all it needs is heat and patience."
+  },
+  "tags": [{ "de": "herzhaft", "en": "savoury" }, { "de": "Abendessen", "en": "Dinner" }, { "de": "scharf", "en": "spicy" }],
+  "created": "2026-11-20",
+  "updated": "2026-11-20",
+  "defaultVariant": "basis",
+  "variants": [
+    {
+      "id": "basis",
+      "label": { "de": "Grundrezept", "en": "Base" },
+      "images": ["images/arrabbiata-1.jpg", "images/arrabbiata-2.jpg", "images/arrabbiata-3.jpg"],
+      "baseServings": 4,
+      "servingsUnit": { "de": "Portionen", "en": "servings" },
+      "note": {
+        "de": [
+          "Je länger der Garprozess dauert, desto weniger aggressiv wird die Schärfe der Chilis — sie entwickelt sich eher zu einer angenehmen Wärme. Zu lange garen heißt aber, dass die Schärfe verschwindet.",
+          "Das Gericht kocht sich quasi von selbst: Man braucht nur Hitze und Geduld.",
+          "Tomaten: Dattel- oder Cocktailtomaten — je aromatischer, desto besser.",
+          "Ursprünglich für 6 Personen gekocht: dafür einfach ×1,5 wählen."
+        ],
+        "en": [
+          "The longer it cooks, the less aggressive the chili heat gets — it turns into a pleasant warmth. Cook it too long, though, and the heat disappears.",
+          "The dish practically cooks itself: all it needs is heat and patience.",
+          "Tomatoes: date or cocktail tomatoes — the more aromatic, the better.",
+          "Originally cooked for 6: just pick ×1.5."
+        ]
+      },
+      "ingredients": [
+        { "id": "pasta", "food": "pasta", "amount": 400, "unit": "g", "name": { "de": "Pasta", "en": "Pasta" } },
+        { "id": "zwiebel", "food": "zwiebel", "amount": 1.3333, "max": 2, "unit": "", "name": { "de": "Zwiebel", "en": "Onion" }, "note": { "de": "gehackt, je nach gewünschter Textur kleiner oder größer", "en": "chopped, finer or coarser as you like" } },
+        { "id": "chili", "food": "chili", "amount": 2, "unit": "", "name": { "de": "Chilischoten", "en": "Chili peppers" }, "note": { "de": "entkernt, gehackt", "en": "deseeded, chopped" } },
+        { "id": "knoblauch", "food": "knoblauch", "amount": 4, "unit": "", "name": { "de": "Knoblauchzehen", "en": "Garlic cloves" }, "note": { "de": "gehackt", "en": "chopped" } },
+        { "id": "tomaten", "food": "tomaten_frisch", "amount": 600, "unit": "g", "name": { "de": "Tomaten", "en": "Tomatoes" }, "note": { "de": "Dattel- oder Cocktailtomaten, je aromatischer, desto besser", "en": "date or cocktail tomatoes, the more aromatic the better" } },
+        { "id": "nudelwasser", "amount": null, "name": { "de": "Nudelwasser", "en": "Pasta water" }, "note": { "de": "aus dem Nudeltopf aufbewahren; bei Bedarf", "en": "kept back from the pasta pot; as needed" } },
+        { "id": "salz", "food": "salz", "amount": null, "name": { "de": "Salz", "en": "Salt" } },
+        { "id": "parmesan", "amount": null, "name": { "de": "veganer Parmesan", "en": "Vegan parmesan" }, "note": { "de": "zum Garnieren", "en": "to garnish" }, "optional": true },
+        { "id": "schafskaese", "amount": null, "name": { "de": "veganer Schafskäse", "en": "Vegan feta" }, "note": { "de": "zum Garnieren; der von Veeze fetzt", "en": "to garnish; the one by Veeze is great" }, "optional": true }
+      ],
+      "steps": [
+        { "section": { "de": "Pasta", "en": "Pasta" }, "text": { "de": "Topf für die Nudeln aufsetzen und zum Kochen bringen. Nudeln dazugeben und garen. Einen Teil des Nudelwassers aufbewahren und nicht wegkippen.", "en": "Bring a pot of water to the boil for the pasta. Add the pasta and cook. Keep back part of the pasta water instead of pouring it away." }, "uses": ["pasta", "nudelwasser"] },
+        { "section": { "de": "Schnippeln", "en": "Chop" }, "text": { "de": "Zeitgleich: Zwiebeln hacken (je nach gewünschter Textur kleiner oder größer), Chilis entkernen und hacken, Knoblauch hacken.", "en": "Meanwhile: chop the onions (finer or coarser as you like), deseed and chop the chilis, chop the garlic." }, "uses": ["zwiebel", "chili", "knoblauch"] },
+        { "section": { "de": "Anschwitzen", "en": "Sweat" }, "text": { "de": "Zwiebeln in eine Pfanne geben und bei mittlerer bis hoher Hitze anschwitzen, bis sie glasig sind. Chilis dazugeben und mitgaren.", "en": "Put the onions in a pan and sweat them over medium-high heat until translucent. Add the chilis and cook along." }, "uses": [] },
+        { "section": { "de": "Knoblauch", "en": "Garlic" }, "text": { "de": "Nach 2–3 Minuten den Knoblauch in die Pfanne geben und 2–3 Minuten mitgaren.", "en": "After 2–3 minutes add the garlic and cook along for 2–3 minutes." }, "uses": [] },
+        { "section": { "de": "Tomaten", "en": "Tomatoes" }, "text": { "de": "Tomaten in die Pfanne geben und so lange garen, bis sie zerfallen und die gewünschte Soßenkonsistenz und Stückigkeit erreicht ist. Immer wieder wenden. Ist zu wenig Flüssigkeit in der Pfanne, mit etwas Nudelwasser auffüllen.", "en": "Add the tomatoes and cook until they break down and the sauce has the consistency and chunkiness you want. Turn them now and then. If the pan runs dry, top up with a little pasta water." }, "uses": ["tomaten"] },
+        { "section": { "de": "Abschmecken", "en": "Season" }, "text": { "de": "Am Ende mit Salz abschmecken.", "en": "Season with salt at the end." }, "uses": ["salz"] },
+        { "section": { "de": "Servieren", "en": "Serve" }, "text": { "de": "Pasta mit der Soße anrichten.", "en": "Plate the pasta with the sauce." }, "optionalText": { "de": "Mit veganem Parmesan oder veganem Schafskäse garnieren.", "en": "Garnish with vegan parmesan or vegan feta." }, "uses": ["parmesan", "schafskaese"] }
+      ],
+      "tree": {
+        "op": { "de": "anrichten", "en": "plate" },
+        "children": [
+          { "op": { "de": "garen, Wasser aufheben", "en": "cook, keep water" }, "children": [{ "ing": "pasta" }] },
+          {
+            "op": { "de": "abschmecken", "en": "season" },
+            "children": [
+              {
+                "op": { "de": "garen, bis sie zerfallen; wenden", "en": "cook until they break down; turn" },
+                "children": [
+                  {
+                    "op": { "de": "2–3 Min mitgaren", "en": "cook 2–3 min" },
+                    "children": [
+                      {
+                        "op": { "de": "Chilis mitgaren", "en": "cook chilis along" },
+                        "children": [
+                          { "op": { "de": "glasig anschwitzen", "en": "sweat until translucent" }, "children": [{ "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "zwiebel" }] }] },
+                          { "op": { "de": "entkernen, hacken", "en": "deseed, chop" }, "children": [{ "ing": "chili" }] }
+                        ]
+                      },
+                      { "op": { "de": "hacken", "en": "chop" }, "children": [{ "ing": "knoblauch" }] }
+                    ]
+                  },
+                  { "ing": "tomaten" },
+                  { "ing": "nudelwasser" }
+                ]
+              },
+              { "ing": "salz" }
+            ]
+          },
+          { "ing": "parmesan" },
+          { "ing": "schafskaese" }
+        ]
+      }
+    }
+  ]
+}
