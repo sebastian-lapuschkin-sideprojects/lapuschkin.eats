@@ -7,7 +7,7 @@
   },
   "tags": ["kid", { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }, { "de": "süß", "en": "sweet" }, { "de": "einfach", "en": "easy" }],
   "created": "2026-11-06",
-  "updated": "2026-11-06",
+  "updated": "2026-11-25",
   "defaultVariant": "basis",
   "variants": [
     {
@@ -33,7 +33,7 @@
       },
       "ingredients": [
         { "id": "banane", "food": "banane", "amount": 3, "unit": "", "name": { "de": "Banane", "en": "Banana" }, "note": { "de": "SUPERreif, zerdrückt", "en": "super-ripe, mashed" } },
-        { "id": "sojamilch", "food": "sojamilch", "amount": 180, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" }, "note": { "de": "ersetzt Ahornsirup (120 ml) + Pflanzenmilch (4 EL)", "en": "replaces maple syrup (120 ml) + plant milk (4 tbsp)" } },
+        { "id": "sojamilch", "food": "sojamilch", "amount": 180, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
         { "id": "kokosoel", "food": "kokosoel", "amount": 4, "unit": "EL", "name": { "de": "Kokosöl oder vegane Butter", "en": "Coconut oil or vegan butter" }, "note": { "de": "geschmolzen", "en": "melted" } },
         { "id": "apfelessig", "food": "apfelessig", "amount": 1, "unit": "EL", "name": { "de": "Apfelessig", "en": "Apple cider vinegar" } },
         { "id": "hafer", "food": "haferflocken", "amount": 90, "unit": "g", "name": { "de": "Haferflocken", "en": "Rolled oats" }, "note": { "de": "zart", "en": "rolled" } },
