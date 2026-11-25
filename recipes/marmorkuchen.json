@@ -22,7 +22,6 @@
           "Nicht länger rühren als nötig — sonst wird der Kuchen beim Backen zu fest.",
           "Statt Öl geht auch vegane Butter oder Margarine (laut Original 190 g statt 160 g Öl).",
           "Zebrakuchen: hellen und dunklen Teig je halbieren und abwechselnd schichtweise in die Form geben.",
-          "Mit Kirschen: abgetropfte Schattenmorellen aus dem Glas auf dem dunklen Teig verteilen, dann marmorieren.",
           "Luftdicht verpackt bleibt er 4–5 Tage saftig."
         ],
         "en": [
@@ -30,7 +29,6 @@
           "Don't mix longer than needed — otherwise the cake bakes up too firm.",
           "Vegan butter or margarine works instead of oil (per the original, 190 g instead of 160 g oil).",
           "Zebra cake: split both the light and the dark batter in half and layer them alternately in the tin.",
-          "With cherries: spread drained jarred morello cherries over the dark batter, then marble.",
           "Wrapped airtight it stays moist for 4–5 days."
         ]
       },
@@ -43,10 +41,7 @@
         { "id": "sojamilch", "food": "sojamilch", "amount": 350, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" }, "note": { "de": "oder andere Pflanzenmilch", "en": "or another plant milk" } },
         { "id": "oel", "food": "pflanzenoel", "amount": 160, "unit": "g", "name": { "de": "Öl", "en": "Oil" }, "note": { "de": "geschmacksneutral", "en": "neutral" } },
         { "id": "kakao", "food": "kakaopulver", "amount": 25, "unit": "g", "name": { "de": "Kakaopulver", "en": "Cocoa powder" }, "note": { "de": "ungesüßter Backkakao", "en": "unsweetened baking cocoa" } },
-        { "id": "sojamilch_dunkel", "food": "sojamilch", "amount": 5, "unit": "EL", "name": { "de": "Sojamilch", "en": "Soy milk" }, "note": { "de": "für den dunklen Teig", "en": "for the dark batter" } },
-        { "id": "schokolade", "food": "zartbitterschokolade", "amount": 120, "unit": "g", "name": { "de": "vegane Zartbitterschokolade", "en": "Vegan dark chocolate" }, "note": { "de": "für die Glasur", "en": "for the glaze" }, "optional": true },
-        { "id": "milch_glasur", "food": "sojamilch", "amount": 2, "unit": "EL", "name": { "de": "Pflanzenmilch", "en": "Plant milk" }, "note": { "de": "für die Glasur", "en": "for the glaze" }, "optional": true },
-        { "id": "puderzucker", "amount": null, "name": { "de": "Puderzucker", "en": "Icing sugar" }, "note": { "de": "zum Bestäuben", "en": "for dusting" }, "optional": true }
+        { "id": "sojamilch_dunkel", "food": "sojamilch", "amount": 5, "unit": "EL", "name": { "de": "Sojamilch", "en": "Soy milk" }, "note": { "de": "für den dunklen Teig", "en": "for the dark batter" } }
       ],
       "steps": [
         { "section": { "de": "Vorbereiten", "en": "Prepare" }, "text": { "de": "Backofen auf 180 °C Ober-/Unterhitze vorheizen. Eine 25-cm-Kastenform mit Backpapier auslegen oder einfetten.", "en": "Preheat the oven to 180 °C (conventional). Line a 25 cm loaf tin with baking paper or grease it." }, "uses": [] },
@@ -55,32 +50,24 @@
         { "section": { "de": "Dunkler Teig", "en": "Dark batter" }, "text": { "de": "Kakaopulver und Sojamilch glatt rühren, mit dem restlichen hellen Teig vermengen und auf den hellen Teig in der Form geben.", "en": "Stir cocoa powder and soy milk until smooth, mix into the remaining light batter and spread it over the light batter in the tin." }, "uses": ["kakao", "sojamilch_dunkel"] },
         { "section": { "de": "Marmorieren", "en": "Marble" }, "text": { "de": "Mit einer Gabel in den Teig stechen und von unten nach oben Kreise ziehen.", "en": "Stick a fork into the batter and draw circles from the bottom up." }, "uses": [] },
         { "section": { "de": "Backen", "en": "Bake" }, "text": { "de": "Bei 180 °C auf der mittleren Schiene 50 Min backen, dann für die letzten 10 Min ganz nach unten auf die unterste Schiene stellen.", "en": "Bake at 180 °C on the middle rack for 50 min, then move it to the very lowest rack for the last 10 min." }, "uses": [] },
-        { "section": { "de": "Abkühlen", "en": "Cool" }, "text": { "de": "Kurz in der Form abkühlen lassen, dann aus der Form lösen und auf einem Kuchengitter erkalten lassen.", "en": "Let cool briefly in the tin, then turn out and let cool completely on a wire rack." }, "optionalText": { "de": "Mit Puderzucker bestäuben.", "en": "Dust with icing sugar." }, "uses": ["puderzucker"] },
-        { "section": { "de": "Glasur", "en": "Glaze" }, "text": "", "optionalText": { "de": "Schokolade grob hacken und über dem Wasserbad bei geringer Hitze schmelzen. Mit der Pflanzenmilch zu einer glatten Glasur verrühren und den ausgekühlten Kuchen damit überziehen.", "en": "Roughly chop the chocolate and melt it over a water bath on low heat. Stir in the plant milk to a smooth glaze and coat the cooled cake with it." }, "uses": ["schokolade", "milch_glasur"] }
+        { "section": { "de": "Abkühlen", "en": "Cool" }, "text": { "de": "Kurz in der Form abkühlen lassen, dann aus der Form lösen und auf einem Kuchengitter erkalten lassen.", "en": "Let cool briefly in the tin, then turn out and let cool completely on a wire rack." }, "uses": [] }
       ],
       "tree": {
-        "op": { "de": "optional: glasieren oder bestäuben", "en": "optional: glaze or dust" },
+        "op": { "de": "50 Min Mitte + 10 Min unten backen, abkühlen", "en": "bake 50 min middle + 10 min bottom, cool" },
         "children": [
           {
-            "op": { "de": "50 Min Mitte + 10 Min unten backen, abkühlen", "en": "bake 50 min middle + 10 min bottom, cool" },
+            "op": { "de": "Hälfte in die Form; Rest mit Kakao verrühren, daraufgeben, marmorieren", "en": "half into the tin; rest mixed with cocoa, on top, marble" },
             "children": [
               {
-                "op": { "de": "Hälfte in die Form; Rest mit Kakao verrühren, daraufgeben, marmorieren", "en": "half into the tin; rest mixed with cocoa, on top, marble" },
+                "op": { "de": "klümpchenfrei verrühren", "en": "stir until lump-free" },
                 "children": [
-                  {
-                    "op": { "de": "klümpchenfrei verrühren", "en": "stir until lump-free" },
-                    "children": [
-                      { "op": { "de": "vermengen", "en": "combine" }, "children": [{ "ing": "mehl" }, { "ing": "zucker" }, { "ing": "backpulver" }, { "ing": "vanillezucker" }, { "ing": "salz" }] },
-                      { "op": { "de": "verquirlen", "en": "whisk" }, "children": [{ "ing": "sojamilch" }, { "ing": "oel" }] }
-                    ]
-                  },
-                  { "op": { "de": "glatt rühren", "en": "stir smooth" }, "children": [{ "ing": "kakao" }, { "ing": "sojamilch_dunkel" }] }
+                  { "op": { "de": "vermengen", "en": "combine" }, "children": [{ "ing": "mehl" }, { "ing": "zucker" }, { "ing": "backpulver" }, { "ing": "vanillezucker" }, { "ing": "salz" }] },
+                  { "op": { "de": "verquirlen", "en": "whisk" }, "children": [{ "ing": "sojamilch" }, { "ing": "oel" }] }
                 ]
-              }
+              },
+              { "op": { "de": "glatt rühren", "en": "stir smooth" }, "children": [{ "ing": "kakao" }, { "ing": "sojamilch_dunkel" }] }
             ]
-          },
-          { "op": { "de": "hacken, schmelzen, glatt rühren", "en": "chop, melt, stir smooth" }, "children": [{ "ing": "schokolade" }, { "ing": "milch_glasur" }] },
-          { "ing": "puderzucker" }
+          }
         ]
       }
     }
