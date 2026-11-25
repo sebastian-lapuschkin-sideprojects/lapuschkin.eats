@@ -15,7 +15,7 @@
     "backpulver":   { "per100g": { "kcal": 163, "protein": 5.2,  "carbs": 37.8,  "fat": 0,    "fiber": 0 },    "g_per_unit": { "g": 1, "TL": 4, "EL": 12 }, "source": "CoFID 2021 (UK), 'Baking powder' 17-355" },
     "rohrzucker":   { "per100g": { "kcal": 394, "protein": 0.5,  "carbs": 104.5, "fat": 0,    "fiber": 0 },    "g_per_unit": { "g": 1, "EL": 12.5 }, "source": "CoFID 2021, 'Sugar, Demerara' 17-061 (KH als Monosaccharid-Äquiv.)" },
     "ahornsirup":   { "per100g": { "kcal": 261, "protein": 0,    "carbs": 67,    "fat": 0,    "fiber": 0 },    "g_per_unit": { "g": 1, "EL": 20, "ml": 1.32 }, "source": "Open Food Facts — Ahornsirup (Liberty Gold), 7613324115249" },
-    "sojamilch":    { "per100g": { "kcal": 26,  "protein": 2.4,  "carbs": 0.5,   "fat": 1.6,  "fiber": 0.5 },  "g_per_unit": { "g": 1, "ml": 1.03 }, "source": "CoFID 2021, 'Milk, soya, unsweetened, fortified' 12-524 (je 100 ml)" },
+    "sojamilch":    { "per100g": { "kcal": 26,  "protein": 2.4,  "carbs": 0.5,   "fat": 1.6,  "fiber": 0.5 },  "g_per_unit": { "g": 1, "ml": 1.03, "EL": 15.5 }, "source": "CoFID 2021, 'Milk, soya, unsweetened, fortified' 12-524 (je 100 ml)" },
     "mandelmilch":  { "per100g": { "kcal": 13,  "protein": 0.5,  "carbs": 0,     "fat": 1.1,  "fiber": 0.2 },  "g_per_unit": { "g": 1, "ml": 1.0 }, "source": "Open Food Facts — Alpro Mandeldrink ungesüßt, 5411188122661 (je 100 ml)" },
     "pflanzenoel":  { "per100g": { "kcal": 899, "protein": 0,    "carbs": 0,     "fat": 99.9, "fiber": 0 },    "g_per_unit": { "g": 1, "EL": 14, "ml": 0.92 }, "source": "CoFID 2021, 'Oil, rapeseed' 17-041" },
     "sojasauce":    { "per100g": { "kcal": 79,  "protein": 3.0,  "carbs": 17.9,  "fat": 0,    "fiber": 0 },    "g_per_unit": { "g": 1, "EL": 15 }, "source": "CoFID 2021, 'Soy sauce' 17-721 (KH als Monosaccharid-Äquiv.)" },
@@ -63,6 +63,10 @@
     "apfelmark": { "per100g": { "kcal": 40, "protein": 0.2, "carbs": 9.7, "fat": 0.3, "fiber": 1.7 }, "g_per_unit": { "g": 1, "EL": 16 }, "source": "CoFID 2021, 'Apples, cooking, stewed without sugar' 14-320" },
     "aepfel_sanddorn_mus": { "per100g": { "kcal": 40, "protein": 0.2, "carbs": 9.7, "fat": 0.3, "fiber": 1.7 }, "g_per_unit": { "g": 1, "EL": 16 }, "source": "Näherung — reines Apfelmark (CoFID 14-320); kein spezifischer Wert für Äpfel-Sanddorn-Mus, echtes (gesüßtes) Mus liegt höher" },
     "banane": { "per100g": { "kcal": 81, "protein": 1.2, "carbs": 20.3, "fat": 0.1, "fiber": 1.4 }, "g_per_unit": { "g": 1, "": 100 }, "source": "CoFID 2021, 'Bananas, flesh only' 14-318 (1 klein–mittel ≈ 100 g)" },
-    "apfel": { "per100g": { "kcal": 51, "protein": 0.6, "carbs": 11.6, "fat": 0.5, "fiber": 1.2 }, "g_per_unit": { "g": 1, "": 150 }, "source": "CoFID 2021, 'Apples, eating, raw, flesh and skin' 14-319 (1 mittel ≈ 150 g)" }
+    "apfel": { "per100g": { "kcal": 51, "protein": 0.6, "carbs": 11.6, "fat": 0.5, "fiber": 1.2 }, "g_per_unit": { "g": 1, "": 150 }, "source": "CoFID 2021, 'Apples, eating, raw, flesh and skin' 14-319 (1 mittel ≈ 150 g)" },
+    "zucker": { "per100g": { "kcal": 400, "protein": 0, "carbs": 100, "fat": 0, "fiber": 0 }, "g_per_unit": { "g": 1, "EL": 12.5 }, "source": "BLS 4.0, 'Zucker weiß (Raffinadezucker/Weißzucker)' 38341 (S111000)" },
+    "vanillezucker": { "per100g": { "kcal": 400, "protein": 0, "carbs": 100, "fat": 0, "fiber": 0 }, "g_per_unit": { "g": 1, "Packung": 8 }, "source": "BLS 4.0, 'Vanillezucker' 38778; Packung = 8 g laut Etikett Dr. Oetker Vanillinzucker (Open Food Facts, 4000521123017)" },
+    "kakaopulver": { "per100g": { "kcal": 311, "protein": 25.5, "carbs": 12.3, "fat": 11.2, "fiber": 29.7 }, "g_per_unit": { "g": 1 }, "source": "BLS 4.0, 'Kakaopulver stark entölt' 38795 (S713000)" },
+    "zartbitterschokolade": { "per100g": { "kcal": 592, "protein": 6.6, "carbs": 33.1, "fat": 45.8, "fiber": null }, "g_per_unit": { "g": 1 }, "source": "Open Food Facts — Vivani Edel Bitter 70 % (vegan), 4044889000610, Etikett (Ballaststoffe nicht deklariert)" }
   }
 }
