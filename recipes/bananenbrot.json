@@ -62,6 +62,61 @@
           }
         ]
       }
+    },
+    {
+      "id": "zimt-apfel",
+      "label": { "de": "Zimt & Apfel", "en": "Cinnamon & apple" },
+      "time": { "total": { "de": "ca. 1 Std 30 Min", "en": "approx. 1 hr 30 min" }, "active": { "de": "15 Min", "en": "15 min" } },
+      "note": {
+        "de": [
+          "Wie das Grundrezept, mit mehr Zimt und einem geriebenen Apfel im Teig; am Ende noch 10 Min bei 160 °C nachbacken.",
+          "Gesüßt mit den sehr reifen Bananen und einer Hand voll Rohrzucker — ohne Ahornsirup und Schokodrops.",
+          "Nüsse großzügig: 2 Hand voll Walnüsse, erbsengroß gehackt.",
+          "Teig rührt sich wie immer zusammen: erst die feuchten, dann die trockenen Zutaten.",
+          "Muss nicht super glatt sein — ruhig etwas „schlampig“ verrühren, das gibt Textur.",
+          "Wird die Oberfläche beim Backen zu dunkel, mit Backpapier abdecken."
+        ],
+        "en": [
+          "Like the base recipe, with more cinnamon and a grated apple in the batter; bake another 10 min at 160 °C at the end.",
+          "Sweetened with the very ripe bananas and a handful of cane sugar — no maple syrup or chocolate chips.",
+          "Be generous with the nuts: 2 handfuls of walnuts, chopped to pea-size.",
+          "The batter comes together as usual: wet ingredients first, then the dry ones.",
+          "It doesn't need to be super smooth — mixing a bit roughly is fine and adds texture.",
+          "If the top browns too much while baking, cover it with baking paper."
+        ]
+      },
+      "ingredients": [
+        { "id": "banane", "food": "banane", "amount": 3, "unit": "", "name": { "de": "Banane", "en": "Banana" }, "note": { "de": "SUPERreif, zerdrückt", "en": "super-ripe, mashed" } },
+        { "id": "apfel", "food": "apfel", "amount": 1, "unit": "", "name": { "de": "Apfel", "en": "Apple" }, "note": { "de": "gerieben", "en": "grated" } },
+        { "id": "sojamilch", "food": "sojamilch", "amount": 180, "unit": "ml", "name": { "de": "Sojamilch", "en": "Soy milk" } },
+        { "id": "kokosoel", "food": "kokosoel", "amount": 4, "unit": "EL", "name": { "de": "Kokosöl oder vegane Butter", "en": "Coconut oil or vegan butter" }, "note": { "de": "geschmolzen", "en": "melted" } },
+        { "id": "apfelessig", "food": "apfelessig", "amount": 1, "unit": "EL", "name": { "de": "Apfelessig", "en": "Apple cider vinegar" } },
+        { "id": "hafer", "food": "haferflocken", "amount": 90, "unit": "g", "name": { "de": "Haferflocken", "en": "Rolled oats" }, "note": { "de": "zart", "en": "rolled" } },
+        { "id": "mehl", "food": "weizenmehl", "amount": 150, "unit": "g", "name": { "de": "Weizenmehl", "en": "Wheat flour" }, "note": { "de": "Type 405, nicht Vollkorn", "en": "white, not wholegrain" } },
+        { "id": "walnuss", "food": "walnuss", "amount": 2, "unit": "Handvoll", "name": { "de": "Walnüsse", "en": "Walnuts" }, "note": { "de": "gehackt, erbsengroß; großzügig", "en": "chopped pea-size; be generous" } },
+        { "id": "backpulver", "food": "backpulver", "amount": 1.5, "unit": "TL", "name": { "de": "Backpulver", "en": "Baking powder" } },
+        { "id": "zimt", "food": "zimt", "amount": 2, "unit": "TL", "name": { "de": "Zimt", "en": "Cinnamon" } },
+        { "id": "salz", "food": "salz", "amount": 1, "unit": "Prise", "name": { "de": "Salz", "en": "Salt" } },
+        { "id": "rohrzucker", "food": "rohrzucker", "amount": 40, "unit": "g", "name": { "de": "Rohrzucker", "en": "Cane sugar" }, "note": { "de": "eine Hand voll", "en": "a handful" } }
+      ],
+      "steps": [
+        { "section": { "de": "Feucht", "en": "Wet" }, "text": { "de": "Bananen in einer großen Schüssel zerdrücken, den Apfel dazu reiben und mit Sojamilch, geschmolzenem Kokosöl und Apfelessig verrühren.", "en": "Mash the bananas in a large bowl, grate in the apple and mix with soy milk, melted coconut oil and apple cider vinegar." }, "uses": ["banane", "apfel", "sojamilch", "kokosoel", "apfelessig"] },
+        { "section": { "de": "Trocken", "en": "Dry" }, "text": { "de": "Walnüsse grob hacken (erbsengroß). Mit Haferflocken, Weizenmehl, Rohrzucker, Backpulver, Zimt und Salz unter die feuchte Masse rühren, bis alles vermengt ist — muss nicht super glatt sein.", "en": "Coarsely chop the walnuts (pea-size). Stir in with oats, wheat flour, cane sugar, baking powder, cinnamon and salt until just combined — it doesn't need to be perfectly smooth." }, "uses": ["hafer", "mehl", "walnuss", "backpulver", "zimt", "salz", "rohrzucker"] },
+        { "section": { "de": "Backen", "en": "Bake" }, "text": { "de": "Teig in eine gefettete oder mit Backpapier ausgelegte 20-cm-Kastenform geben und glatt streichen. Bei 180 °C Ober-/Unterhitze 30 Min backen, dann auf 150 °C reduzieren und weitere 20 Min backen. Zum Schluss auf 160 °C stellen und noch 10 Min backen.", "en": "Pour the batter into a greased or lined 20 cm loaf tin and smooth the top. Bake at 180 °C (conventional) for 30 min, then reduce to 150 °C and bake another 20 min. Finally set to 160 °C and bake 10 min more." }, "uses": [] },
+        { "section": { "de": "Abkühlen", "en": "Cool" }, "text": { "de": "Ca. 30 Min abkühlen lassen, dann vorsichtig aus der Form lösen.", "en": "Let cool for about 30 min, then carefully remove from the tin." }, "uses": [] }
+      ],
+      "tree": {
+        "op": { "de": "backen, abkühlen", "en": "bake, cool" },
+        "children": [
+          {
+            "op": { "de": "zu Teig verrühren", "en": "stir into a batter" },
+            "children": [
+              { "op": { "de": "feucht verrühren", "en": "mix wet" }, "children": [{ "ing": "banane" }, { "op": { "de": "reiben", "en": "grate" }, "children": [{ "ing": "apfel" }] }, { "ing": "sojamilch" }, { "ing": "kokosoel" }, { "ing": "apfelessig" }] },
+              { "op": { "de": "trocken + Walnüsse unterrühren", "en": "stir in dry + walnuts" }, "children": [{ "ing": "hafer" }, { "ing": "mehl" }, { "ing": "walnuss" }, { "ing": "backpulver" }, { "ing": "zimt" }, { "ing": "salz" }, { "ing": "rohrzucker" }] }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
