@@ -5,7 +5,7 @@
     "de": "Saftiger Klassiker aus der Kastenform, heller und dunkler Teig mit der Gabel marmoriert.",
     "en": "A moist classic from the loaf tin, light and dark batter marbled with a fork."
   },
-  "tags": [{ "de": "Kaffeepause", "en": "Coffee break" }, { "de": "süß", "en": "sweet" }],
+  "tags": ["kid", { "de": "Frühstück", "en": "Breakfast" }, { "de": "Kaffeepause", "en": "Coffee break" }, { "de": "süß", "en": "sweet" }],
   "source": { "name": "einfachkochen.de", "url": "https://www.einfachkochen.de/rezepte/veganer-marmorkuchen-saftig-und-einfach" },
   "created": "2026-11-25",
   "updated": "2026-11-25",
